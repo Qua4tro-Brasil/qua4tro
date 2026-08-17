@@ -126,6 +126,9 @@ a {
 .hero {
     min-height: 100vh;
 
+    position: relative;
+    overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,97 +137,263 @@ a {
 
     padding: 140px 7% 100px;
 
-    position: relative;
-    overflow: hidden;
-
     background:
         radial-gradient(
-            circle at 50% 45%,
-            rgba(255, 165, 31, 0.15),
-            transparent 30%
+            circle at 50% 50%,
+            rgba(255, 165, 31, 0.12),
+            transparent 32%
         ),
-        linear-gradient(
-            180deg,
-            #080808 0%,
-            #0b0b0b 100%
-        );
+        #080808;
 }
 
-.hero::before {
-    content: "";
 
+/* Número gigante */
+
+.hero-background-number {
     position: absolute;
-
-    width: 600px;
-    height: 600px;
-
-    border: 1px solid rgba(255, 165, 31, 0.12);
-    border-radius: 50%;
 
     top: 50%;
     left: 50%;
 
     transform: translate(-50%, -50%);
+
+    font-size: min(75vw, 950px);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    color: transparent;
+
+    -webkit-text-stroke: 2px rgba(255, 165, 31, 0.08);
+
+    user-select: none;
+
+    z-index: 0;
+
+    animation: numberFloat 8s ease-in-out infinite;
 }
+
+
+/* Linhas decorativas */
+
+.hero-lines {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    opacity: 0.25;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 49.9%,
+            rgba(255, 255, 255, 0.04) 50%,
+            transparent 50.1%
+        ),
+        linear-gradient(
+            transparent 49.9%,
+            rgba(255, 255, 255, 0.04) 50%,
+            transparent 50.1%
+        );
+
+    background-size: 100px 100px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 30%,
+        black 70%,
+        transparent
+    );
+
+    z-index: 0;
+}
+
+
+/* Conteúdo */
 
 .hero-content {
     position: relative;
+
+    max-width: 1200px;
+
     z-index: 2;
 
-    max-width: 1100px;
+    animation: heroAppear 1s ease forwards;
 }
 
+
+/* Tag */
+
 .hero-tag {
+    display: inline-block;
+
+    margin-bottom: 28px;
+
     color: var(--orange);
 
-    font-size: 13px;
+    font-size: 12px;
+
     font-weight: 900;
 
     letter-spacing: 5px;
 
-    margin-bottom: 25px;
+    text-transform: uppercase;
 }
 
+
+/* Título */
+
 .hero h1 {
-    font-size: clamp(48px, 8vw, 110px);
+    margin-bottom: 30px;
+
+    font-size: clamp(55px, 9vw, 125px);
 
     font-weight: 900;
 
-    line-height: 0.95;
+    line-height: 0.88;
 
-    letter-spacing: -5px;
+    letter-spacing: -6px;
 
     text-transform: uppercase;
-
-    margin-bottom: 35px;
 }
 
 .hero h1 span {
     display: block;
+
     color: var(--orange);
 }
+
+
+/* Descrição */
 
 .hero-description {
     max-width: 650px;
 
-    margin: 0 auto 40px;
+    margin: 0 auto 42px;
 
-    color: var(--gray);
+    color: #a8a8a8;
 
-    font-size: 19px;
+    font-size: clamp(16px, 2vw, 20px);
+
+    line-height: 1.6;
 }
+
+
+/* Botões */
 
 .hero-buttons {
     display: flex;
 
     justify-content: center;
-    align-items: center;
 
     gap: 15px;
 
     flex-wrap: wrap;
 }
 
+
+/* Parte inferior */
+
+.hero-bottom {
+    position: absolute;
+
+    bottom: 30px;
+    left: 6%;
+    right: 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    color: #555;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    z-index: 2;
+}
+
+.hero-scroll {
+    color: var(--orange);
+}
+
+
+/* =========================================
+   ANIMAÇÕES
+   ========================================= */
+
+@keyframes numberFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -51%) scale(1.03);
+    }
+}
+
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   HERO RESPONSIVO
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 120px 20px 100px;
+    }
+
+    .hero-background-number {
+        font-size: 100vw;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 14vw, 80px);
+
+        letter-spacing: -4px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-bottom {
+        left: 20px;
+        right: 20px;
+    }
+
+    .hero-bottom span:first-child {
+        max-width: 180px;
+    }
+
+}
 
 /* =========================================
    BUTTONS
