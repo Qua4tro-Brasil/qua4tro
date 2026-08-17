@@ -879,5 +879,357 @@ a {
         left: 20px !important;
         right: 20px !important;
     }
+/* =========================================
+   COMPETIÇÕES — LIRFUT + NOX BELLI
+   ========================================= */
+
+.competitions-section {
+    position: relative;
+
+    padding: 140px 6%;
+
+    background: #080808;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+
+.competitions-heading {
+    max-width: 1000px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+}
+
+.competitions-heading .section-label {
+    margin-bottom: 25px;
+}
+
+.competitions-heading h2 {
+    margin-bottom: 25px;
+
+    font-size: clamp(42px, 6vw, 80px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    font-weight: 900;
+}
+
+.competitions-heading h2 span {
+    display: block;
+
+    color: #ffa51f;
+}
+
+.competitions-heading p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #8f8f8f;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   GRID
+   ========================================= */
+
+.division-grid {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.division-card {
+    position: relative;
+
+    height: 650px;
+
+    overflow: hidden;
+
+    background: #111111;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    isolation: isolate;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.division-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(255, 165, 31, 0.45);
+}
+
+
+/* =========================================
+   IMAGEM
+   ========================================= */
+
+.division-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: -3;
+
+    filter: grayscale(100%);
+
+    transform: scale(1.02);
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+.division-card:hover .division-image {
+    transform: scale(1.08);
+
+    filter: grayscale(0%);
+}
+
+
+/* =========================================
+   OVERLAY
+   ========================================= */
+
+.division-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.96) 0%,
+            rgba(0, 0, 0, 0.65) 42%,
+            rgba(0, 0, 0, 0.15) 100%
+        );
+
+    transition: 0.5s ease;
+}
+
+.division-card:hover .division-overlay {
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.45) 55%,
+            rgba(0, 0, 0, 0.05) 100%
+        );
+}
+
+
+/* =========================================
+   NÚMERO
+   ========================================= */
+
+.division-number {
+    position: absolute;
+
+    top: 28px;
+    right: 32px;
+
+    color: rgba(255, 255, 255, 0.2);
+
+    font-size: 70px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    transition: 0.5s ease;
+}
+
+.division-card:hover .division-number {
+    color: rgba(255, 165, 31, 0.7);
+}
+
+
+/* =========================================
+   CONTEÚDO
+   ========================================= */
+
+.division-content {
+    position: absolute;
+
+    left: 45px;
+    right: 45px;
+    bottom: 45px;
+
+    z-index: 2;
+}
+
+.division-category {
+    margin-bottom: 12px;
+
+    color: #ffa51f;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+.division-content h3 {
+    margin-bottom: 15px;
+
+    font-size: clamp(55px, 6vw, 90px);
+
+    font-weight: 900;
+
+    line-height: 0.85;
+
+    letter-spacing: -4px;
+}
+
+.division-content p {
+    max-width: 500px;
+
+    margin-bottom: 28px;
+
+    color: #c0c0c0;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BOTÃO
+   ========================================= */
+
+.division-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #ffa51f;
+
+    color: #ffa51f;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s;
+}
+
+.division-button span {
+    font-size: 18px;
+
+    line-height: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+.division-button:hover {
+    color: #ffffff;
+
+    border-color: #ffffff;
+}
+
+.division-button:hover span {
+    transform: translateX(6px);
+}
+
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .competitions-section {
+        padding: 100px 25px;
+    }
+
+    .division-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .division-card {
+        height: 580px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .competitions-section {
+        padding: 90px 18px;
+    }
+
+    .competitions-heading h2 {
+        letter-spacing: -2px;
+    }
+
+    .division-card {
+        height: 520px;
+    }
+
+    .division-content {
+        left: 28px;
+        right: 28px;
+        bottom: 30px;
+    }
+
+    .division-content h3 {
+        font-size: 55px;
+
+        letter-spacing: -3px;
+    }
+
+    .division-number {
+        top: 22px;
+        right: 22px;
+
+        font-size: 55px;
+    }
 
 }
