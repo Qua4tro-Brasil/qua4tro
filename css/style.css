@@ -1231,5 +1231,44 @@ a {
 
         font-size: 55px;
     }
+/* =========================================
+   CORREÇÃO — GRID DAS DIVISÕES
+   ========================================= */
+
+/* DESKTOP */
+@media (min-width: 901px) {
+
+    .division-grid {
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 22px !important;
+
+        width: 100% !important;
+
+        max-width: 1500px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .division-card {
+        width: 100% !important;
+    }
+
+}
+
+
+/* TABLET E CELULAR */
+@media (max-width: 900px) {
+
+    .division-grid {
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 22px !important;
+    }
 
 }
