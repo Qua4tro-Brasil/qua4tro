@@ -1278,3 +1278,288 @@ a {
     }
 
 }
+/* =========================================
+   FILIAÇÃO QUA4TRO
+   ========================================= */
+
+.affiliation-section {
+    padding: 150px 7%;
+
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(255,165,31,0.08),
+            transparent 30%
+        ),
+        #111111;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+
+.affiliation-top {
+    max-width: 1500px;
+
+    margin: 0 auto 80px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: end;
+}
+
+.affiliation-heading h2 {
+    font-size: clamp(50px, 6vw, 90px);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+}
+
+.affiliation-heading h2 span {
+    display: block;
+
+    color: #ffa51f;
+}
+
+.affiliation-intro p {
+    max-width: 600px;
+
+    color: #8d8d8d;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+.affiliation-intro p:first-child {
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   BENEFÍCIOS
+   ========================================= */
+
+.benefits-grid {
+    max-width: 1500px;
+
+    margin: 0 auto 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.benefit {
+    min-height: 220px;
+
+    padding: 32px;
+
+    border-right: 1px solid rgba(255,255,255,0.1);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    transition: 0.3s ease;
+}
+
+.benefit:hover {
+    background: rgba(255,165,31,0.05);
+}
+
+.benefit > span {
+    display: block;
+
+    margin-bottom: 45px;
+
+    color: #ffa51f;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.benefit h3 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+    font-weight: 900;
+}
+
+.benefit p {
+    color: #777777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   OPÇÕES DE FILIAÇÃO
+   ========================================= */
+
+.affiliation-options {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.affiliation-option {
+    min-height: 220px;
+
+    padding: 40px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: #080808;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: 0.4s ease;
+}
+
+.affiliation-option:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(255,165,31,0.55);
+
+    background: #0d0d0d;
+}
+
+.option-category {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #ffa51f;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.affiliation-option h3 {
+    margin-bottom: 10px;
+
+    font-size: clamp(35px, 4vw, 55px);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.affiliation-option p {
+    max-width: 430px;
+
+    color: #777777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.option-arrow {
+    color: #ffa51f;
+
+    font-size: 40px;
+
+    transition: 0.3s ease;
+}
+
+.affiliation-option:hover .option-arrow {
+    transform: translateX(8px);
+}
+
+
+/* =========================================
+   FILIAÇÃO — RESPONSIVO
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .affiliation-top {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .affiliation-options {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .affiliation-section {
+        padding: 90px 18px;
+    }
+
+    .affiliation-heading h2 {
+        letter-spacing: -3px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit {
+        min-height: 190px;
+    }
+
+    .affiliation-option {
+        min-height: 200px;
+
+        padding: 28px;
+    }
+
+}
