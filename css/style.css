@@ -1,13 +1,8 @@
-/* =========================================
-   QUA4TRO — STYLE
-   ========================================= */
-
 :root {
     --black: #080808;
     --black-soft: #111111;
     --white: #ffffff;
     --gray: #a5a5a5;
-    --gray-dark: #242424;
     --orange: #ffa51f;
 }
 
@@ -38,11 +33,6 @@ a {
     text-decoration: none;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
 
 /* =========================================
    HEADER
@@ -52,6 +42,7 @@ a {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 82px;
 
@@ -91,9 +82,7 @@ a {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-
     color: #d0d0d0;
-
     transition: 0.3s;
 }
 
@@ -103,7 +92,6 @@ a {
 
 .nav-button {
     padding: 12px 22px;
-
     background: var(--orange);
     color: var(--black);
 
@@ -146,9 +134,6 @@ a {
         #080808;
 }
 
-
-/* Número gigante */
-
 .hero-background-number {
     position: absolute;
 
@@ -171,20 +156,17 @@ a {
 
     z-index: 0;
 
-    animation: numberFloat 8s ease-in-out infinite;
+    pointer-events: none;
 }
-
-
-/* Linhas decorativas */
 
 .hero-lines {
     position: absolute;
 
-    width: 100%;
-    height: 100%;
-
     top: 0;
     left: 0;
+
+    width: 100%;
+    height: 100%;
 
     opacity: 0.25;
 
@@ -203,32 +185,19 @@ a {
 
     background-size: 100px 100px;
 
-    mask-image: linear-gradient(
-        to bottom,
-        transparent,
-        black 30%,
-        black 70%,
-        transparent
-    );
-
     z-index: 0;
+
+    pointer-events: none;
 }
-
-
-/* Conteúdo */
 
 .hero-content {
     position: relative;
+    z-index: 2;
 
     max-width: 1200px;
 
-    z-index: 2;
-
     animation: heroAppear 1s ease forwards;
 }
-
-
-/* Tag */
 
 .hero-tag {
     display: inline-block;
@@ -238,16 +207,10 @@ a {
     color: var(--orange);
 
     font-size: 12px;
-
     font-weight: 900;
 
     letter-spacing: 5px;
-
-    text-transform: uppercase;
 }
-
-
-/* Título */
 
 .hero h1 {
     margin-bottom: 30px;
@@ -265,12 +228,8 @@ a {
 
 .hero h1 span {
     display: block;
-
     color: var(--orange);
 }
-
-
-/* Descrição */
 
 .hero-description {
     max-width: 650px;
@@ -284,28 +243,23 @@ a {
     line-height: 1.6;
 }
 
-
-/* Botões */
-
 .hero-buttons {
     display: flex;
 
     justify-content: center;
+    align-items: center;
 
     gap: 15px;
 
     flex-wrap: wrap;
 }
 
-
-/* Parte inferior */
-
 .hero-bottom {
     position: absolute;
 
-    bottom: 30px;
     left: 6%;
     right: 6%;
+    bottom: 30px;
 
     display: flex;
 
@@ -320,7 +274,7 @@ a {
 
     letter-spacing: 2px;
 
-    z-index: 2;
+    z-index: 5;
 }
 
 .hero-scroll {
@@ -329,21 +283,8 @@ a {
 
 
 /* =========================================
-   ANIMAÇÕES
+   ANIMAÇÃO
    ========================================= */
-
-@keyframes numberFloat {
-
-    0%,
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-
-    50% {
-        transform: translate(-50%, -51%) scale(1.03);
-    }
-}
-
 
 @keyframes heroAppear {
 
@@ -361,42 +302,7 @@ a {
 
 
 /* =========================================
-   HERO RESPONSIVO
-   ========================================= */
-
-@media (max-width: 600px) {
-
-    .hero {
-        padding: 120px 20px 100px;
-    }
-
-    .hero-background-number {
-        font-size: 100vw;
-    }
-
-    .hero h1 {
-        font-size: clamp(48px, 14vw, 80px);
-
-        letter-spacing: -4px;
-    }
-
-    .hero-description {
-        font-size: 16px;
-    }
-
-    .hero-bottom {
-        left: 20px;
-        right: 20px;
-    }
-
-    .hero-bottom span:first-child {
-        max-width: 180px;
-    }
-
-}
-
-/* =========================================
-   BUTTONS
+   BOTÕES
    ========================================= */
 
 .button {
@@ -410,6 +316,7 @@ a {
     padding: 0 28px;
 
     font-size: 12px;
+
     font-weight: 900;
 
     letter-spacing: 1px;
@@ -424,11 +331,14 @@ a {
 
 .button-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(255, 165, 31, 0.2);
+
+    box-shadow:
+        0 10px 35px rgba(255, 165, 31, 0.2);
 }
 
 .button-secondary {
     border: 1px solid rgba(255, 255, 255, 0.25);
+
     color: var(--white);
 }
 
@@ -439,448 +349,7 @@ a {
 
 
 /* =========================================
-   SECTIONS
-   ========================================= */
-
-.section {
-    padding: 130px 8%;
-
-    position: relative;
-
-    text-align: center;
-}
-
-.section-label {
-    color: var(--orange);
-
-    font-size: 11px;
-    font-weight: 900;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 25px;
-}
-
-.section h2 {
-    font-size: clamp(38px, 5vw, 70px);
-
-    line-height: 1;
-
-    letter-spacing: -3px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 30px;
-}
-
-.section h2 span {
-    color: var(--orange);
-}
-
-.section p {
-    max-width: 760px;
-
-    margin: 0 auto 20px;
-
-    color: var(--gray);
-
-    font-size: 18px;
-}
-
-
-/* =========================================
-   SOBRE
-   ========================================= */
-
-.about {
-    background: var(--black-soft);
-}
-
-.about p + p {
-    margin-top: 10px;
-}
-
-
-/* =========================================
    COMPETIÇÕES
-   ========================================= */
-
-.competitions {
-    background: var(--black);
-}
-
-.competition-grid {
-    max-width: 1100px;
-
-    margin: 70px auto 0;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
-
-    text-align: left;
-}
-
-.competition-card {
-    position: relative;
-
-    min-height: 400px;
-
-    padding: 45px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    background: linear-gradient(
-        145deg,
-        #181818,
-        #0e0e0e
-    );
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    overflow: hidden;
-
-    transition: 0.4s;
-}
-
-.competition-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 250px;
-    height: 250px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 165, 31, 0.08);
-
-    top: -100px;
-    right: -100px;
-
-    transition: 0.4s;
-}
-
-.competition-card:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(255, 165, 31, 0.4);
-}
-
-.competition-card:hover::before {
-    transform: scale(1.5);
-}
-
-.competition-number {
-    position: absolute;
-
-    top: 30px;
-    right: 35px;
-
-    color: rgba(255, 255, 255, 0.2);
-
-    font-size: 70px;
-    font-weight: 900;
-
-    line-height: 1;
-}
-
-.competition-card h3 {
-    position: relative;
-
-    font-size: 55px;
-
-    font-weight: 900;
-
-    letter-spacing: -2px;
-
-    margin-bottom: 15px;
-}
-
-.competition-card p {
-    position: relative;
-
-    margin: 0 0 30px;
-
-    max-width: 500px;
-
-    font-size: 16px;
-}
-
-.competition-card a {
-    position: relative;
-
-    color: var(--orange);
-
-    font-size: 12px;
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================
-   FILIAÇÃO
-   ========================================= */
-
-.affiliation {
-    background:
-        linear-gradient(
-            rgba(255, 165, 31, 0.06),
-            rgba(255, 165, 31, 0.06)
-        ),
-        var(--black-soft);
-}
-
-.affiliation .hero-buttons {
-    margin-top: 40px;
-}
-
-
-/* =========================================
-   APP
-   ========================================= */
-
-.app-section {
-    background: var(--black);
-}
-
-.app-coming {
-    display: inline-block;
-
-    margin-top: 35px;
-
-    padding: 12px 25px;
-
-    border: 1px solid var(--orange);
-
-    color: var(--orange);
-
-    font-size: 11px;
-    font-weight: 900;
-
-    letter-spacing: 3px;
-}
-
-
-/* =========================================
-   CONTATO
-   ========================================= */
-
-.contact {
-    background: var(--black-soft);
-}
-
-.contact .button {
-    margin-top: 25px;
-}
-
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
-.footer {
-    padding: 50px 8%;
-
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 20px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-    background: #050505;
-}
-
-.footer-logo {
-    font-size: 24px;
-    font-weight: 900;
-}
-
-.footer p {
-    color: #666;
-
-    font-size: 12px;
-}
-
-
-/* =========================================
-   RESPONSIVO
-   ========================================= */
-
-@media (max-width: 850px) {
-
-    .header {
-        padding: 0 25px;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .competition-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .competition-card {
-        min-height: 350px;
-    }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .header {
-        height: 70px;
-    }
-
-    .nav-button {
-        padding: 10px 15px;
-    }
-
-    .hero {
-        padding: 120px 20px 80px;
-    }
-
-    .hero h1 {
-        letter-spacing: -3px;
-    }
-
-    .hero-description {
-        font-size: 16px;
-    }
-
-    .section {
-        padding: 90px 25px;
-    }
-
-    .section h2 {
-        letter-spacing: -2px;
-    }
-
-    .competition-card {
-        padding: 30px;
-        min-height: 320px;
-    }
-
-    .competition-card h3 {
-        font-size: 45px;
-    }
-
-    .button {
-        width: 100%;
-    }
-
-    .hero-buttons {
-        width: 100%;
-    }
-/* =========================================
-   CORREÇÃO DO HERO
-   ========================================= */
-
-.hero {
-    position: relative !important;
-    overflow: hidden;
-}
-
-.hero-background-number {
-    position: absolute !important;
-
-    top: 50% !important;
-    left: 50% !important;
-
-    transform: translate(-50%, -50%) !important;
-
-    width: auto !important;
-    height: auto !important;
-
-    font-size: min(75vw, 950px) !important;
-    line-height: 0.8 !important;
-
-    font-weight: 900 !important;
-
-    color: transparent !important;
-
-    -webkit-text-stroke: 2px rgba(255, 165, 31, 0.08) !important;
-
-    z-index: 0 !important;
-
-    pointer-events: none !important;
-}
-
-.hero-lines {
-    position: absolute !important;
-
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    z-index: 0 !important;
-
-    pointer-events: none !important;
-}
-
-.hero-content {
-    position: relative !important;
-
-    z-index: 2 !important;
-}
-
-.hero-bottom {
-    position: absolute !important;
-
-    left: 6% !important;
-    right: 6% !important;
-    bottom: 30px !important;
-
-    width: auto !important;
-
-    display: flex !important;
-
-    justify-content: space-between !important;
-    align-items: center !important;
-
-    z-index: 5 !important;
-
-    color: #555 !important;
-
-    font-size: 9px !important;
-    font-weight: 900 !important;
-
-    letter-spacing: 2px !important;
-}
-
-.hero-bottom .hero-scroll {
-    color: #ffa51f !important;
-}
-
-@media (max-width: 600px) {
-
-    .hero-background-number {
-        font-size: 100vw !important;
-    }
-
-    .hero-bottom {
-        left: 20px !important;
-        right: 20px !important;
-    }
-/* =========================================
-   COMPETIÇÕES — LIRFUT + NOX BELLI
    ========================================= */
 
 .competitions-section {
@@ -888,15 +357,13 @@ a {
 
     padding: 140px 6%;
 
-    background: #080808;
+    background: var(--black);
 
     overflow: hidden;
 }
 
 
-/* =========================================
-   CABEÇALHO
-   ========================================= */
+/* Cabeçalho */
 
 .competitions-heading {
     max-width: 1000px;
@@ -906,7 +373,15 @@ a {
     text-align: center;
 }
 
-.competitions-heading .section-label {
+.section-label {
+    color: var(--orange);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
     margin-bottom: 25px;
 }
 
@@ -925,7 +400,7 @@ a {
 .competitions-heading h2 span {
     display: block;
 
-    color: #ffa51f;
+    color: var(--orange);
 }
 
 .competitions-heading p {
@@ -940,28 +415,32 @@ a {
 
 
 /* =========================================
-   GRID
+   GRID — AQUI ESTÁ A CORREÇÃO
    ========================================= */
 
 .division-grid {
+    width: 100%;
     max-width: 1500px;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 22px;
 }
 
 
 /* =========================================
-   CARD
+   CARDS
    ========================================= */
 
 .division-card {
     position: relative;
+
+    width: 100%;
+    min-width: 0;
 
     height: 650px;
 
@@ -987,9 +466,7 @@ a {
 }
 
 
-/* =========================================
-   IMAGEM
-   ========================================= */
+/* Imagem */
 
 .division-image {
     position: absolute;
@@ -1000,8 +477,6 @@ a {
     height: 100%;
 
     object-fit: cover;
-
-    object-position: center;
 
     z-index: -3;
 
@@ -1021,9 +496,7 @@ a {
 }
 
 
-/* =========================================
-   OVERLAY
-   ========================================= */
+/* Overlay */
 
 .division-overlay {
     position: absolute;
@@ -1039,24 +512,10 @@ a {
             rgba(0, 0, 0, 0.65) 42%,
             rgba(0, 0, 0, 0.15) 100%
         );
-
-    transition: 0.5s ease;
-}
-
-.division-card:hover .division-overlay {
-    background:
-        linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.95) 0%,
-            rgba(0, 0, 0, 0.45) 55%,
-            rgba(0, 0, 0, 0.05) 100%
-        );
 }
 
 
-/* =========================================
-   NÚMERO
-   ========================================= */
+/* Número */
 
 .division-number {
     position: absolute;
@@ -1073,18 +532,10 @@ a {
     line-height: 1;
 
     letter-spacing: -4px;
-
-    transition: 0.5s ease;
-}
-
-.division-card:hover .division-number {
-    color: rgba(255, 165, 31, 0.7);
 }
 
 
-/* =========================================
-   CONTEÚDO
-   ========================================= */
+/* Conteúdo */
 
 .division-content {
     position: absolute;
@@ -1099,7 +550,7 @@ a {
 .division-category {
     margin-bottom: 12px;
 
-    color: #ffa51f;
+    color: var(--orange);
 
     font-size: 11px;
 
@@ -1133,9 +584,7 @@ a {
 }
 
 
-/* =========================================
-   BOTÃO
-   ========================================= */
+/* Botão */
 
 .division-button {
     display: inline-flex;
@@ -1146,50 +595,156 @@ a {
 
     padding-bottom: 8px;
 
-    border-bottom: 1px solid #ffa51f;
+    border-bottom: 1px solid var(--orange);
 
-    color: #ffa51f;
+    color: var(--orange);
 
     font-size: 11px;
 
     font-weight: 900;
 
     letter-spacing: 1.5px;
-
-    transition: 0.3s;
 }
 
 .division-button span {
     font-size: 18px;
-
-    line-height: 10px;
-
-    transition: transform 0.3s ease;
-}
-
-.division-button:hover {
-    color: #ffffff;
-
-    border-color: #ffffff;
-}
-
-.division-button:hover span {
-    transform: translateX(6px);
 }
 
 
 /* =========================================
-   RESPONSIVO
+   FILIAÇÃO / APP / CONTATO
+   ========================================= */
+
+.section {
+    padding: 130px 8%;
+
+    position: relative;
+
+    text-align: center;
+}
+
+.section h2 {
+    font-size: clamp(38px, 5vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 30px;
+}
+
+.section h2 span {
+    color: var(--orange);
+}
+
+.section p {
+    max-width: 760px;
+
+    margin: 0 auto 20px;
+
+    color: var(--gray);
+
+    font-size: 18px;
+}
+
+.about,
+.affiliation,
+.contact {
+    background: var(--black-soft);
+}
+
+.app-section {
+    background: var(--black);
+}
+
+.app-coming {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 12px 25px;
+
+    border: 1px solid var(--orange);
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer {
+    padding: 50px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: #050505;
+}
+
+.footer-logo {
+    font-size: 24px;
+
+    font-weight: 900;
+}
+
+.footer p {
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   DESKTOP
+   ========================================= */
+
+@media (min-width: 901px) {
+
+    .division-grid {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 22px;
+    }
+
+}
+
+
+/* =========================================
+   TABLET
    ========================================= */
 
 @media (max-width: 900px) {
 
-    .competitions-section {
-        padding: 100px 25px;
+    .nav {
+        display: none;
     }
 
     .division-grid {
+        display: grid;
+
         grid-template-columns: 1fr;
+
+        gap: 22px;
     }
 
     .division-card {
@@ -1199,7 +754,56 @@ a {
 }
 
 
+/* =========================================
+   CELULAR
+   ========================================= */
+
 @media (max-width: 600px) {
+
+    .header {
+        height: 70px;
+
+        padding: 0 20px;
+    }
+
+    .nav-button {
+        padding: 10px 15px;
+    }
+
+    .hero {
+        padding: 120px 20px 100px;
+    }
+
+    .hero-background-number {
+        font-size: 100vw;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 14vw, 80px);
+
+        letter-spacing: -4px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-bottom {
+        left: 20px;
+        right: 20px;
+    }
+
+    .hero-bottom span:first-child {
+        max-width: 180px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
 
     .competitions-section {
         padding: 90px 18px;
@@ -1231,44 +835,11 @@ a {
 
         font-size: 55px;
     }
-/* =========================================
-   CORREÇÃO — GRID DAS DIVISÕES
-   ========================================= */
 
-/* DESKTOP */
-@media (min-width: 901px) {
+    .footer {
+        flex-direction: column;
 
-    .division-grid {
-        display: grid !important;
-
-        grid-template-columns: 1fr 1fr !important;
-
-        gap: 22px !important;
-
-        width: 100% !important;
-
-        max-width: 1500px !important;
-
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-    .division-card {
-        width: 100% !important;
-    }
-
-}
-
-
-/* TABLET E CELULAR */
-@media (max-width: 900px) {
-
-    .division-grid {
-        display: grid !important;
-
-        grid-template-columns: 1fr !important;
-
-        gap: 22px !important;
+        text-align: center;
     }
 
 }
