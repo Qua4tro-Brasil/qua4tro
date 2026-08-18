@@ -1022,3 +1022,259 @@ a {
     }
 
 }
+/* =========================================
+   ECOSSISTEMA QUA4TRO
+   ========================================= */
+
+.ecosystem-section {
+    padding: 150px 7%;
+
+    background: #080808;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+
+/* CABEÇALHO */
+
+.ecosystem-heading {
+    max-width: 950px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+.ecosystem-heading h2 {
+    font-size: clamp(48px, 6vw, 85px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+
+    margin-bottom: 25px;
+}
+
+.ecosystem-heading h2 span {
+    display: block;
+
+    color: #ffa51f;
+}
+
+.ecosystem-heading > p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #8c8c8c;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   GRID
+   ========================================= */
+
+.ecosystem-grid {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.ecosystem-card {
+    position: relative;
+
+    min-height: 320px;
+
+    padding: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    background: #0d0d0d;
+
+    border-right: 1px solid rgba(255,255,255,0.1);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    overflow: hidden;
+
+    transition: 0.4s ease;
+}
+
+.ecosystem-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(255,165,31,0.08);
+
+    transition: 0.5s ease;
+}
+
+.ecosystem-card:hover {
+    background: #141414;
+
+    transform: translateY(-5px);
+}
+
+.ecosystem-card:hover::before {
+    transform: scale(1.8);
+}
+
+
+/* NÚMEROS */
+
+.ecosystem-number {
+    position: absolute;
+
+    top: 32px;
+    left: 40px;
+
+    color: #ffa51f;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+/* TÍTULOS */
+
+.ecosystem-card h3 {
+    position: relative;
+
+    margin-bottom: 15px;
+
+    font-size: clamp(28px, 3vw, 42px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    font-weight: 900;
+}
+
+
+/* TEXTO */
+
+.ecosystem-card p {
+    position: relative;
+
+    max-width: 360px;
+
+    color: #858585;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CARD TECNOLOGIA
+   ========================================= */
+
+.ecosystem-card-featured {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,165,31,0.12),
+            #0d0d0d 60%
+        );
+}
+
+.ecosystem-card-featured h3 {
+    color: #ffa51f;
+}
+
+.ecosystem-badge {
+    position: absolute;
+
+    top: 28px;
+    right: 28px;
+
+    padding: 7px 12px;
+
+    border: 1px solid rgba(255,165,31,0.5);
+
+    color: #ffa51f;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .ecosystem-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .ecosystem-section {
+        padding: 90px 18px;
+    }
+
+    .ecosystem-heading h2 {
+        letter-spacing: -3px;
+    }
+
+    .ecosystem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ecosystem-card {
+        min-height: 270px;
+
+        padding: 32px;
+    }
+
+    .ecosystem-number {
+        top: 25px;
+        left: 30px;
+    }
+
+}
