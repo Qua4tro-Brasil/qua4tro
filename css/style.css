@@ -842,4 +842,182 @@ a {
         text-align: center;
     }
 
+/* =========================================
+   SOBRE A QUA4TRO
+   ========================================= */
+
+.about-section {
+    padding: 150px 7%;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 100px;
+
+    align-items: start;
+
+    background: #111111;
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+
+/* LADO ESQUERDO */
+
+.about-left {
+    position: sticky;
+    top: 140px;
+}
+
+.about-left h2 {
+    max-width: 650px;
+
+    font-size: clamp(50px, 6vw, 90px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+}
+
+.about-left h2 span {
+    display: block;
+
+    color: #ffa51f;
+}
+
+
+/* LADO DIREITO */
+
+.about-right {
+    padding-top: 45px;
+}
+
+.about-right > p {
+    max-width: 700px;
+
+    color: #999999;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.about-right .about-intro {
+    color: #ffffff;
+
+    font-size: clamp(22px, 2.5vw, 32px);
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* PILARES */
+
+.about-pillars {
+    margin-top: 65px;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.about-pillar {
+    display: grid;
+
+    grid-template-columns: 60px 190px 1fr;
+
+    gap: 25px;
+
+    align-items: center;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+
+    transition: 0.3s ease;
+}
+
+.about-pillar:hover {
+    padding-left: 12px;
+}
+
+.about-pillar > span {
+    color: #ffa51f;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.about-pillar h3 {
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.about-pillar p {
+    color: #777777;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   SOBRE — RESPONSIVO
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .about-section {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 100px 25px;
+    }
+
+    .about-left {
+        position: static;
+    }
+
+    .about-right {
+        padding-top: 0;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-section {
+        padding: 90px 20px;
+    }
+
+    .about-left h2 {
+        font-size: 52px;
+
+        letter-spacing: -3px;
+    }
+
+    .about-pillar {
+        grid-template-columns: 35px 1fr;
+
+        gap: 15px;
+    }
+
+    .about-pillar p {
+        grid-column: 2;
+    }
+
 }
