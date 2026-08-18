@@ -1987,3 +1987,347 @@ a {
     }
 
 }
+/* =========================================
+   PATROCINADORES / PARCEIROS
+   ========================================= */
+
+.partners-section {
+    padding: 150px 7%;
+
+    background: #111111;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+
+/* CABEÇALHO */
+
+.partners-heading {
+    max-width: 1050px;
+
+    margin: 0 auto 75px;
+
+    text-align: center;
+}
+
+.partners-heading h2 {
+    margin-bottom: 28px;
+
+    font-size: clamp(48px, 6vw, 85px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+}
+
+.partners-heading h2 span {
+    display: block;
+
+    color: #ffa51f;
+}
+
+.partners-heading p {
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    color: #8c8c8c;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ÁREA PRINCIPAL
+   ========================================= */
+
+.partners-showcase {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: #080808;
+}
+
+
+/* BLOCO ESQUERDO */
+
+.partners-main {
+    position: relative;
+
+    min-height: 520px;
+
+    padding: 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    border-right: 1px solid rgba(255,255,255,0.10);
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,165,31,0.14),
+            transparent 35%
+        ),
+        #080808;
+}
+
+.partners-main::before {
+    content: "4";
+
+    position: absolute;
+
+    top: -80px;
+    right: 30px;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        2px rgba(255,165,31,0.08);
+
+    font-size: 500px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+.partners-small {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    color: #ffa51f;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.partners-main h3 {
+    position: relative;
+
+    max-width: 750px;
+
+    margin-bottom: 25px;
+
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 0.92;
+
+    letter-spacing: -4px;
+
+    font-weight: 900;
+}
+
+.partners-main h3 strong {
+    display: block;
+
+    color: #ffa51f;
+}
+
+.partners-main p {
+    position: relative;
+
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+    color: #888888;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* BOTÃO */
+
+.partners-button {
+    position: relative;
+
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 22px;
+
+    background: #ffa51f;
+
+    color: #080808;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.partners-button:hover {
+    transform: translateY(-4px);
+}
+
+.partners-button span {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   PROPRIEDADES COMERCIAIS
+   ========================================= */
+
+.partners-properties {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.partner-property {
+    min-height: 170px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-right: 1px solid rgba(255,255,255,0.08);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.3s ease;
+}
+
+.partner-property:hover {
+    background: rgba(255,165,31,0.06);
+}
+
+.partner-property span {
+    color: #ffa51f;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.partner-property h4 {
+    font-size: 18px;
+
+    font-weight: 900;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================
+   ÁREA DE LOGOS
+   ========================================= */
+
+.partners-logos {
+    max-width: 1500px;
+
+    margin: 20px auto 0;
+
+    padding: 32px;
+
+    text-align: center;
+
+    border: 1px dashed rgba(255,165,31,0.25);
+}
+
+.partners-logos span {
+    color: #666666;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+@media (max-width: 950px) {
+
+    .partners-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .partners-main {
+        border-right: none;
+
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .partners-section {
+        padding: 90px 18px;
+    }
+
+    .partners-heading h2 {
+        letter-spacing: -3px;
+    }
+
+    .partners-main {
+        min-height: 470px;
+
+        padding: 35px 28px;
+    }
+
+    .partners-main h3 {
+        letter-spacing: -3px;
+    }
+
+    .partners-main::before {
+        font-size: 380px;
+
+        right: -100px;
+    }
+
+    .partners-properties {
+        grid-template-columns: 1fr;
+    }
+
+    .partner-property {
+        min-height: 130px;
+    }
+
+}
