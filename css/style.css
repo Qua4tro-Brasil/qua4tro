@@ -2331,3 +2331,343 @@ a {
     }
 
 }
+/* =========================================
+   CONTATO
+   ========================================= */
+
+.contact-section {
+    padding: 150px 7%;
+
+    background: #080808;
+}
+
+
+.contact-heading {
+    max-width: 1000px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+
+.contact-heading h2 {
+    margin-bottom: 25px;
+
+    font-size: clamp(50px, 6vw, 90px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+}
+
+
+.contact-heading h2 span {
+    display: block;
+
+    color: #ffa51f;
+}
+
+
+.contact-heading p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #888888;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   REDES SOCIAIS
+   ========================================= */
+
+.social-grid {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    border-top: 1px solid rgba(255,255,255,0.10);
+
+    border-left: 1px solid rgba(255,255,255,0.10);
+}
+
+
+.social-card {
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    border-right: 1px solid rgba(255,255,255,0.10);
+
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+
+    background: #0c0c0c;
+
+    transition: 0.4s ease;
+}
+
+
+.social-card:hover {
+    background: #141414;
+
+    transform: translateY(-6px);
+}
+
+
+.social-type {
+    position: absolute;
+
+    top: 30px;
+    left: 35px;
+
+    color: #ffa51f;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.social-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+}
+
+
+.social-card p {
+    color: #777777;
+
+    font-size: 13px;
+}
+
+
+.social-arrow {
+    position: absolute;
+
+    right: 30px;
+    bottom: 30px;
+
+    color: #ffa51f;
+
+    font-size: 28px;
+
+    transition: 0.3s ease;
+}
+
+
+.social-card:hover .social-arrow {
+    transform: translateX(7px);
+}
+
+
+/* =========================================
+   FOOTER FINAL
+   ========================================= */
+
+.footer-final {
+    padding: 80px 7% 35px;
+
+    background: #050505;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.footer-top {
+    max-width: 1500px;
+
+    margin: 0 auto 70px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+
+.footer-brand .footer-logo {
+    margin-bottom: 15px;
+
+    font-size: 38px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+}
+
+
+.footer-brand .footer-logo span {
+    color: #ffa51f;
+}
+
+
+.footer-brand p {
+    color: #666666;
+
+    font-size: 14px;
+}
+
+
+.footer-links {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 40px;
+}
+
+
+.footer-links > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.footer-links span {
+    margin-bottom: 8px;
+
+    color: #ffa51f;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.footer-links a {
+    color: #777777;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+
+.footer-bottom {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding-top: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.footer-bottom p,
+.footer-bottom a {
+    color: #555555;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.footer-bottom a:hover {
+    color: #ffa51f;
+}
+
+
+/* =========================================
+   CONTATO / FOOTER RESPONSIVO
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .social-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .contact-section {
+        padding: 90px 18px;
+    }
+
+    .contact-heading h2 {
+        letter-spacing: -3px;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-card {
+        min-height: 220px;
+    }
+
+    .footer-final {
+        padding: 65px 20px 30px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+}
