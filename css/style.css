@@ -2750,3 +2750,50 @@ a {
     }
 
 }
+/* =========================================
+   AÇÕES DO HEADER
+   ========================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-app-button {
+    padding: 11px 18px;
+
+    border: 1px solid #ffa51f;
+
+    color: #ffa51f;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.nav-app-button:hover {
+    background: #ffa51f;
+    color: #080808;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .header-actions {
+        gap: 6px;
+    }
+
+    .nav-app-button,
+    .nav-button {
+        padding: 9px 11px;
+
+        font-size: 9px;
+    }
+
+}
