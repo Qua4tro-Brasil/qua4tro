@@ -2877,3 +2877,18 @@ septa-card:hover .division-logo-image,
 
     opacity: 1;
 }
+/* =========================================
+   LOGO SEPTA 7
+   ========================================= */
+
+.septa-logo {
+    object-fit: contain !important;
+
+    width: 70% !important;
+    height: 70% !important;
+
+    top: 15% !important;
+    left: 15% !important;
+
+    pointer-events: none;
+}
