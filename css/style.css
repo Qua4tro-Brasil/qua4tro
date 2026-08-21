@@ -2923,3 +2923,106 @@ septa-card:hover .division-logo-image,
     }
 
 }
+/* =========================================
+   APP — PWA / PLATAFORMAS
+   ========================================= */
+
+.app-platforms {
+    margin-top: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.app-platforms span {
+    padding: 7px 11px;
+
+    border: 1px solid rgba(255,165,31,0.30);
+
+    color: #ffa51f;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* GUIA DE INSTALAÇÃO */
+
+.app-install-guide {
+    max-width: 620px;
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0,1fr));
+
+    border-top: 1px solid rgba(255,255,255,0.10);
+
+    border-left: 1px solid rgba(255,255,255,0.10);
+}
+
+.app-install-guide > div {
+    padding: 20px;
+
+    border-right: 1px solid rgba(255,255,255,0.10);
+
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.app-install-guide strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #ffa51f;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.app-install-guide p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 950px) {
+
+    .app-platforms {
+        justify-content: center;
+    }
+
+    .app-install-guide {
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: left;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .app-install-guide {
+        grid-template-columns: 1fr;
+    }
+
+}
