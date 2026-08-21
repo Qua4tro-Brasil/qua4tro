@@ -15,6 +15,11 @@
     gtag('js', new Date());
 
     gtag('config', 'G-982VR130YJ');
+    unction trackQua4tro(eventName, locationName) {
+    gtag('event', eventName, {
+        cta_location: locationName
+    });
+}
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,11 +58,14 @@
     target="_blank"
     rel="noopener"
     class="nav-app-button"
+    onclick="trackQua4tro('acessar_app', 'header')"
 >
     ACESSAR APP
 </a>
 
     <a href="#filiacao" class="nav-button">
+    class="nav-button"
+    onclick="trackQua4tro('filie_se', 'header')"
         FILIE-SE
     </a>
 
@@ -546,6 +554,7 @@
             href="https://forms.gle/EaRvEnEHtddZzC7U7"
             target="_blank"
             class="affiliation-option"
+            onclick="trackQua4tro('filiacao_lirfut', 'filiacao')"
         >
 
             <div>
@@ -573,6 +582,7 @@
             href="https://forms.gle/BhDsDBAVzpL3pBuFA"
             target="_blank"
             class="affiliation-option"
+            onclick="trackQua4tro('filiacao_nox_belli', 'filiacao')"
         >
 
             <div>
@@ -599,6 +609,7 @@
     target="_blank"
     rel="noopener"
     class="affiliation-option"
+     onclick="trackQua4tro('filiacao_septa7', 'filiacao')"
 >
 
     <div>
@@ -680,6 +691,7 @@
             target="_blank"
             rel="noopener"
             class="app-download-button"
+            onclick="trackQua4tro('acessar_app', 'secao_app')"
         >
             ACESSAR APP QUA4TRO
             <span>→</span>
@@ -907,6 +919,7 @@
         href="https://www.instagram.com/qua4tro.br/"
         target="_blank"
         class="social-card"
+        onclick="trackQua4tro('instagram_qua4tro', 'redes')"
     >
         <span class="social-type">INSTAGRAM</span>
         <h3>QUA4TRO</h3>
@@ -918,6 +931,7 @@
         href="https://www.instagram.com/lirfut.br/"
         target="_blank"
         class="social-card"
+        onclick="trackQua4tro('instagram_lirfut', 'redes')"
     >
         <span class="social-type">INSTAGRAM</span>
         <h3>LIRFUT</h3>
@@ -929,6 +943,7 @@
         href="https://www.instagram.com/noxbelli/"
         target="_blank"
         class="social-card"
+        onclick="trackQua4tro('instagram_nox_belli', 'redes')"
     >
         <span class="social-type">INSTAGRAM</span>
         <h3>NOX BELLI</h3>
@@ -940,6 +955,7 @@
         href="https://www.instagram.com/septa7.br/"
         target="_blank"
         class="social-card"
+        onclick="trackQua4tro('instagram_septa7', 'redes')"
     >
         <span class="social-type">INSTAGRAM</span>
         <h3>SEPTA 7</h3>
@@ -951,6 +967,7 @@
         href="https://www.youtube.com/@Qua4troTV"
         target="_blank"
         class="social-card"
+        onclick="trackQua4tro('youtube_qua4trotv', 'redes')"
     >
         <span class="social-type">YOUTUBE</span>
         <h3>QUA4TRO TV</h3>
