@@ -2,42 +2,199 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-982VR130YJ"></script>
 
-<script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- =========================================
+         GOOGLE ANALYTICS
+         ========================================= -->
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-982VR130YJ"></script>
 
-    gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'G-982VR130YJ');
-    unction trackQua4tro(eventName, locationName) {
-    gtag('event', eventName, {
-        cta_location: locationName
-    });
-}
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-982VR130YJ');
+
+        function trackQua4tro(eventName, locationName) {
+            gtag('event', eventName, {
+                cta_location: locationName
+            });
+        }
+    </script>
+
+
+    <!-- =========================================
+         CONFIGURAÇÕES BÁSICAS
+         ========================================= -->
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Qua4tro | Profissionalizando o esporte amador</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-        content="Qua4tro — Profissionalizando o esporte amador através de competições, atletas, equipes e experiências esportivas.">
+    <title>Qua4tro | O esporte amador em outro nível</title>
 
-<link rel="stylesheet" href="css/style.css?v=19">
-<link rel="icon" type="image/png" href="images/favicon.png">
+    <meta
+        name="description"
+        content="Qua4tro — O esporte amador em outro nível. Competições, atletas, equipes, tecnologia, mídia e experiências esportivas."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <link
+        rel="canonical"
+        href="https://qua4tro.com.br/"
+    >
+
+
+    <!-- =========================================
+         FAVICON
+         ========================================= -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/favicon.png"
+    >
+
+
+    <!-- =========================================
+         OPEN GRAPH
+         WhatsApp / Facebook / LinkedIn
+         ========================================= -->
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:locale"
+        content="pt_BR"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Qua4tro"
+    >
+
+    <meta
+        property="og:title"
+        content="Qua4tro | O esporte amador em outro nível"
+    >
+
+    <meta
+        property="og:description"
+        content="Competições, atletas, equipes, tecnologia e experiências esportivas. Conheça o ecossistema Qua4tro."
+    >
+
+    <meta
+        property="og:url"
+        content="https://qua4tro.com.br/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://qua4tro.com.br/images/share-qua4tro.png"
+    >
+
+    <meta
+        property="og:image:width"
+        content="1200"
+    >
+
+    <meta
+        property="og:image:height"
+        content="630"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Qua4tro — O esporte amador em outro nível"
+    >
+
+
+    <!-- =========================================
+         X / TWITTER
+         ========================================= -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Qua4tro | O esporte amador em outro nível"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Competições, atletas, equipes, tecnologia e experiências esportivas. Conheça o ecossistema Qua4tro."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://qua4tro.com.br/images/share-qua4tro.png"
+    >
+
+
+    <!-- =========================================
+         DADOS ESTRUTURADOS — GOOGLE
+         ========================================= -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Qua4tro Brasil",
+        "url": "https://qua4tro.com.br/",
+        "logo": "https://qua4tro.com.br/images/favicon.png",
+        "email": "contato@qua4tro.com.br",
+        "sameAs": [
+            "https://www.instagram.com/qua4tro.br/",
+            "https://www.instagram.com/lirfut.br/",
+            "https://www.instagram.com/noxbelli/",
+            "https://www.instagram.com/septa7.br/",
+            "https://www.youtube.com/@Qua4troTV"
+        ]
+    }
+    </script>
+
+
+    <!-- =========================================
+         CSS
+         ========================================= -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css?v=19"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- ==============================
-         MENU
-         ============================== -->
+
+    <!-- =========================================
+         HEADER
+         ========================================= -->
 
     <header class="header">
 
@@ -45,1069 +202,1343 @@
             QUA<span>4</span>TRO
         </a>
 
+
         <nav class="nav">
-            <a href="#sobre">Sobre</a>
-            <a href="#competicoes">Competições</a>
-            <a href="#filiacao">Filiação</a>
-            <a href="#contato">Contato</a>
+
+            <a href="#sobre">
+                Sobre
+            </a>
+
+            <a href="#competicoes">
+                Competições
+            </a>
+
+            <a href="#filiacao">
+                Filiação
+            </a>
+
+            <a href="#contato">
+                Contato
+            </a>
+
         </nav>
+
 
         <div class="header-actions">
 
-    <a
-        href="https://qua4tro.expo.app/"
-        target="_blank"
-        rel="noopener"
-        class="nav-app-button"
-        onclick="trackQua4tro('acessar_app', 'header')"
-    >
-        ACESSAR APP
-    </a>
+            <a
+                href="https://qua4tro.expo.app/"
+                target="_blank"
+                rel="noopener"
+                class="nav-app-button"
+                onclick="trackQua4tro('acessar_app', 'header')"
+            >
+                ACESSAR APP
+            </a>
 
-    <a
-        href="#filiacao"
-        class="nav-button"
-        onclick="trackQua4tro('filie_se', 'header')"
-    >
-        FILIE-SE
-    </a>
+            <a
+                href="#filiacao"
+                class="nav-button"
+                onclick="trackQua4tro('filie_se', 'header')"
+            >
+                FILIE-SE
+            </a>
 
-</div>
-        </header>
+        </div>
 
-    <!-- ==============================
-         HERO
-         ============================== -->
+    </header>
+
 
     <main>
 
-<section class="hero">
 
-    <div class="hero-background-number">
-        4
-    </div>
+        <!-- =========================================
+             HERO
+             ========================================= -->
 
-    <div class="hero-lines"></div>
+        <section class="hero">
 
-    <div class="hero-content">
-
-        <div class="hero-tag">
-            QUA4TRO BRASIL
-        </div>
-
-        <h1>
-            O ESPORTE
-            <span>EM OUTRO NÍVEL.</span>
-        </h1>
-
-        <p class="hero-description">
-            Competições. Atletas. Equipes.
-            Uma nova experiência para o esporte amador.
-        </p>
-
-        <div class="hero-buttons">
-
-    <a href="#competicoes" class="button button-primary">
-        CONHEÇA AS COMPETIÇÕES
-    </a>
-
-    <a href="#filiacao" class="button button-secondary">
-        SEJA QUA4TRO
-    </a>
-
-    <a
-        href="https://whatsapp.com/channel/0029Vb8iElECBtxHHwyRXE1p"
-        target="_blank"
-        rel="noopener"
-        class="button button-secondary"
-        onclick="trackQua4tro('canal_whatsapp', 'hero')"
-    >
-        CANAL WHATSAPP
-    </a>
-
-</div>
-
-    </div>
-
-    <div class="hero-bottom">
-
-        <span>
-            PROFISSIONALIZANDO O ESPORTE AMADOR
-        </span>
-
-        <span class="hero-scroll">
-            SCROLL ↓
-        </span>
-
-    </div>
-
-</section>
-
-
-        <!-- ==============================
-             SOBRE
-             ============================== -->
-        
-<section id="sobre" class="about-section">
-
-    <div class="about-left">
-
-        <div class="section-label">
-            01 — QUA4TRO
-        </div>
-
-        <h2>
-            O ESPORTE AMADOR
-            <span>MERECE MAIS.</span>
-        </h2>
-
-    </div>
-
-
-    <div class="about-right">
-
-        <p class="about-intro">
-            A Qua4tro nasceu para aproximar a experiência
-            do esporte amador da estrutura encontrada
-            no esporte profissional.
-        </p>
-
-        <p>
-            Criamos competições com organização, identidade,
-            tecnologia e uma experiência pensada para valorizar
-            atletas, equipes, parceiros e público.
-        </p>
-
-
-        <div class="about-pillars">
-
-            <div class="about-pillar">
-                <span>01</span>
-                <h3>PROFISSIONALIZAR</h3>
-                <p>
-                    Elevar o padrão das competições amadoras.
-                </p>
+            <div class="hero-background-number">
+                4
             </div>
 
-            <div class="about-pillar">
-                <span>02</span>
-                <h3>VALORIZAR</h3>
-                <p>
-                    Dar protagonismo para atletas e equipes.
-                </p>
-            </div>
-
-            <div class="about-pillar">
-                <span>03</span>
-                <h3>CONECTAR</h3>
-                <p>
-                    Unir esporte, público, marcas e tecnologia.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-        <!-- ==============================
-             COMPETIÇÕES
-             ============================== -->
-
-<section id="competicoes" class="competitions-section">
-
-    <div class="competitions-heading">
-
-        <div class="section-label">
-            02 — COMPETIÇÕES
-        </div>
-
-        <h2>
-            DIFERENTES ESPORTES.
-            <span>UMA VISÃO.</span>
-        </h2>
-
-        <p>
-            Competições criadas para elevar o nível do esporte,
-            dentro e fora das arenas.
-        </p>
-
-    </div>
+            <div class="hero-lines"></div>
 
 
-    <div class="division-grid">
+            <div class="hero-content">
 
-
-        <!-- ==============================
-             LIRFUT
-             ============================== -->
-
-        <article class="division-card">
-
-            <img
-                src="images/Logo Lirfut.svg"
-                alt="LIRFUT — Liga Regional de Futsal"
-                class="division-image"
-            >
-
-            <div class="division-overlay"></div>
-
-            <div class="division-number">
-                01
-            </div>
-
-            <div class="division-content">
-
-                <div class="division-category">
-                    FUTSAL
+                <div class="hero-tag">
+                    QUA4TRO BRASIL
                 </div>
 
-                <h3>
-                    LIRFUT
-                </h3>
+                <h1>
+                    O ESPORTE
+                    <span>EM OUTRO NÍVEL.</span>
+                </h1>
 
-                <p>
-                    Liga Regional de Futsal.
-                    Competição, estrutura e experiência
-                    para equipes e atletas.
+                <p class="hero-description">
+                    Competições. Atletas. Equipes.
+                    Uma nova experiência para o esporte amador.
                 </p>
 
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#competicoes"
+                        class="button button-primary"
+                        onclick="trackQua4tro('ver_competicoes', 'hero')"
+                    >
+                        CONHEÇA AS COMPETIÇÕES
+                    </a>
+
+                    <a
+                        href="#filiacao"
+                        class="button button-secondary"
+                        onclick="trackQua4tro('filie_se', 'hero')"
+                    >
+                        SEJA QUA4TRO
+                    </a>
+
+                    <a
+                        href="https://whatsapp.com/channel/0029Vb8iElECBtxHHwyRXE1p"
+                        target="_blank"
+                        rel="noopener"
+                        class="button button-secondary"
+                        onclick="trackQua4tro('canal_whatsapp', 'hero')"
+                    >
+                        CANAL WHATSAPP
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+                <span>
+                    PROFISSIONALIZANDO O ESPORTE AMADOR
+                </span>
+
+                <span class="hero-scroll">
+                    SCROLL ↓
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SOBRE
+             ========================================= -->
+
+        <section id="sobre" class="about-section">
+
+            <div class="about-left">
+
+                <div class="section-label">
+                    01 — QUA4TRO
+                </div>
+
+                <h2>
+                    O ESPORTE AMADOR
+                    <span>MERECE MAIS.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="about-right">
+
+                <p class="about-intro">
+                    A Qua4tro nasceu para aproximar a experiência
+                    do esporte amador da estrutura encontrada
+                    no esporte profissional.
+                </p>
+
+                <p>
+                    Criamos competições com organização, identidade,
+                    tecnologia e uma experiência pensada para valorizar
+                    atletas, equipes, parceiros e público.
+                </p>
+
+
+                <div class="about-pillars">
+
+                    <div class="about-pillar">
+
+                        <span>01</span>
+
+                        <h3>
+                            PROFISSIONALIZAR
+                        </h3>
+
+                        <p>
+                            Elevar o padrão das competições amadoras.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-pillar">
+
+                        <span>02</span>
+
+                        <h3>
+                            VALORIZAR
+                        </h3>
+
+                        <p>
+                            Dar protagonismo para atletas e equipes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-pillar">
+
+                        <span>03</span>
+
+                        <h3>
+                            CONECTAR
+                        </h3>
+
+                        <p>
+                            Unir esporte, público, marcas e tecnologia.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             COMPETIÇÕES
+             ========================================= -->
+
+        <section
+            id="competicoes"
+            class="competitions-section"
+        >
+
+            <div class="competitions-heading">
+
+                <div class="section-label">
+                    02 — COMPETIÇÕES
+                </div>
+
+                <h2>
+                    DIFERENTES ESPORTES.
+                    <span>UMA VISÃO.</span>
+                </h2>
+
+                <p>
+                    Competições criadas para elevar o nível do esporte,
+                    dentro e fora das arenas.
+                </p>
+
+            </div>
+
+
+            <div class="division-grid">
+
+
+                <!-- LIRFUT -->
+
+                <article class="division-card">
+
+                    <img
+                        src="images/Logo Lirfut.svg"
+                        alt="LIRFUT — Liga Regional de Futsal"
+                        class="division-image"
+                    >
+
+                    <div class="division-overlay"></div>
+
+                    <div class="division-number">
+                        01
+                    </div>
+
+
+                    <div class="division-content">
+
+                        <div class="division-category">
+                            FUTSAL
+                        </div>
+
+                        <h3>
+                            LIRFUT
+                        </h3>
+
+                        <p>
+                            Liga Regional de Futsal.
+                            Competição, estrutura e experiência
+                            para equipes e atletas.
+                        </p>
+
+                        <a
+                            href="https://www.instagram.com/lirfut.br/"
+                            target="_blank"
+                            rel="noopener"
+                            class="division-button"
+                            onclick="trackQua4tro('conhecer_lirfut', 'competicoes')"
+                        >
+                            CONHECER LIRFUT
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NOX BELLI -->
+
+                <article class="division-card">
+
+                    <img
+                        src="images/Logo Noxbelli.svg"
+                        alt="NOX BELLI — Divisão de MMA da Qua4tro"
+                        class="division-image"
+                    >
+
+                    <div class="division-overlay"></div>
+
+                    <div class="division-number">
+                        02
+                    </div>
+
+
+                    <div class="division-content">
+
+                        <div class="division-category">
+                            MMA
+                        </div>
+
+                        <h3>
+                            NOX BELLI
+                        </h3>
+
+                        <p>
+                            Combate, performance e competição.
+                            Uma nova experiência para os atletas
+                            de MMA.
+                        </p>
+
+                        <a
+                            href="https://www.instagram.com/noxbelli/"
+                            target="_blank"
+                            rel="noopener"
+                            class="division-button"
+                            onclick="trackQua4tro('conhecer_nox_belli', 'competicoes')"
+                        >
+                            CONHECER NOX BELLI
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SEPTA 7 -->
+
+                <article class="division-card septa-card">
+
+                    <img
+                        src="images/Logo Septa7.svg"
+                        alt="SEPTA 7 — Handebol"
+                        class="division-image septa-logo"
+                    >
+
+                    <div class="division-overlay"></div>
+
+                    <div class="division-number">
+                        03
+                    </div>
+
+
+                    <div class="division-content">
+
+                        <div class="division-category">
+                            HANDEBOL
+                        </div>
+
+                        <h3>
+                            SEPTA 7
+                        </h3>
+
+                        <p>
+                            Jogue com o coração.
+                            Uma competição criada para quem vive
+                            o handebol dentro e fora da quadra.
+                        </p>
+
+                        <a
+                            href="https://www.instagram.com/septa7.br/"
+                            target="_blank"
+                            rel="noopener"
+                            class="division-button"
+                            onclick="trackQua4tro('conhecer_septa7', 'competicoes')"
+                        >
+                            CONHECER SEPTA 7
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             ECOSSISTEMA
+             ========================================= -->
+
+        <section class="ecosystem-section">
+
+            <div class="ecosystem-heading">
+
+                <div class="section-label">
+                    03 — ECOSSISTEMA
+                </div>
+
+                <h2>
+                    MUITO ALÉM
+                    <span>DA COMPETIÇÃO.</span>
+                </h2>
+
+                <p>
+                    Um ecossistema criado para conectar tudo o que
+                    acontece dentro e fora das arenas.
+                </p>
+
+            </div>
+
+
+            <div class="ecosystem-grid">
+
+
+                <div class="ecosystem-card">
+
+                    <span class="ecosystem-number">
+                        01
+                    </span>
+
+                    <h3>
+                        ATLETAS
+                    </h3>
+
+                    <p>
+                        Perfis, desempenho, histórico e protagonismo
+                        para quem entra em jogo.
+                    </p>
+
+                </div>
+
+
+                <div class="ecosystem-card">
+
+                    <span class="ecosystem-number">
+                        02
+                    </span>
+
+                    <h3>
+                        EQUIPES
+                    </h3>
+
+                    <p>
+                        Clubes e equipes conectados às competições
+                        e ao universo Qua4tro.
+                    </p>
+
+                </div>
+
+
+                <div class="ecosystem-card">
+
+                    <span class="ecosystem-number">
+                        03
+                    </span>
+
+                    <h3>
+                        COMPETIÇÕES
+                    </h3>
+
+                    <p>
+                        Eventos organizados para entregar uma experiência
+                        cada vez mais próxima do esporte profissional.
+                    </p>
+
+                </div>
+
+
+                <div class="ecosystem-card">
+
+                    <span class="ecosystem-number">
+                        04
+                    </span>
+
+                    <h3>
+                        RANKINGS
+                    </h3>
+
+                    <p>
+                        Classificações, resultados e desempenho
+                        acompanhados durante toda a temporada.
+                    </p>
+
+                </div>
+
+
+                <div class="ecosystem-card">
+
+                    <span class="ecosystem-number">
+                        05
+                    </span>
+
+                    <h3>
+                        MÍDIA
+                    </h3>
+
+                    <p>
+                        Conteúdo, transmissões, histórias e exposição
+                        para atletas, equipes e parceiros.
+                    </p>
+
+                </div>
+
+
+                <div class="ecosystem-card ecosystem-card-featured">
+
+                    <span class="ecosystem-number">
+                        06
+                    </span>
+
+                    <h3>
+                        TECNOLOGIA
+                    </h3>
+
+                    <p>
+                        O APP QUA4TRO conecta competições, resultados,
+                        rankings, atletas e equipes em um só lugar.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FILIAÇÃO
+             ========================================= -->
+
+        <section
+            id="filiacao"
+            class="affiliation-section"
+        >
+
+            <div class="affiliation-top">
+
+                <div class="affiliation-heading">
+
+                    <div class="section-label">
+                        04 — FILIAÇÃO
+                    </div>
+
+                    <h2>
+                        FAÇA PARTE
+                        <span>DO JOGO.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="affiliation-intro">
+
+                    <p>
+                        Fazer parte da Qua4tro é entrar em um ecossistema
+                        criado para valorizar atletas, equipes e competições.
+                    </p>
+
+                    <p>
+                        A filiação conecta você às nossas propriedades
+                        esportivas e às experiências desenvolvidas pela marca.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="benefits-grid">
+
+
+                <div class="benefit">
+
+                    <span>01</span>
+
+                    <h3>
+                        COMPETIÇÕES
+                    </h3>
+
+                    <p>
+                        Acesso às competições e eventos organizados
+                        pela Qua4tro.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <span>02</span>
+
+                    <h3>
+                        VISIBILIDADE
+                    </h3>
+
+                    <p>
+                        Mais espaço para atletas e equipes dentro
+                        dos nossos canais e transmissões.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <span>03</span>
+
+                    <h3>
+                        ESTRUTURA
+                    </h3>
+
+                    <p>
+                        Uma experiência esportiva pensada para aproximar
+                        o amador do profissional.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <span>04</span>
+
+                    <h3>
+                        ECOSSISTEMA
+                    </h3>
+
+                    <p>
+                        Integração com rankings, resultados, mídia
+                        e o APP QUA4TRO.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="affiliation-options">
+
+
+                <!-- LIRFUT -->
+
                 <a
-                   href="https://www.instagram.com/lirfut.br/"
-                   target="_blank"
-                   rel="noopener"
-                   class="division-button"
-                   onclick="trackQua4tro('conhecer_lirfut', 'competicoes')"
-                  >
-                   CONHECER LIRFUT
-                   <span>→</span>
+                    href="https://forms.gle/EaRvEnEHtddZzC7U7"
+                    target="_blank"
+                    rel="noopener"
+                    class="affiliation-option"
+                    onclick="trackQua4tro('filiacao_lirfut', 'filiacao')"
+                >
+
+                    <div>
+
+                        <span class="option-category">
+                            FUTSAL
+                        </span>
+
+                        <h3>
+                            LIRFUT
+                        </h3>
+
+                        <p>
+                            Filiação de equipes à Liga Regional de Futsal.
+                        </p>
+
+                    </div>
+
+                    <span class="option-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- NOX BELLI -->
+
+                <a
+                    href="https://forms.gle/BhDsDBAVzpL3pBuFA"
+                    target="_blank"
+                    rel="noopener"
+                    class="affiliation-option"
+                    onclick="trackQua4tro('filiacao_nox_belli', 'filiacao')"
+                >
+
+                    <div>
+
+                        <span class="option-category">
+                            MMA
+                        </span>
+
+                        <h3>
+                            NOX BELLI
+                        </h3>
+
+                        <p>
+                            Filiação de atletas à divisão de combate da Qua4tro.
+                        </p>
+
+                    </div>
+
+                    <span class="option-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- SEPTA 7 -->
+
+                <a
+                    href="https://forms.gle/gKg9cev3rkhZyomo6"
+                    target="_blank"
+                    rel="noopener"
+                    class="affiliation-option"
+                    onclick="trackQua4tro('filiacao_septa7', 'filiacao')"
+                >
+
+                    <div>
+
+                        <span class="option-category">
+                            HANDEBOL
+                        </span>
+
+                        <h3>
+                            SEPTA 7
+                        </h3>
+
+                        <p>
+                            Filiação à divisão de handebol da Qua4tro.
+                        </p>
+
+                    </div>
+
+                    <span class="option-arrow">
+                        →
+                    </span>
+
                 </a>
 
             </div>
 
-        </article>
+        </section>
 
 
-        <!-- ==============================
-             NOX BELLI
-             ============================== -->
+        <!-- =========================================
+             APP QUA4TRO
+             ========================================= -->
 
-        <article class="division-card">
+        <section class="app-showcase">
 
-            <img
-                src="images/Logo Noxbelli.svg"
-                alt="NOX BELLI — divisão de MMA da Qua4tro"
-                class="division-image"
-            >
 
-            <div class="division-overlay"></div>
+            <div class="app-info">
 
-            <div class="division-number">
-                02
-            </div>
-
-            <div class="division-content">
-
-                <div class="division-category">
-                    MMA
+                <div class="section-label">
+                    05 — APP QUA4TRO
                 </div>
 
-                <h3>
-                    NOX BELLI
-                </h3>
+                <h2>
+                    TODO O ESPORTE.
+                    <span>EM UM SÓ LUGAR.</span>
+                </h2>
+
+                <p class="app-intro">
+                    O APP QUA4TRO conecta atletas, equipes,
+                    competições e público em uma única experiência.
+                </p>
 
                 <p>
-                    Combate, performance e competição.
-                    Uma nova experiência para os atletas
-                    de MMA.
+                    Resultados, classificações, rankings, jogos, eventos
+                    e informações das competições dentro de uma única plataforma.
                 </p>
+
+
+                <div class="app-features">
+
+                    <span>RESULTADOS</span>
+                    <span>RANKINGS</span>
+                    <span>EQUIPES</span>
+                    <span>ATLETAS</span>
+                    <span>EVENTOS</span>
+                    <span>COMPETIÇÕES</span>
+
+                </div>
+
+
+                <div class="app-status">
+
+                    <span class="app-status-dot"></span>
+
+                    APP QUA4TRO — DISPONÍVEL AGORA
+
+                </div>
+
 
                 <a
-    href="https://www.instagram.com/noxbelli/"
-    target="_blank"
-    rel="noopener"
-    class="division-button"
-    onclick="trackQua4tro('conhecer_nox_belli', 'competicoes')"
->
-    CONHECER NOX BELLI
-    <span>→</span>
-</a>
+                    href="https://qua4tro.expo.app/"
+                    target="_blank"
+                    rel="noopener"
+                    class="app-download-button"
+                    onclick="trackQua4tro('acessar_app', 'secao_app')"
+                >
+                    ACESSAR APP QUA4TRO
+                    <span>→</span>
+                </a>
+
+
+                <div class="app-platforms">
+
+                    <span>ANDROID</span>
+                    <span>iOS</span>
+                    <span>WEB</span>
+
+                </div>
+
+
+                <div class="app-install-guide">
+
+                    <div>
+
+                        <strong>
+                            ANDROID
+                        </strong>
+
+                        <p>
+                            Abra o APP no navegador e escolha
+                            “Instalar app” ou “Adicionar à tela inicial”.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            IPHONE
+                        </strong>
+
+                        <p>
+                            Abra no Safari, toque em Compartilhar
+                            e escolha “Adicionar à Tela de Início”.
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
-        </article>
 
-        
-<!-- ==============================
-     SEPTA 7
-     ============================== -->
+            <div class="app-visual">
 
-<article class="division-card septa-card">
-
-   <img
-    src="images/Logo Septa7.svg"
-    alt="SEPTA 7 — Handebol"
-    class="division-image septa-logo"
->
-
-    <div class="division-overlay"></div>
-
-    <div class="division-number">
-        03
-    </div>
-
-    <div class="division-content">
-
-        <div class="division-category">
-            HANDEBOL
-        </div>
-
-        <h3>
-            SEPTA 7
-        </h3>
-
-        <p>
-            Jogue com o coração.
-            Uma competição criada para quem vive
-            o handebol dentro e fora da quadra.
-        </p>
-
-        <a
-    href="https://www.instagram.com/septa7.br/"
-    target="_blank"
-    rel="noopener"
-    class="division-button"
-    onclick="trackQua4tro('conhecer_septa7', 'competicoes')"
->
-    CONHECER SEPTA 7
-    <span>→</span>
-</a>
-
-    </div>
-
-</article>
-
-    </div>
-
-</section>
-        <!-- ==============================
-             FILIAÇÃO
-             ============================== -->
-
-   <!-- ==============================
-     ECOSSISTEMA QUA4TRO
-     ============================== -->
-
-<section class="ecosystem-section">
-
-    <div class="ecosystem-heading">
-
-        <div class="section-label">
-            03 — ECOSSISTEMA
-        </div>
-
-        <h2>
-            MUITO ALÉM
-            <span>DA COMPETIÇÃO.</span>
-        </h2>
-
-        <p>
-            Um ecossistema criado para conectar tudo o que
-            acontece dentro e fora das arenas.
-        </p>
-
-    </div>
+                <div class="phone-glow"></div>
 
 
-    <div class="ecosystem-grid">
+                <div class="phone">
 
-        <div class="ecosystem-card">
-            <span class="ecosystem-number">01</span>
+                    <div class="phone-top">
 
-            <h3>ATLETAS</h3>
+                        <div class="phone-speaker"></div>
 
-            <p>
-                Perfis, desempenho, histórico e protagonismo
-                para quem entra em jogo.
-            </p>
-        </div>
+                    </div>
 
 
-        <div class="ecosystem-card">
-            <span class="ecosystem-number">02</span>
+                    <div class="phone-screen">
 
-            <h3>EQUIPES</h3>
-
-            <p>
-                Clubes e equipes conectados às competições
-                e ao universo Qua4tro.
-            </p>
-        </div>
+                        <div class="phone-logo">
+                            QUA<span>4</span>TRO
+                        </div>
 
 
-        <div class="ecosystem-card">
-            <span class="ecosystem-number">03</span>
+                        <div class="phone-message">
 
-            <h3>COMPETIÇÕES</h3>
+                            O ESPORTE<br>
 
-            <p>
-                Eventos organizados para entregar uma experiência
-                cada vez mais próxima do esporte profissional.
-            </p>
-        </div>
+                            <strong>
+                                EM OUTRO NÍVEL.
+                            </strong>
 
-
-        <div class="ecosystem-card">
-            <span class="ecosystem-number">04</span>
-
-            <h3>RANKINGS</h3>
-
-            <p>
-                Classificações, resultados e desempenho
-                acompanhados durante toda a temporada.
-            </p>
-        </div>
+                        </div>
 
 
-        <div class="ecosystem-card">
-            <span class="ecosystem-number">05</span>
+                        <div class="phone-nav">
 
-            <h3>MÍDIA</h3>
+                            <div>
+                                <span>⌂</span>
+                                HOME
+                            </div>
 
-            <p>
-                Conteúdo, transmissões, histórias e exposição
-                para atletas, equipes e parceiros.
-            </p>
-        </div>
+                            <div>
+                                <span>◉</span>
+                                LIRFUT
+                            </div>
+
+                            <div>
+                                <span>◆</span>
+                                NOX
+                            </div>
+
+                            <div>
+                                <span>≡</span>
+                                MAIS
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
 
-        <div class="ecosystem-card ecosystem-card-featured">
-            <span class="ecosystem-number">06</span>
+                <div class="app-background-number">
+                    4
+                </div>
 
-         
-            <h3>TECNOLOGIA</h3>
-
-            <p>
-                O APP QUA4TRO conecta competições, resultados,
-                rankings, atletas e equipes em um só lugar.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-        
-<section id="filiacao" class="affiliation-section">
-
-    <div class="affiliation-top">
-
-        <div class="affiliation-heading">
-
-            <div class="section-label">
-                04 — FILIAÇÃO
             </div>
 
-            <h2>
-                FAÇA PARTE
-                <span>DO JOGO.</span>
-            </h2>
-
-        </div>
-
-        <div class="affiliation-intro">
-
-            <p>
-                Fazer parte da Qua4tro é entrar em um ecossistema
-                criado para valorizar atletas, equipes e competições.
-            </p>
-
-            <p>
-                A filiação conecta você às nossas propriedades
-                esportivas e às experiências desenvolvidas pela marca.
-            </p>
-
-        </div>
-
-    </div>
+        </section>
 
 
-    <div class="benefits-grid">
+        <!-- =========================================
+             PARCERIAS
+             ========================================= -->
 
-        <div class="benefit">
-            <span>01</span>
-            <h3>COMPETIÇÕES</h3>
-            <p>
-                Acesso às competições e eventos organizados
-                pela Qua4tro.
-            </p>
-        </div>
-
-        <div class="benefit">
-            <span>02</span>
-            <h3>VISIBILIDADE</h3>
-            <p>
-                Mais espaço para atletas e equipes dentro
-                dos nossos canais e transmissões.
-            </p>
-        </div>
-
-        <div class="benefit">
-            <span>03</span>
-            <h3>ESTRUTURA</h3>
-            <p>
-                Uma experiência esportiva pensada para aproximar
-                o amador do profissional.
-            </p>
-        </div>
-
-        <div class="benefit">
-            <span>04</span>
-            <h3>ECOSSISTEMA</h3>
-            <p>
-                Integração com rankings, resultados, mídia
-                e futuramente o APP QUA4TRO.
-            </p>
-        </div>
-
-    </div>
-
-
-    <div class="affiliation-options">
-
-        <a
-            href="https://forms.gle/EaRvEnEHtddZzC7U7"
-            target="_blank"
-            class="affiliation-option"
-            onclick="trackQua4tro('filiacao_lirfut', 'filiacao')"
+        <section
+            id="patrocinadores"
+            class="partners-section"
         >
 
-            <div>
-                <span class="option-category">
-                    FUTSAL
+            <div class="partners-heading">
+
+                <div class="section-label">
+                    06 — PARCERIAS
+                </div>
+
+                <h2>
+                    MARCAS QUE ACREDITAM
+                    <span>FAZEM PARTE DO JOGO.</span>
+                </h2>
+
+                <p>
+                    A Qua4tro conecta marcas ao esporte através de
+                    competições, atletas, equipes, conteúdo e experiências.
+                </p>
+
+            </div>
+
+
+            <div class="partners-showcase">
+
+
+                <div class="partners-main">
+
+                    <span class="partners-small">
+                        QUA4TRO + SUA MARCA
+                    </span>
+
+                    <h3>
+                        ESPAÇO PARA
+                        <strong>GRANDES PARCERIAS.</strong>
+                    </h3>
+
+                    <p>
+                        Construímos projetos comerciais que aproximam marcas
+                        do público através do esporte.
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/5519994895728?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20conhecer%20as%20oportunidades%20de%20parceria%20e%20patroc%C3%ADnio%20da%20Qua4tro."
+                        target="_blank"
+                        rel="noopener"
+                        class="partners-button"
+                        onclick="trackQua4tro('seja_parceiro', 'parcerias')"
+                    >
+                        SEJA UM PARCEIRO
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="partners-properties">
+
+                    <div class="partner-property">
+                        <span>01</span>
+                        <h4>NAMING RIGHTS</h4>
+                    </div>
+
+                    <div class="partner-property">
+                        <span>02</span>
+                        <h4>EVENTOS</h4>
+                    </div>
+
+                    <div class="partner-property">
+                        <span>03</span>
+                        <h4>TRANSMISSÕES</h4>
+                    </div>
+
+                    <div class="partner-property">
+                        <span>04</span>
+                        <h4>MÍDIA</h4>
+                    </div>
+
+                    <div class="partner-property">
+                        <span>05</span>
+                        <h4>ATIVAÇÕES</h4>
+                    </div>
+
+                    <div class="partner-property">
+                        <span>06</span>
+                        <h4>CONTEÚDO</h4>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="partners-logos">
+
+                <span>
+                    EM BREVE, NOSSOS PARCEIROS ESTARÃO AQUI.
                 </span>
 
-                <h3>
-                    LIRFUT
-                </h3>
-
-                <p>
-                    Filiação de equipes à Liga Regional de Futsal.
-                </p>
             </div>
 
-            <span class="option-arrow">
-                →
-            </span>
+        </section>
 
-        </a>
 
-
-        <a
-            href="https://forms.gle/BhDsDBAVzpL3pBuFA"
-            target="_blank"
-            class="affiliation-option"
-            onclick="trackQua4tro('filiacao_nox_belli', 'filiacao')"
-        >
-
-            <div>
-                <span class="option-category">
-                    MMA
-                </span>
-
-                <h3>
-                    NOX BELLI
-                </h3>
-
-                <p>
-                    Filiação de atletas à divisão de combate da Qua4tro.
-                </p>
-            </div>
-
-            <span class="option-arrow">
-                →
-            </span>
-
-        </a>
-<a
-    href="https://forms.gle/gKg9cev3rkhZyomo6"
-    target="_blank"
-    rel="noopener"
-    class="affiliation-option"
-     onclick="trackQua4tro('filiacao_septa7', 'filiacao')"
->
-
-    <div>
-
-        <span class="option-category">
-            HANDEBOL
-        </span>
-
-        <h3>
-            SEPTA 7
-        </h3>
-
-        <p>
-            Filiação à divisão de handebol da Qua4tro.
-        </p>
-
-    </div>
-
-    <span class="option-arrow">
-        →
-    </span>
-
-</a>
-        
-    </div>
-
-</section>
-        <!-- ==============================
-             APP
-             ============================== -->
-<section class="app-showcase">
-
-    <!-- LADO ESQUERDO -->
-
-    <div class="app-info">
-
-        <div class="section-label">
-            05 — APP QUA4TRO
-        </div>
-
-        <h2>
-            TODO O ESPORTE.
-            <span>EM UM SÓ LUGAR.</span>
-        </h2>
-
-        <p class="app-intro">
-            O APP QUA4TRO conecta atletas, equipes,
-            competições e público em uma única experiência.
-        </p>
-
-        <p>
-            Resultados, classificações, rankings, jogos, eventos
-            e informações das competições dentro de uma única plataforma.
-        </p>
-
-        <div class="app-features">
-
-            <span>RESULTADOS</span>
-            <span>RANKINGS</span>
-            <span>EQUIPES</span>
-            <span>ATLETAS</span>
-            <span>EVENTOS</span>
-            <span>COMPETIÇÕES</span>
-
-        </div>
-
-
-        <div class="app-status">
-
-            <span class="app-status-dot"></span>
-
-            APP QUA4TRO — DISPONÍVEL AGORA
-
-        </div>
-
-
-        <a
-            href="https://qua4tro.expo.app/"
-            target="_blank"
-            rel="noopener"
-            class="app-download-button"
-            onclick="trackQua4tro('acessar_app', 'secao_app')"
-        >
-            ACESSAR APP QUA4TRO
-            <span>→</span>
-        </a>
-
-
-        <div class="app-platforms">
-
-            <span>ANDROID</span>
-            <span>iOS</span>
-            <span>WEB</span>
-
-        </div>
-
-
-        <div class="app-install-guide">
-
-            <div>
-                <strong>ANDROID</strong>
-
-                <p>
-                    Abra o APP no navegador e escolha
-                    “Instalar app” ou “Adicionar à tela inicial”.
-                </p>
-            </div>
-
-            <div>
-                <strong>IPHONE</strong>
-
-                <p>
-                    Abra no Safari, toque em Compartilhar
-                    e escolha “Adicionar à Tela de Início”.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- LADO DIREITO -->
-
-    <div class="app-visual">
-
-        <div class="phone-glow"></div>
-
-        <div class="phone">
-
-            <div class="phone-top">
-                <div class="phone-speaker"></div>
-            </div>
-
-            <div class="phone-screen">
-
-                <div class="phone-logo">
-                    QUA<span>4</span>TRO
-                </div>
-
-                <div class="phone-message">
-                    O ESPORTE<br>
-                    <strong>EM OUTRO NÍVEL.</strong>
-                </div>
-
-                <div class="phone-nav">
-
-                    <div>
-                        <span>⌂</span>
-                        HOME
-                    </div>
-
-                    <div>
-                        <span>◉</span>
-                        LIRFUT
-                    </div>
-
-                    <div>
-                        <span>◆</span>
-                        NOX
-                    </div>
-
-                    <div>
-                        <span>≡</span>
-                        MAIS
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="app-background-number">
-            4
-        </div>
-
-    </div>
-
-</section>
-        
-        <!-- ==============================
+        <!-- =========================================
              CONTATO
-             ============================== -->
-<!-- ==============================
-     PATROCINADORES
-     ============================== -->
+             ========================================= -->
 
-<section id="patrocinadores" class="partners-section">
+        <section
+            id="contato"
+            class="contact-section"
+        >
 
-    <div class="partners-heading">
+            <div class="contact-heading">
 
-        <div class="section-label">
-            06 — PARCERIAS
-        </div>
+                <div class="section-label">
+                    07 — CONTATO
+                </div>
 
-        <h2>
-            MARCAS QUE ACREDITAM
-            <span>FAZEM PARTE DO JOGO.</span>
-        </h2>
+                <h2>
+                    O PRÓXIMO JOGO
+                    <span>COMEÇA AQUI.</span>
+                </h2>
 
-        <p>
-            A Qua4tro conecta marcas ao esporte através de
-            competições, atletas, equipes, conteúdo e experiências.
-        </p>
+                <p>
+                    Acompanhe a Qua4tro, conheça nossas competições
+                    e faça parte do que estamos construindo.
+                </p>
 
-    </div>
-
-
-    <div class="partners-showcase">
-
-        <div class="partners-main">
-
-            <span class="partners-small">
-                QUA4TRO + SUA MARCA
-            </span>
-
-            <h3>
-                ESPAÇO PARA
-                <strong>GRANDES PARCERIAS.</strong>
-            </h3>
-
-            <p>
-                Construímos projetos comerciais que aproximam marcas
-                do público através do esporte.
-            </p>
-
-           <a
-    href="https://wa.me/5519994895728?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20conhecer%20as%20oportunidades%20de%20parceria%20e%20patroc%C3%ADnio%20da%20Qua4tro."
-    target="_blank"
-    rel="noopener"
-    class="partners-button"
-    onclick="trackQua4tro('seja_parceiro', 'parcerias')"
->
-    SEJA UM PARCEIRO
-    <span>→</span>
-</a>
-
-        </div>
-
-
-        <div class="partners-properties">
-
-            <div class="partner-property">
-                <span>01</span>
-                <h4>NAMING RIGHTS</h4>
-            </div>
-
-            <div class="partner-property">
-                <span>02</span>
-                <h4>EVENTOS</h4>
-            </div>
-
-            <div class="partner-property">
-                <span>03</span>
-                <h4>TRANSMISSÕES</h4>
-            </div>
-
-            <div class="partner-property">
-                <span>04</span>
-                <h4>MÍDIA</h4>
-            </div>
-
-            <div class="partner-property">
-                <span>05</span>
-                <h4>ATIVAÇÕES</h4>
-            </div>
-
-            <div class="partner-property">
-                <span>06</span>
-                <h4>CONTEÚDO</h4>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="partners-logos">
-
-        <span>
-            EM BREVE, NOSSOS PARCEIROS ESTARÃO AQUI.
-        </span>
-
-    </div>
-
-</section>
-
-        <section id="contato" class="contact-section">
-
-    <div class="contact-heading">
-
-        <div class="section-label">
-            07 — CONTATO
-        </div>
-
-        <h2>
-            O PRÓXIMO JOGO
-            <span>COMEÇA AQUI.</span>
-        </h2>
-
-        <p>
-            Acompanhe a Qua4tro, conheça nossas competições
-            e faça parte do que estamos construindo.
-        </p>
-        <a
-    href="mailto:contato@qua4tro.com.br"
-    class="contact-email"
-    onclick="trackQua4tro('email_contato', 'contato')"
->
-    contato@qua4tro.com.br
-</a>
-
-    </div>
-
-
-<div class="social-grid">
-
-    <a
-        href="https://www.instagram.com/qua4tro.br/"
-        target="_blank"
-        class="social-card"
-        onclick="trackQua4tro('instagram_qua4tro', 'redes')"
-    >
-        <span class="social-type">INSTAGRAM</span>
-        <h3>QUA4TRO</h3>
-        <p>@qua4tro.br</p>
-        <span class="social-arrow">→</span>
-    </a>
-
-    <a
-        href="https://www.instagram.com/lirfut.br/"
-        target="_blank"
-        class="social-card"
-        onclick="trackQua4tro('instagram_lirfut', 'redes')"
-    >
-        <span class="social-type">INSTAGRAM</span>
-        <h3>LIRFUT</h3>
-        <p>@lirfut.br</p>
-        <span class="social-arrow">→</span>
-    </a>
-
-    <a
-        href="https://www.instagram.com/noxbelli/"
-        target="_blank"
-        class="social-card"
-        onclick="trackQua4tro('instagram_nox_belli', 'redes')"
-    >
-        <span class="social-type">INSTAGRAM</span>
-        <h3>NOX BELLI</h3>
-        <p>@noxbelli</p>
-        <span class="social-arrow">→</span>
-    </a>
-
-    <a
-        href="https://www.instagram.com/septa7.br/"
-        target="_blank"
-        class="social-card"
-        onclick="trackQua4tro('instagram_septa7', 'redes')"
-    >
-        <span class="social-type">INSTAGRAM</span>
-        <h3>SEPTA 7</h3>
-        <p>@septa7.br</p>
-        <span class="social-arrow">→</span>
-    </a>
-
-    <a
-        href="https://www.youtube.com/@Qua4troTV"
-        target="_blank"
-        class="social-card"
-        onclick="trackQua4tro('youtube_qua4trotv', 'redes')"
-    >
-        <span class="social-type">YOUTUBE</span>
-        <h3>QUA4TRO TV</h3>
-        <p>@Qua4troTV</p>
-        <span class="social-arrow">→</span>
-    </a>
-
-</div>
-
-</section>
-
-    </main>
-
-
-    <!-- ==============================
-         FOOTER
-         ============================== -->
-
- <footer class="footer-final">
-
-    <div class="footer-top">
-
-        <div class="footer-brand">
-
-            <div class="footer-logo">
-                QUA<span>4</span>TRO
-            </div>
-
-            <p>
-                Profissionalizando o esporte amador.
-            </p>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <div>
-                <span>QUA4TRO</span>
-
-                <a href="#sobre">Sobre</a>
-                <a href="#competicoes">Competições</a>
-                <a href="#filiacao">Filiação</a>
-                <a href="#patrocinadores">Parcerias</a>
 
                 <a
                     href="mailto:contato@qua4tro.com.br"
-                    onclick="trackQua4tro('email_contato', 'footer')"
+                    class="contact-email"
+                    onclick="trackQua4tro('email_contato', 'contato')"
                 >
-                    Contato
+                    contato@qua4tro.com.br
                 </a>
+
             </div>
 
 
-            <div>
-                <span>COMPETIÇÕES</span>
+            <div class="social-grid">
 
-                <a href="#competicoes">LIRFUT</a>
-                <a href="#competicoes">NOX BELLI</a>
-                <a href="#competicoes">SEPTA 7</a>
-            </div>
-
-
-            <div>
-                <span>REDES</span>
 
                 <a
                     href="https://www.instagram.com/qua4tro.br/"
                     target="_blank"
                     rel="noopener"
+                    class="social-card"
+                    onclick="trackQua4tro('instagram_qua4tro', 'redes')"
                 >
-                    Instagram
+                    <span class="social-type">
+                        INSTAGRAM
+                    </span>
+
+                    <h3>
+                        QUA4TRO
+                    </h3>
+
+                    <p>
+                        @qua4tro.br
+                    </p>
+
+                    <span class="social-arrow">
+                        →
+                    </span>
                 </a>
 
-             
+
+                <a
+                    href="https://www.instagram.com/lirfut.br/"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-card"
+                    onclick="trackQua4tro('instagram_lirfut', 'redes')"
+                >
+                    <span class="social-type">
+                        INSTAGRAM
+                    </span>
+
+                    <h3>
+                        LIRFUT
+                    </h3>
+
+                    <p>
+                        @lirfut.br
+                    </p>
+
+                    <span class="social-arrow">
+                        →
+                    </span>
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/noxbelli/"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-card"
+                    onclick="trackQua4tro('instagram_nox_belli', 'redes')"
+                >
+                    <span class="social-type">
+                        INSTAGRAM
+                    </span>
+
+                    <h3>
+                        NOX BELLI
+                    </h3>
+
+                    <p>
+                        @noxbelli
+                    </p>
+
+                    <span class="social-arrow">
+                        →
+                    </span>
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/septa7.br/"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-card"
+                    onclick="trackQua4tro('instagram_septa7', 'redes')"
+                >
+                    <span class="social-type">
+                        INSTAGRAM
+                    </span>
+
+                    <h3>
+                        SEPTA 7
+                    </h3>
+
+                    <p>
+                        @septa7.br
+                    </p>
+
+                    <span class="social-arrow">
+                        →
+                    </span>
+                </a>
+
+
                 <a
                     href="https://www.youtube.com/@Qua4troTV"
                     target="_blank"
                     rel="noopener"
+                    class="social-card"
+                    onclick="trackQua4tro('youtube_qua4trotv', 'redes')"
                 >
-                    Qua4tro TV
+                    <span class="social-type">
+                        YOUTUBE
+                    </span>
+
+                    <h3>
+                        QUA4TRO TV
+                    </h3>
+
+                    <p>
+                        @Qua4troTV
+                    </p>
+
+                    <span class="social-arrow">
+                        →
+                    </span>
                 </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="footer-final">
+
+
+        <div class="footer-top">
+
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    QUA<span>4</span>TRO
+                </div>
+
+                <p>
+                    Profissionalizando o esporte amador.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+
+                <div>
+
+                    <span>
+                        QUA4TRO
+                    </span>
+
+                    <a href="#sobre">
+                        Sobre
+                    </a>
+
+                    <a href="#competicoes">
+                        Competições
+                    </a>
+
+                    <a href="#filiacao">
+                        Filiação
+                    </a>
+
+                    <a href="#patrocinadores">
+                        Parcerias
+                    </a>
+
+                    <a
+                        href="mailto:contato@qua4tro.com.br"
+                        onclick="trackQua4tro('email_contato', 'footer')"
+                    >
+                        Contato
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        COMPETIÇÕES
+                    </span>
+
+                    <a href="#competicoes">
+                        LIRFUT
+                    </a>
+
+                    <a href="#competicoes">
+                        NOX BELLI
+                    </a>
+
+                    <a href="#competicoes">
+                        SEPTA 7
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        REDES
+                    </span>
+
+                    <a
+                        href="https://www.instagram.com/qua4tro.br/"
+                        target="_blank"
+                        rel="noopener"
+                        onclick="trackQua4tro('instagram_qua4tro', 'footer')"
+                    >
+                        Instagram
+                    </a>
+
+                    <a
+                        href="https://www.youtube.com/@Qua4troTV"
+                        target="_blank"
+                        rel="noopener"
+                        onclick="trackQua4tro('youtube_qua4trotv', 'footer')"
+                    >
+                        Qua4tro TV
+                    </a>
+
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Qua4tro Brasil Ltda. Todos os direitos reservados.
+            </p>
+
+            <a href="#">
+                VOLTAR AO TOPO ↑
+            </a>
+
+        </div>
 
 
-    <div class="footer-bottom">
+    </footer>
 
-        <p>
-            © 2026 Qua4tro Brasil Ltda. Todos os direitos reservados.
-        </p>
-
-        <a href="#">
-            VOLTAR AO TOPO ↑
-        </a>
-
-    </div>
-
-</footer>
 
 </body>
 
