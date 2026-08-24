@@ -3026,3 +3026,31 @@ septa-card:hover .division-logo-image,
     }
 
 }
+/* =========================================
+   E-MAIL DE CONTATO
+   ========================================= */
+
+.contact-email {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: #ffa51f;
+
+    font-size: clamp(16px, 2vw, 22px);
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid rgba(255,165,31,0.4);
+
+    padding-bottom: 5px;
+
+    transition: 0.3s ease;
+}
+
+.contact-email:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
