@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qua4tro.com.br/sitemap.xml
