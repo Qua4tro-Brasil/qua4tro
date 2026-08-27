@@ -27,10 +27,6 @@
     </script>
 
 
-    <!-- =========================================
-         CONFIGURAÇÕES
-         ========================================= -->
-
     <meta charset="UTF-8">
 
     <meta
@@ -63,13 +59,11 @@
 
     <link
         rel="stylesheet"
-        href="../../css/lirfut.css?v=5"
+        href="../../css/lirfut.css?v=6"
     >
 
 
-    <!-- =========================================
-         SUPABASE
-         ========================================= -->
+    <!-- SUPABASE -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -253,9 +247,7 @@
             </div>
 
 
-            <!-- =========================================
-                 FILTROS
-                 ========================================= -->
+            <!-- FILTROS -->
 
             <div class="club-filters">
 
@@ -306,9 +298,7 @@
             </div>
 
 
-            <!-- =========================================
-                 CARREGANDO
-                 ========================================= -->
+            <!-- CARREGANDO -->
 
             <div
                 id="clubsLoading"
@@ -328,9 +318,7 @@
             </div>
 
 
-            <!-- =========================================
-                 ERRO
-                 ========================================= -->
+            <!-- ERRO -->
 
             <div
                 id="clubsError"
@@ -356,9 +344,7 @@
             </div>
 
 
-            <!-- =========================================
-                 GRID DINÂMICO
-                 ========================================= -->
+            <!-- GRID -->
 
             <div
                 class="clubs-master-grid"
@@ -368,9 +354,7 @@
             </div>
 
 
-            <!-- =========================================
-                 NENHUM CLUBE
-                 ========================================= -->
+            <!-- VAZIO -->
 
             <div
                 class="clubs-empty"
@@ -422,7 +406,6 @@
 
 
             <div class="future-structure-grid">
-
 
                 <div>
 
@@ -494,7 +477,6 @@
                     </p>
 
                 </div>
-
 
             </div>
 
@@ -622,7 +604,7 @@
 
 
     <!-- =========================================
-         SUPABASE / CLUBES
+         SUPABASE
          ========================================= -->
 
     <script>
@@ -666,21 +648,13 @@
 
 
         let clubes = [];
-
         let participacoes = [];
-
         let campeonatos = [];
-
         let historicos = [];
-
         let divisoes = [];
 
         let filtroAtual = 'all';
 
-
-        /* =========================================
-           NORMALIZA TEXTO
-           ========================================= */
 
         function normalizar(texto) {
 
@@ -696,19 +670,15 @@
         }
 
 
-        /* =========================================
-           CARREGA BANCO
-           ========================================= */
-
         async function carregarClubes() {
 
             clubsLoading.hidden = false;
-
             clubsError.hidden = true;
-
             clubsGrid.hidden = true;
 
-            clubsEmpty.classList.remove('show');
+            clubsEmpty.classList.remove(
+                'show'
+            );
 
 
             try {
@@ -838,7 +808,6 @@
 
 
                 clubsLoading.hidden = true;
-
                 clubsGrid.hidden = false;
 
 
@@ -853,9 +822,7 @@
 
 
                 clubsLoading.hidden = true;
-
                 clubsGrid.hidden = true;
-
                 clubsError.hidden = false;
 
 
@@ -867,10 +834,6 @@
 
         }
 
-
-        /* =========================================
-           COPA LIRFUT 2026
-           ========================================= */
 
         function campeonatosCopa2026() {
 
@@ -922,10 +885,6 @@
 
         }
 
-
-        /* =========================================
-           DIVISÃO ATUAL
-           ========================================= */
 
         function divisaoAtual(equipeId) {
 
@@ -1022,10 +981,6 @@
         }
 
 
-        /* =========================================
-           CATEGORIAS DE UM CLUBE
-           ========================================= */
-
         function categoriasClube(clube) {
 
             const categorias = [];
@@ -1036,7 +991,9 @@
                     clube.status_lirfut
                 ) === 'filiado'
             ) {
-                categorias.push('filiado');
+                categorias.push(
+                    'filiado'
+                );
             }
 
 
@@ -1045,7 +1002,9 @@
                     clube.id
                 )
             ) {
-                categorias.push('copa');
+                categorias.push(
+                    'copa'
+                );
             }
 
 
@@ -1069,10 +1028,6 @@
         }
 
 
-        /* =========================================
-           FILTRA CLUBES
-           ========================================= */
-
         function clubesFiltrados() {
 
             if (
@@ -1093,10 +1048,6 @@
 
         }
 
-
-        /* =========================================
-           INICIAIS
-           ========================================= */
 
         function iniciais(nome) {
 
@@ -1128,10 +1079,6 @@
         }
 
 
-        /* =========================================
-           TEXTO DO STATUS
-           ========================================= */
-
         function statusClube(clube) {
 
             const status =
@@ -1158,10 +1105,6 @@
 
         }
 
-
-        /* =========================================
-           DESCRIÇÃO DO CARD
-           ========================================= */
 
         function contextoClube(clube) {
 
@@ -1205,10 +1148,6 @@
 
         }
 
-
-        /* =========================================
-           CRIA ESCUDO
-           ========================================= */
 
         function criarEscudo(clube) {
 
@@ -1279,10 +1218,6 @@
         }
 
 
-        /* =========================================
-           CRIA CARD
-           ========================================= */
-
         function criarCard(
             clube,
             indice
@@ -1344,8 +1279,6 @@
                 ).join(' ');
 
 
-            /* NÚMERO */
-
             const numero =
                 document.createElement(
                     'span'
@@ -1362,8 +1295,6 @@
                     '0'
                 );
 
-
-            /* STATUS */
 
             const status =
                 document.createElement(
@@ -1392,15 +1323,11 @@
             }
 
 
-            /* ESCUDO */
-
             const escudo =
                 criarEscudo(
                     clube
                 );
 
-
-            /* CONTEÚDO */
 
             const content =
                 document.createElement(
@@ -1457,8 +1384,6 @@
             );
 
 
-            /* FOOTER */
-
             const footer =
                 document.createElement(
                     'div'
@@ -1510,13 +1435,10 @@
         }
 
 
-        /* =========================================
-           RENDERIZA
-           ========================================= */
-
         function renderizarClubes() {
 
-            clubsGrid.innerHTML = '';
+            clubsGrid.innerHTML =
+                '';
 
 
             const lista =
@@ -1567,10 +1489,6 @@
         }
 
 
-        /* =========================================
-           FILTROS
-           ========================================= */
-
         filters.forEach(
             filter => {
 
@@ -1607,19 +1525,11 @@
         );
 
 
-        /* =========================================
-           RETRY
-           ========================================= */
-
         retryClubs.addEventListener(
             'click',
             carregarClubes
         );
 
-
-        /* =========================================
-           INICIALIZA
-           ========================================= */
 
         carregarClubes();
 
