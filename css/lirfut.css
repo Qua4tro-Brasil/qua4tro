@@ -1,5 +1,5 @@
 /* =========================================
-   LIRFUT — V5
+   LIRFUT — V6
    HOME + CLUBES + SUPABASE
    ========================================= */
 
@@ -31,6 +31,11 @@ body {
     color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+}
+
+
+[hidden] {
+    display: none !important;
 }
 
 
@@ -605,7 +610,7 @@ img {
 
 
 /* =========================================
-   HOME HERO STATS
+   HERO STATS
    ========================================= */
 
 .hero-status {
@@ -1381,7 +1386,7 @@ img {
 
 
 /* =========================================
-   CLUB DIRECTORY
+   DIRECTORY
    ========================================= */
 
 .clubs-directory {
@@ -1582,7 +1587,7 @@ img {
 
 
 /* =========================================
-   CLUB MASTER GRID
+   CLUB GRID
    ========================================= */
 
 .clubs-master-grid {
@@ -1783,7 +1788,7 @@ a.club-master-card:hover .club-master-footer {
 
 
 /* =========================================
-   FUTURE STRUCTURE
+   FUTURE
    ========================================= */
 
 .clubs-future {
