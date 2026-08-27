@@ -1,5 +1,5 @@
 /* =========================================
-   NOX BELLI — V1
+   NOX BELLI — V2
    FIGHT PROMOTION
    ========================================= */
 
@@ -57,14 +57,11 @@ img {
 .qua4tro-bar {
     min-height: 38px;
     padding: 0 5%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     background: #000;
     border-bottom: 1px solid var(--line);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 1.5px;
@@ -107,18 +104,14 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     min-height: 105px;
     padding: 0 5%;
-
     display: grid;
     grid-template-columns: 220px 1fr 150px;
     align-items: center;
     gap: 30px;
-
     background: rgba(5,5,5,0.96);
     backdrop-filter: blur(15px);
-
     border-bottom: 1px solid var(--line);
 }
 
@@ -126,7 +119,6 @@ img {
 .nox-brand {
     width: 145px;
     height: 78px;
-
     display: flex;
     align-items: center;
 }
@@ -150,31 +142,23 @@ img {
 
 .nox-nav a {
     position: relative;
-
     padding: 43px 0;
-
     color: #8a8a8a;
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 1.4px;
-
     transition: 0.25s ease;
 }
 
 
 .nox-nav a::after {
     content: "";
-
     position: absolute;
     left: 50%;
     right: 50%;
     bottom: 30px;
-
     height: 3px;
-
     background: var(--orange);
-
     transition: 0.25s ease;
 }
 
@@ -192,16 +176,12 @@ img {
 
 .header-join {
     justify-self: end;
-
     padding: 15px 22px;
-
     background: var(--orange);
     color: #050505;
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 1px;
-
     transition: 0.25s ease;
 }
 
@@ -218,10 +198,8 @@ img {
 .event-strip {
     display: grid;
     grid-template-columns: 250px 1fr;
-
     background: #fff;
     color: #050505;
-
     border-bottom: 1px solid #ddd;
 }
 
@@ -229,18 +207,15 @@ img {
 .event-strip-label {
     min-height: 105px;
     padding: 25px 35px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     background: var(--orange);
 }
 
 
 .event-strip-label span {
     margin-bottom: 8px;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -254,27 +229,23 @@ img {
 
 .event-strip-stats {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
 }
 
 
 .event-strip-stats > div {
     min-height: 105px;
     padding: 25px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     border-right: 1px solid #ddd;
 }
 
 
 .event-strip-stats span {
     margin-bottom: 8px;
-
     color: #999;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 1.4px;
@@ -292,14 +263,11 @@ img {
 
 .nox-hero {
     position: relative;
-
     min-height: 830px;
     padding: 105px 7% 55px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     overflow: hidden;
 
     background:
@@ -320,7 +288,6 @@ img {
 .hero-grid {
     position: absolute;
     inset: 0;
-
     opacity: 0.06;
 
     background-image:
@@ -335,9 +302,7 @@ img {
         );
 
     background-size: 70px 70px;
-
     transform: skewY(-4deg) scale(1.1);
-
     pointer-events: none;
 }
 
@@ -346,17 +311,12 @@ img {
     position: absolute;
     right: -60px;
     top: 40px;
-
     color: transparent;
-
-    -webkit-text-stroke:
-        3px rgba(255,165,31,0.10);
-
+    -webkit-text-stroke: 3px rgba(255,165,31,0.10);
     font-size: clamp(280px,38vw,620px);
     font-weight: 900;
     line-height: 0.75;
     letter-spacing: -35px;
-
     pointer-events: none;
 }
 
@@ -364,18 +324,14 @@ img {
 .hero-content {
     position: relative;
     z-index: 3;
-
     max-width: 980px;
 }
 
 
 .hero-eyebrow {
     display: block;
-
     margin-bottom: 25px;
-
     color: var(--orange);
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 4px;
@@ -385,10 +341,8 @@ img {
 .hero-logo {
     width: min(500px,80vw);
     min-height: 180px;
-
     display: flex;
     align-items: center;
-
     margin-bottom: 15px;
 }
 
@@ -396,7 +350,6 @@ img {
 .hero-logo img {
     width: 100%;
     max-height: 180px;
-
     object-fit: contain;
     object-position: left center;
 }
@@ -404,16 +357,11 @@ img {
 
 .hero-event-code {
     width: fit-content;
-
     margin-bottom: 30px;
     padding: 10px 14px;
-
     border-left: 4px solid var(--orange);
-
     background: rgba(255,255,255,0.04);
-
     color: #aaa;
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -422,28 +370,22 @@ img {
 
 .hero-content h1 {
     max-width: 1000px;
-
     font-size: clamp(58px,8vw,120px);
     line-height: 0.82;
-
     letter-spacing: -8px;
 }
 
 
 .hero-content h1 strong {
     display: block;
-
     color: var(--orange);
 }
 
 
 .hero-content p {
     max-width: 600px;
-
     margin-top: 32px;
-
     color: #8b8b8b;
-
     font-size: 17px;
     line-height: 1.7;
 }
@@ -451,7 +393,6 @@ img {
 
 .hero-actions {
     margin-top: 40px;
-
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -465,15 +406,12 @@ img {
 .btn {
     min-height: 53px;
     padding: 0 25px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 1.4px;
-
     transition: 0.25s ease;
 }
 
@@ -504,22 +442,17 @@ img {
     top: 300px;
     right: 7%;
     z-index: 3;
-
     width: 230px;
     padding: 28px;
-
     border-top: 4px solid var(--orange);
     border-bottom: 1px solid var(--line);
-
     background: rgba(0,0,0,0.40);
 }
 
 
 .hero-side span {
     display: block;
-
     color: #666;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -528,11 +461,8 @@ img {
 
 .hero-side strong {
     display: block;
-
     margin-top: 5px;
-
     color: var(--orange);
-
     font-size: 52px;
     line-height: 1;
 }
@@ -540,9 +470,7 @@ img {
 
 .hero-side p {
     margin-top: 6px;
-
     color: #ddd;
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -551,9 +479,7 @@ img {
 
 .hero-side-line {
     height: 1px;
-
     margin: 24px 0;
-
     background: var(--line);
 }
 
@@ -565,12 +491,9 @@ img {
 .hero-bottom {
     position: relative;
     z-index: 3;
-
     margin-top: 90px;
-
     display: grid;
     grid-template-columns: repeat(4,1fr);
-
     border-top: 1px solid var(--line);
     border-left: 1px solid var(--line);
 }
@@ -579,11 +502,9 @@ img {
 .hero-bottom > div {
     min-height: 105px;
     padding: 25px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 }
@@ -591,9 +512,7 @@ img {
 
 .hero-bottom span {
     margin-bottom: 9px;
-
     color: #555;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 1.5px;
@@ -611,9 +530,7 @@ img {
 
 .section-heading {
     max-width: 1500px;
-
     margin: 0 auto 60px;
-
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -623,11 +540,8 @@ img {
 
 .section-number {
     display: block;
-
     margin-bottom: 14px;
-
     color: var(--orange);
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -645,16 +559,13 @@ img {
 .section-heading h2 strong,
 .media-copy h2 strong {
     display: block;
-
     color: var(--orange);
 }
 
 
 .section-note {
     padding-bottom: 8px;
-
     color: #777;
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -667,7 +578,6 @@ img {
 
 .event-section {
     padding: 120px 7%;
-
     background: #f2f2f2;
     color: #050505;
 }
@@ -675,9 +585,7 @@ img {
 
 .event-showcase {
     max-width: 1500px;
-
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 20px;
@@ -686,14 +594,11 @@ img {
 
 .event-main {
     position: relative;
-
     min-height: 590px;
     padding: 50px;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     overflow: hidden;
 
     background:
@@ -710,16 +615,12 @@ img {
 
 .event-main::after {
     content: "";
-
     position: absolute;
     right: -120px;
     top: -120px;
-
     width: 370px;
     height: 370px;
-
     border: 55px solid rgba(255,165,31,0.035);
-
     transform: rotate(45deg);
 }
 
@@ -728,9 +629,7 @@ img {
     position: absolute;
     top: 45px;
     left: 50px;
-
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -741,16 +640,11 @@ img {
     position: absolute;
     top: 35px;
     right: 45px;
-
     color: transparent;
-
-    -webkit-text-stroke:
-        2px rgba(255,165,31,0.22);
-
+    -webkit-text-stroke: 2px rgba(255,165,31,0.22);
     font-size: 130px;
     font-weight: 900;
     line-height: 1;
-
     letter-spacing: -10px;
 }
 
@@ -758,17 +652,14 @@ img {
 .event-main h3 {
     position: relative;
     z-index: 2;
-
     font-size: clamp(52px,7vw,100px);
     line-height: 0.84;
-
     letter-spacing: -6px;
 }
 
 
 .event-main h3 strong {
     display: block;
-
     color: var(--orange);
 }
 
@@ -776,13 +667,9 @@ img {
 .event-main > p {
     position: relative;
     z-index: 2;
-
     max-width: 640px;
-
     margin-top: 25px;
-
     color: #888;
-
     font-size: 14px;
     line-height: 1.7;
 }
@@ -791,12 +678,9 @@ img {
 .event-specs {
     position: relative;
     z-index: 2;
-
     margin-top: 40px;
-
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-
+    grid-template-columns: repeat(3,1fr);
     border-top: 1px solid var(--line);
 }
 
@@ -808,11 +692,8 @@ img {
 
 .event-specs span {
     display: block;
-
     margin-bottom: 8px;
-
     color: #555;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 1px;
@@ -833,22 +714,17 @@ img {
 
 .event-side article {
     padding: 35px;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     border: 1px solid #ddd;
-
     background: #fff;
 }
 
 
 .event-side span {
     margin-bottom: auto;
-
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -862,9 +738,7 @@ img {
 
 .event-side p {
     margin-top: 13px;
-
     color: #888;
-
     font-size: 12px;
     line-height: 1.6;
 }
@@ -876,16 +750,13 @@ img {
 
 .fight-card-section {
     padding: 120px 7%;
-
     background: #090909;
 }
 
 
 .main-fight {
     max-width: 1500px;
-
     margin: 0 auto 18px;
-
     border: 1px solid rgba(255,165,31,0.30);
 
     background:
@@ -901,18 +772,15 @@ img {
 .fight-header {
     min-height: 62px;
     padding: 0 28px;
-
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-
     border-bottom: 1px solid var(--line);
 }
 
 
 .fight-header span {
     color: #666;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 1.5px;
@@ -926,7 +794,6 @@ img {
 
 .fight-header strong {
     color: var(--orange);
-
     font-size: 9px;
     letter-spacing: 2px;
 }
@@ -934,7 +801,6 @@ img {
 
 .main-fight-body {
     min-height: 450px;
-
     display: grid;
     grid-template-columns: 1fr 180px 1fr;
     align-items: center;
@@ -943,30 +809,24 @@ img {
 
 .fighter-side {
     position: relative;
-
     min-height: 450px;
     padding: 50px;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     overflow: hidden;
 }
 
 
 .fighter-a {
     align-items: flex-start;
-
     border-right: 1px solid var(--line);
 }
 
 
 .fighter-b {
     align-items: flex-end;
-
     text-align: right;
-
     border-left: 1px solid var(--line);
 }
 
@@ -974,12 +834,8 @@ img {
 .fighter-number {
     position: absolute;
     top: 15px;
-
     color: transparent;
-
-    -webkit-text-stroke:
-        2px rgba(255,165,31,0.16);
-
+    -webkit-text-stroke: 2px rgba(255,165,31,0.16);
     font-size: 260px;
     font-weight: 900;
     line-height: 1;
@@ -999,9 +855,7 @@ img {
 .fighter-side > span {
     position: relative;
     z-index: 2;
-
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -1011,9 +865,7 @@ img {
 .fighter-side h3 {
     position: relative;
     z-index: 2;
-
     margin-top: 10px;
-
     font-size: clamp(40px,5vw,75px);
     line-height: 0.9;
     letter-spacing: -4px;
@@ -1023,11 +875,8 @@ img {
 .fighter-side p {
     position: relative;
     z-index: 2;
-
     margin-top: 14px;
-
     color: #777;
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 1.5px;
@@ -1036,19 +885,16 @@ img {
 
 .fight-center {
     min-height: 450px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
 }
 
 
 .fight-center span {
     color: #777;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -1057,9 +903,7 @@ img {
 
 .fight-center strong {
     margin: 16px 0;
-
     color: var(--orange);
-
     font-size: 62px;
     line-height: 1;
 }
@@ -1067,7 +911,6 @@ img {
 
 .fight-center p {
     color: #777;
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 1.5px;
@@ -1080,9 +923,7 @@ img {
 
 .fight-list {
     max-width: 1500px;
-
     margin: 0 auto;
-
     border-top: 1px solid var(--line);
     border-left: 1px solid var(--line);
 }
@@ -1090,16 +931,12 @@ img {
 
 .fight-row {
     min-height: 110px;
-
     display: grid;
     grid-template-columns: 80px 1fr 100px 1fr 220px;
     align-items: center;
-
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-
     background: #111;
-
     transition: 0.25s ease;
 }
 
@@ -1111,15 +948,11 @@ img {
 
 .fight-order {
     height: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-right: 1px solid var(--line);
-
     color: var(--orange);
-
     font-size: 22px;
     font-weight: 900;
 }
@@ -1137,11 +970,8 @@ img {
 
 .fight-fighter span {
     display: block;
-
     margin-bottom: 6px;
-
     color: #555;
-
     font-size: 6px;
     font-weight: 900;
     letter-spacing: 1.5px;
@@ -1155,9 +985,7 @@ img {
 
 .fight-vs {
     color: var(--orange);
-
     text-align: center;
-
     font-size: 18px;
     font-weight: 900;
 }
@@ -1165,13 +993,9 @@ img {
 
 .fight-category {
     padding: 20px;
-
     border-left: 1px solid var(--line);
-
     color: #777;
-
     text-align: center;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 1px;
@@ -1184,7 +1008,6 @@ img {
 
 .fighters-section {
     padding: 120px 7%;
-
     background: #f2f2f2;
     color: #050505;
 }
@@ -1192,12 +1015,9 @@ img {
 
 .fighters-grid {
     max-width: 1500px;
-
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: repeat(4,1fr);
-
     border-top: 1px solid var(--light-line);
     border-left: 1px solid var(--light-line);
 }
@@ -1205,18 +1025,14 @@ img {
 
 .fighter-placeholder {
     position: relative;
-
     min-height: 440px;
     padding: 30px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     border-right: 1px solid var(--light-line);
     border-bottom: 1px solid var(--light-line);
-
     background: #fff;
 }
 
@@ -1225,9 +1041,7 @@ img {
     position: absolute;
     top: 24px;
     left: 24px;
-
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
 }
@@ -1236,9 +1050,7 @@ img {
 .fighter-silhouette {
     width: 140px;
     height: 190px;
-
     margin-bottom: 25px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1252,9 +1064,7 @@ img {
         #f5f5f5;
 
     border-bottom: 4px solid var(--orange);
-
     color: #c7c7c7;
-
     font-size: 50px;
     font-weight: 900;
 }
@@ -1267,9 +1077,7 @@ img {
 
 .fighter-placeholder p {
     margin-top: 8px;
-
     color: #aaa;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 1.3px;
@@ -1278,15 +1086,12 @@ img {
 
 .fighters-bottom {
     max-width: 1500px;
-
     margin: 35px auto 0;
     padding-top: 30px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-
     border-top: 1px solid #d8d8d8;
 }
 
@@ -1298,11 +1103,8 @@ img {
 
 .fighters-bottom > div:first-child span {
     display: block;
-
     margin-bottom: 8px;
-
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -1311,7 +1113,6 @@ img {
 
 .fighters-bottom p {
     color: #888;
-
     font-size: 12px;
     line-height: 1.7;
 }
@@ -1320,13 +1121,10 @@ img {
 .future-button {
     min-height: 54px;
     padding: 0 22px;
-
     display: flex;
     align-items: center;
     gap: 20px;
-
     border: 1px solid #050505;
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 1px;
@@ -1344,18 +1142,15 @@ img {
 
 .categories-section {
     padding: 120px 7%;
-
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: 70px;
-
     background: #050505;
 }
 
 
 .categories-intro > span {
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -1364,7 +1159,6 @@ img {
 
 .categories-intro h2 {
     margin-top: 18px;
-
     font-size: clamp(52px,7vw,100px);
     line-height: 0.85;
     letter-spacing: -6px;
@@ -1373,18 +1167,14 @@ img {
 
 .categories-intro h2 strong {
     display: block;
-
     color: var(--orange);
 }
 
 
 .categories-intro p {
     max-width: 580px;
-
     margin-top: 25px;
-
     color: #777;
-
     font-size: 14px;
     line-height: 1.7;
 }
@@ -1393,7 +1183,6 @@ img {
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-
     border-top: 1px solid var(--line);
     border-left: 1px solid var(--line);
 }
@@ -1402,23 +1191,18 @@ img {
 .categories-grid > div {
     min-height: 400px;
     padding: 30px;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-
     background: #101010;
 }
 
 
 .categories-grid span {
     margin-bottom: auto;
-
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -1432,9 +1216,7 @@ img {
 
 .categories-grid p {
     margin-top: 12px;
-
     color: #777;
-
     font-size: 12px;
     line-height: 1.6;
 }
@@ -1446,30 +1228,24 @@ img {
 
 .rankings-section {
     padding: 120px 7%;
-
     background: #0d0d0d;
 }
 
 
 .ranking-preview {
     max-width: 1500px;
-
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: 330px 1fr;
-
     border: 1px solid var(--line);
 }
 
 
 .ranking-category {
     padding: 35px;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     border-right: 1px solid var(--line);
 
     background:
@@ -1484,9 +1260,7 @@ img {
 
 .ranking-category span {
     margin-bottom: auto;
-
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -1506,11 +1280,9 @@ img {
 .ranking-row {
     min-height: 92px;
     padding: 0 28px;
-
     display: grid;
     grid-template-columns: 80px 1fr 150px;
     align-items: center;
-
     border-bottom: 1px solid var(--line);
 }
 
@@ -1522,7 +1294,6 @@ img {
 
 .ranking-row > span {
     color: var(--orange);
-
     font-size: 17px;
     font-weight: 900;
 }
@@ -1535,9 +1306,7 @@ img {
 
 .ranking-row > p {
     color: #666;
-
     text-align: right;
-
     font-size: 8px;
     font-weight: 900;
 }
@@ -1559,15 +1328,12 @@ img {
 
 .identity-section {
     position: relative;
-
     min-height: 680px;
     padding: 120px 7%;
-
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     align-items: center;
     gap: 70px;
-
     overflow: hidden;
 
     background:
@@ -1584,16 +1350,11 @@ img {
     position: absolute;
     left: -60px;
     bottom: -90px;
-
     color: transparent;
-
-    -webkit-text-stroke:
-        3px rgba(255,165,31,0.07);
-
+    -webkit-text-stroke: 3px rgba(255,165,31,0.07);
     font-size: 430px;
     font-weight: 900;
     line-height: 0.8;
-
     letter-spacing: -25px;
 }
 
@@ -1606,7 +1367,6 @@ img {
 
 .identity-content > span {
     color: var(--orange);
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 3px;
@@ -1615,7 +1375,6 @@ img {
 
 .identity-content h2 {
     margin-top: 18px;
-
     font-size: clamp(55px,7vw,105px);
     line-height: 0.84;
     letter-spacing: -7px;
@@ -1624,18 +1383,14 @@ img {
 
 .identity-content h2 strong {
     display: block;
-
     color: var(--orange);
 }
 
 
 .identity-content p {
     max-width: 590px;
-
     margin-top: 30px;
-
     color: #888;
-
     font-size: 16px;
     line-height: 1.7;
 }
@@ -1644,10 +1399,8 @@ img {
 .identity-values {
     position: relative;
     z-index: 2;
-
     display: grid;
     grid-template-columns: repeat(2,1fr);
-
     border-top: 1px solid var(--line);
     border-left: 1px solid var(--line);
 }
@@ -1656,21 +1409,17 @@ img {
 .identity-values > div {
     min-height: 190px;
     padding: 30px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-
     background: rgba(255,255,255,0.02);
 }
 
 
 .identity-values span {
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
 }
@@ -1687,22 +1436,17 @@ img {
 
 .media-section {
     padding: 120px 7%;
-
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     gap: 70px;
-
     background: #111;
 }
 
 
 .media-copy p {
     max-width: 560px;
-
     margin-top: 25px;
-
     color: #777;
-
     font-size: 15px;
     line-height: 1.7;
 }
@@ -1710,7 +1454,6 @@ img {
 
 .media-actions {
     margin-top: 35px;
-
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -1720,7 +1463,6 @@ img {
 .media-grid {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-
     border-top: 1px solid var(--line);
     border-left: 1px solid var(--line);
 }
@@ -1729,23 +1471,18 @@ img {
 .media-grid article {
     min-height: 390px;
     padding: 30px;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-
     background: #171717;
 }
 
 
 .media-grid span {
     margin-bottom: auto;
-
     color: var(--orange);
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -1759,9 +1496,7 @@ img {
 
 .media-grid p {
     margin-top: 12px;
-
     color: #777;
-
     font-size: 12px;
     line-height: 1.6;
 }
@@ -1773,12 +1508,10 @@ img {
 
 .nox-app {
     padding: 75px 7%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
-
     background: var(--orange);
     color: #050505;
 }
@@ -1793,7 +1526,6 @@ img {
 
 .nox-app h2 {
     margin: 10px 0 14px;
-
     font-size: clamp(38px,5vw,70px);
     line-height: 0.9;
     letter-spacing: -4px;
@@ -1813,18 +1545,14 @@ img {
 .nox-app > a {
     min-height: 55px;
     padding: 0 25px;
-
     display: flex;
     align-items: center;
     gap: 28px;
-
     background: #050505;
     color: #fff;
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 1.2px;
-
     transition: 0.25s ease;
 }
 
@@ -1845,13 +1573,10 @@ img {
 
 .join-section {
     position: relative;
-
     min-height: 720px;
     padding: 120px 7%;
-
     display: flex;
     align-items: center;
-
     overflow: hidden;
 
     background:
@@ -1868,16 +1593,11 @@ img {
     position: absolute;
     right: -50px;
     bottom: -120px;
-
     color: transparent;
-
-    -webkit-text-stroke:
-        3px rgba(255,165,31,0.10);
-
+    -webkit-text-stroke: 3px rgba(255,165,31,0.10);
     font-size: 600px;
     font-weight: 900;
     line-height: 0.8;
-
     letter-spacing: -30px;
 }
 
@@ -1885,14 +1605,12 @@ img {
 .join-content {
     position: relative;
     z-index: 2;
-
     max-width: 1000px;
 }
 
 
 .join-content > span {
     color: var(--orange);
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 3px;
@@ -1901,7 +1619,6 @@ img {
 
 .join-content h2 {
     margin: 22px 0 30px;
-
     font-size: clamp(58px,8vw,115px);
     line-height: 0.83;
     letter-spacing: -7px;
@@ -1910,16 +1627,13 @@ img {
 
 .join-content h2 strong {
     display: block;
-
     color: var(--orange);
 }
 
 
 .join-content p {
     max-width: 650px;
-
     color: #888;
-
     font-size: 17px;
     line-height: 1.7;
 }
@@ -1928,20 +1642,15 @@ img {
 .join-content > a {
     min-height: 58px;
     padding: 0 25px;
-
     margin-top: 40px;
-
     display: inline-flex;
     align-items: center;
     gap: 28px;
-
     background: var(--orange);
     color: #050505;
-
     font-size: 9px;
     font-weight: 900;
     letter-spacing: 1.3px;
-
     transition: 0.25s ease;
 }
 
@@ -1962,9 +1671,7 @@ img {
 
 .nox-footer {
     padding: 70px 7% 30px;
-
     background: #030303;
-
     border-top: 1px solid var(--line);
 }
 
@@ -1980,7 +1687,6 @@ img {
 .footer-main > img {
     width: 175px;
     height: 110px;
-
     object-fit: contain;
     object-position: left center;
 }
@@ -1993,11 +1699,8 @@ img {
 
 .footer-main span {
     display: block;
-
     margin-bottom: 8px;
-
     color: #555;
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -2006,7 +1709,6 @@ img {
 
 .footer-main a {
     color: var(--orange);
-
     font-size: 12px;
     font-weight: 900;
 }
@@ -2015,39 +1717,29 @@ img {
 .footer-statement {
     margin-top: 60px;
     padding: 30px 0;
-
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-
     color: transparent;
-
-    -webkit-text-stroke:
-        1px rgba(255,165,31,0.34);
-
+    -webkit-text-stroke: 1px rgba(255,165,31,0.34);
     font-size: clamp(70px,12vw,180px);
     font-weight: 900;
     line-height: 0.8;
-
     letter-spacing: -10px;
 }
 
 
 .footer-links {
     padding: 30px 0;
-
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-
     border-bottom: 1px solid var(--line);
 }
 
 
 .footer-links a {
     color: #777;
-
     font-size: 10px;
-
     transition: 0.25s ease;
 }
 
@@ -2059,13 +1751,10 @@ img {
 
 .footer-bottom {
     padding-top: 30px;
-
     display: flex;
     justify-content: space-between;
     gap: 30px;
-
     color: #444;
-
     font-size: 8px;
     font-weight: 900;
     letter-spacing: 1px;
@@ -2107,12 +1796,9 @@ img {
 
     .fight-category {
         grid-column: 2 / -1;
-
         padding: 12px 25px;
-
         border-left: none;
         border-top: 1px solid var(--line);
-
         text-align: left;
     }
 
@@ -2123,7 +1809,6 @@ img {
 
     .nox-header {
         min-height: 90px;
-
         grid-template-columns: 1fr auto;
     }
 
@@ -2139,7 +1824,7 @@ img {
 
 
     .event-strip-stats {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(3,1fr);
     }
 
 
@@ -2161,9 +1846,7 @@ img {
     .fighter-a,
     .fighter-b {
         align-items: center;
-
         text-align: center;
-
         border-left: none;
         border-right: none;
     }
@@ -2171,7 +1854,6 @@ img {
 
     .fight-center {
         min-height: 150px;
-
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
     }
@@ -2184,7 +1866,6 @@ img {
 
     .ranking-category {
         min-height: 180px;
-
         border-right: none;
         border-bottom: 1px solid var(--line);
     }
@@ -2218,28 +1899,29 @@ img {
 
     .header-join {
         padding: 11px 14px;
-
         font-size: 8px;
     }
 
 
     .event-strip-label {
         min-height: 85px;
-
         padding: 20px;
     }
 
 
     .event-strip-stats > div {
         min-height: 85px;
+        padding: 15px 12px;
+    }
 
-        padding: 18px;
+
+    .event-strip-stats strong {
+        font-size: 12px;
     }
 
 
     .nox-hero {
         min-height: 770px;
-
         padding: 80px 20px 35px;
     }
 
@@ -2252,7 +1934,6 @@ img {
 
     .hero-content h1 {
         font-size: 60px;
-
         letter-spacing: -5px;
     }
 
@@ -2269,7 +1950,6 @@ img {
 
     .hero-bottom > div {
         min-height: 90px;
-
         padding: 18px;
     }
 
@@ -2294,14 +1974,12 @@ img {
     .section-heading h2,
     .media-copy h2 {
         font-size: 52px;
-
         letter-spacing: -4px;
     }
 
 
     .event-main {
         min-height: 540px;
-
         padding: 30px 22px;
     }
 
@@ -2315,29 +1993,25 @@ img {
     .event-001 {
         top: 30px;
         right: 20px;
-
         font-size: 80px;
     }
 
 
     .event-main h3 {
         font-size: 50px;
-
         letter-spacing: -4px;
     }
 
 
     .event-specs {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(3,1fr);
     }
 
 
     .fight-header {
         padding: 15px;
-
         grid-template-columns: 1fr;
         gap: 7px;
-
         text-align: center;
     }
 
@@ -2359,7 +2033,6 @@ img {
 
     .fight-row {
         min-height: 150px;
-
         grid-template-columns: 50px 1fr 50px 1fr;
     }
 
@@ -2376,7 +2049,6 @@ img {
 
     .fight-category {
         grid-column: 2 / -1;
-
         padding-left: 10px;
     }
 
@@ -2405,7 +2077,6 @@ img {
     .categories-intro h2,
     .identity-content h2 {
         font-size: 56px;
-
         letter-spacing: -5px;
     }
 
@@ -2422,7 +2093,6 @@ img {
 
     .ranking-row {
         padding: 0 15px;
-
         grid-template-columns: 50px 1fr 70px;
     }
 
@@ -2434,7 +2104,6 @@ img {
 
     .identity-values > div {
         min-height: 150px;
-
         padding: 20px;
     }
 
@@ -2456,28 +2125,24 @@ img {
 
     .nox-app > a {
         width: 100%;
-
         justify-content: space-between;
     }
 
 
     .join-section {
         min-height: 680px;
-
         padding: 90px 20px;
     }
 
 
     .join-content h2 {
         font-size: 57px;
-
         letter-spacing: -5px;
     }
 
 
     .join-content > a {
         width: 100%;
-
         justify-content: space-between;
     }
 
@@ -2500,7 +2165,6 @@ img {
 
     .footer-statement {
         font-size: 68px;
-
         letter-spacing: -5px;
     }
 
