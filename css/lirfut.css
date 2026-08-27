@@ -1,5 +1,6 @@
 /* =========================================
-   LIRFUT — V3
+   LIRFUT — V4
+   HOME + DIRETÓRIO DE CLUBES
    ========================================= */
 
 :root {
@@ -39,6 +40,11 @@ a {
 }
 
 
+button {
+    font-family: inherit;
+}
+
+
 img {
     display: block;
     max-width: 100%;
@@ -46,7 +52,7 @@ img {
 
 
 /* =========================================
-   QUA4TRO
+   QUA4TRO BAR
    ========================================= */
 
 .qua4tro-bar {
@@ -134,9 +140,7 @@ img {
             transparent 75%
         );
 
-    transition:
-        transform 0.4s ease,
-        background 0.4s ease;
+    transition: 0.4s ease;
 }
 
 
@@ -168,11 +172,6 @@ img {
     width: 70px;
     height: 70px;
     object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 0 10px rgba(255,165,31,0.18)
-        );
 }
 
 
@@ -211,12 +210,14 @@ img {
 }
 
 
-.lirfut-nav a:hover {
+.lirfut-nav a:hover,
+.lirfut-nav .nav-current {
     color: var(--white);
 }
 
 
-.lirfut-nav a:hover::after {
+.lirfut-nav a:hover::after,
+.lirfut-nav .nav-current::after {
     right: 0;
 }
 
@@ -239,7 +240,7 @@ img {
 
 
 /* =========================================
-   COMPETIÇÃO
+   COMPETITION SELECTOR
    ========================================= */
 
 .competition-selector {
@@ -371,13 +372,12 @@ img {
 
 .match-strip-title strong {
     font-size: 13px;
-    letter-spacing: 0.5px;
 }
 
 
 .match-strip-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0,1fr));
+    grid-template-columns: repeat(4,minmax(0,1fr));
 }
 
 
@@ -433,7 +433,7 @@ img {
 
 
 /* =========================================
-   HERO
+   HOME HERO
    ========================================= */
 
 .lirfut-hero {
@@ -518,9 +518,6 @@ img {
             rgba(255,165,31,0.06) 36%,
             transparent 70%
         );
-
-    filter: blur(5px);
-    pointer-events: none;
 }
 
 
@@ -535,7 +532,6 @@ img {
     border-radius: 50%;
     background: rgba(255,255,255,0.018);
     border: 1px solid rgba(255,255,255,0.055);
-    box-shadow: 0 0 80px rgba(255,165,31,0.08);
 }
 
 
@@ -546,10 +542,6 @@ img {
     max-height: 270px;
     object-fit: contain;
     object-position: left center;
-
-    filter:
-        drop-shadow(0 12px 30px rgba(0,0,0,0.50))
-        drop-shadow(0 0 13px rgba(255,165,31,0.10));
 }
 
 
@@ -579,7 +571,7 @@ img {
 
 
 /* =========================================
-   BOTÕES
+   BUTTONS
    ========================================= */
 
 .btn {
@@ -613,7 +605,7 @@ img {
 
 
 /* =========================================
-   HERO STATUS
+   HOME HERO STATS
    ========================================= */
 
 .hero-status {
@@ -648,13 +640,12 @@ img {
 
 
 .hero-status strong {
-    color: var(--white);
     font-size: 22px;
 }
 
 
 /* =========================================
-   SEÇÕES
+   GENERAL SECTIONS
    ========================================= */
 
 .content-section,
@@ -710,7 +701,7 @@ img {
 
 
 /* =========================================
-   JOGOS
+   GAMES
    ========================================= */
 
 .games-grid {
@@ -816,13 +807,12 @@ img {
 
 
 /* =========================================
-   CHAVE
+   BRACKET
    ========================================= */
 
 .bracket-section {
     padding: 120px 7%;
     background: var(--surface);
-    color: var(--white);
 }
 
 
@@ -835,7 +825,7 @@ img {
     max-width: 1500px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
     gap: 40px;
     align-items: center;
 }
@@ -877,14 +867,8 @@ img {
 }
 
 
-.bracket-final {
-    align-self: center;
-}
-
-
 .final-box {
     padding: 45px;
-
     background:
         radial-gradient(
             circle at center,
@@ -892,7 +876,6 @@ img {
             transparent 60%
         ),
         #171717;
-
     border: 1px solid rgba(255,165,31,0.30);
     text-align: center;
 }
@@ -922,7 +905,7 @@ img {
 
 
 /* =========================================
-   TIMES
+   HOME TEAMS
    ========================================= */
 
 .teams-grid {
@@ -980,39 +963,9 @@ img {
 }
 
 
-/* =========================================
-   TIME ATIVO
-   ========================================= */
-
 .team-card-active {
     overflow: hidden;
     cursor: pointer;
-    transition:
-        transform 0.35s ease,
-        background 0.35s ease,
-        color 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-
-.team-card-active::before {
-    content: "";
-    position: absolute;
-    width: 230px;
-    height: 230px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,165,31,0.14),
-            transparent 68%
-        );
-
-    opacity: 0;
     transition: 0.35s ease;
 }
 
@@ -1022,25 +975,7 @@ img {
     transform: translateY(-8px);
     background: #101010;
     color: #fff;
-
-    box-shadow:
-        0 25px 55px rgba(0,0,0,0.17);
-}
-
-
-.team-card-active:hover::before {
-    opacity: 1;
-}
-
-
-.team-card-active > * {
-    position: relative;
-    z-index: 2;
-}
-
-
-.team-card-active:hover p {
-    color: #777;
+    box-shadow: 0 25px 55px rgba(0,0,0,0.17);
 }
 
 
@@ -1048,14 +983,6 @@ img {
     border-color: rgba(255,165,31,0.45);
     background: rgba(255,165,31,0.06);
     color: var(--lirfut);
-    transition: 0.35s ease;
-}
-
-
-.team-card-active:hover .active-emblem {
-    transform: scale(1.08);
-    border-color: var(--lirfut);
-    box-shadow: 0 0 35px rgba(255,165,31,0.12);
 }
 
 
@@ -1070,76 +997,35 @@ img {
 }
 
 
-.team-card-active:hover .team-profile-status {
-    color: var(--lirfut);
-}
-
-
-.team-card-link {
+.team-card-link,
+.team-waiting {
     position: absolute;
     left: 25px;
     right: 25px;
     bottom: 22px;
-
     padding-top: 15px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     border-top: 1px solid #eee;
-
-    color: #999;
-
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 1.5px;
 }
 
 
+.team-card-link {
+    display: flex;
+    justify-content: space-between;
+    color: #999;
+}
+
+
 .team-card-link span {
     color: var(--lirfut);
     font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-
-.team-card-active:hover .team-card-link {
-    border-color: rgba(255,255,255,0.10);
-    color: #fff;
-}
-
-
-.team-card-active:hover .team-card-link span {
-    transform: translateX(5px);
-}
-
-
-/* =========================================
-   TIMES AINDA NÃO CONFIRMADOS
-   ========================================= */
-
-.team-card-disabled {
-    transition: 0.3s ease;
-}
-
-
-.team-card-disabled:hover {
-    background: #fafafa;
 }
 
 
 .team-waiting {
-    position: absolute;
-    left: 25px;
-    right: 25px;
-    bottom: 24px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
     color: #bbb;
-    font-size: 6px;
-    font-weight: 900;
-    letter-spacing: 1.3px;
 }
 
 
@@ -1147,14 +1033,22 @@ img {
     max-width: 1500px;
     margin: 35px auto 0;
     padding-top: 30px;
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
     border-top: 1px solid #ddd;
 }
 
 
-.teams-explanation span {
+.teams-explanation > div {
+    max-width: 650px;
+}
+
+
+.teams-explanation > div > span {
+    display: block;
+    margin-bottom: 8px;
     color: var(--lirfut);
     font-size: 8px;
     font-weight: 900;
@@ -1163,15 +1057,42 @@ img {
 
 
 .teams-explanation p {
-    max-width: 650px;
     color: #888;
     font-size: 12px;
     line-height: 1.7;
 }
 
 
+.all-clubs-button {
+    flex-shrink: 0;
+    min-height: 54px;
+    padding: 0 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    border: 1px solid #080808;
+    color: #080808;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+    transition: 0.3s ease;
+}
+
+
+.all-clubs-button span {
+    color: var(--lirfut);
+    font-size: 18px;
+}
+
+
+.all-clubs-button:hover {
+    background: #080808;
+    color: #fff;
+}
+
+
 /* =========================================
-   MÍDIA
+   MEDIA
    ========================================= */
 
 .media-section {
@@ -1285,15 +1206,16 @@ img {
 
 .lirfut-app .btn-primary {
     background: #080808;
-    color: var(--white);
+    color: #fff;
 }
 
 
 /* =========================================
-   FILIAÇÃO
+   JOIN
    ========================================= */
 
-.join-section {
+.join-section,
+.clubs-join {
     position: relative;
     padding: 140px 7%;
     overflow: hidden;
@@ -1308,7 +1230,8 @@ img {
 }
 
 
-.join-section > span {
+.join-section > span,
+.clubs-join > span {
     color: var(--lirfut);
     font-size: 9px;
     font-weight: 900;
@@ -1316,7 +1239,8 @@ img {
 }
 
 
-.join-section h2 {
+.join-section h2,
+.clubs-join h2 {
     max-width: 950px;
     margin: 20px 0;
     font-size: clamp(55px,8vw,110px);
@@ -1325,13 +1249,15 @@ img {
 }
 
 
-.join-section h2 strong {
+.join-section h2 strong,
+.clubs-join h2 strong {
     display: block;
     color: var(--lirfut);
 }
 
 
-.join-section p {
+.join-section p,
+.clubs-join p {
     max-width: 600px;
     color: #888;
     font-size: 17px;
@@ -1361,6 +1287,488 @@ img {
 
 .join-button:hover {
     transform: translateY(-5px);
+}
+
+
+/* =========================================
+   CLUBS PAGE HERO
+   ========================================= */
+
+.clubs-hero {
+    position: relative;
+    min-height: 610px;
+    padding: 115px 7% 70px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: end;
+    gap: 70px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 40%,
+            rgba(255,165,31,0.14),
+            transparent 28%
+        ),
+        #080808;
+}
+
+
+.clubs-hero-number {
+    position: absolute;
+    right: -70px;
+    top: -220px;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255,255,255,0.035);
+    font-size: 760px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+
+.clubs-hero-content,
+.clubs-principle {
+    position: relative;
+    z-index: 2;
+}
+
+
+.clubs-hero-content h1 {
+    font-size: clamp(75px,11vw,160px);
+    line-height: 0.78;
+    letter-spacing: -9px;
+}
+
+
+.clubs-hero-content h1 strong {
+    display: block;
+    color: var(--lirfut);
+}
+
+
+.clubs-hero-content p {
+    max-width: 600px;
+    margin-top: 35px;
+    color: #888;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+.clubs-principle {
+    padding: 35px;
+    border-left: 3px solid var(--lirfut);
+    background: rgba(255,255,255,0.025);
+}
+
+
+.clubs-principle span {
+    color: var(--lirfut);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.clubs-principle p {
+    margin-top: 14px;
+    color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CLUB DIRECTORY
+   ========================================= */
+
+.clubs-directory {
+    padding: 120px 7%;
+    background: #f4f4f4;
+    color: #080808;
+}
+
+
+.clubs-directory-heading {
+    max-width: 1500px;
+    margin: 0 auto 55px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+
+.clubs-directory-heading > div > span {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--lirfut);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.clubs-directory-heading h2 {
+    font-size: clamp(50px,7vw,95px);
+    line-height: 0.88;
+    letter-spacing: -6px;
+}
+
+
+.clubs-directory-heading h2 strong {
+    display: block;
+    color: var(--lirfut);
+}
+
+
+.directory-join {
+    padding-bottom: 8px;
+    color: #777;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+}
+
+
+.directory-join span {
+    margin-left: 12px;
+    color: var(--lirfut);
+    font-size: 16px;
+}
+
+
+/* =========================================
+   CLUB FILTERS
+   ========================================= */
+
+.club-filters {
+    max-width: 1500px;
+    margin: 0 auto 35px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #d8d8d8;
+    background: #fff;
+}
+
+
+.club-filter {
+    min-height: 58px;
+    padding: 0 22px;
+    border: none;
+    border-right: 1px solid #e2e2e2;
+    background: transparent;
+    color: #888;
+    cursor: pointer;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    transition: 0.3s ease;
+}
+
+
+.club-filter:hover {
+    color: #080808;
+}
+
+
+.club-filter.active {
+    background: #080808;
+    color: #fff;
+}
+
+
+.club-filter.active::before {
+    content: "●";
+    margin-right: 9px;
+    color: var(--lirfut);
+}
+
+
+.future-filter {
+    cursor: default;
+    color: #bbb;
+}
+
+
+.future-filter small {
+    display: block;
+    margin-top: 3px;
+    color: var(--lirfut);
+    font-size: 5px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   CLUB MASTER GRID
+   ========================================= */
+
+.clubs-master-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-top: 1px solid #d6d6d6;
+    border-left: 1px solid #d6d6d6;
+}
+
+
+.club-master-card {
+    position: relative;
+    min-height: 430px;
+    padding: 35px 30px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6;
+    background: #fff;
+    color: #080808;
+    transition: 0.35s ease;
+}
+
+
+a.club-master-card:hover {
+    z-index: 2;
+    transform: translateY(-7px);
+    background: #101010;
+    color: #fff;
+    box-shadow: 0 25px 55px rgba(0,0,0,0.16);
+}
+
+
+.club-master-number {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: var(--lirfut);
+    font-size: 9px;
+    font-weight: 900;
+}
+
+
+.club-status {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #bbb;
+    font-size: 6px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.active-status {
+    color: var(--lirfut);
+}
+
+
+.club-master-emblem {
+    width: 120px;
+    height: 120px;
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: #aaa;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
+.active-master-emblem {
+    border-color: rgba(255,165,31,0.50);
+    background: rgba(255,165,31,0.06);
+    color: var(--lirfut);
+}
+
+
+.club-master-content {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.club-master-content > span {
+    color: var(--lirfut);
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.club-master-content h3 {
+    margin: 8px 0;
+    font-size: 21px;
+}
+
+
+.club-master-content p {
+    color: #aaa;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.club-master-footer {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid #eee;
+}
+
+
+.club-master-footer span {
+    color: #aaa;
+    font-size: 6px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.club-master-footer strong {
+    color: var(--lirfut);
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+
+a.club-master-card:hover .club-master-footer {
+    border-color: rgba(255,255,255,0.10);
+}
+
+
+.club-master-placeholder {
+    color: #999;
+}
+
+
+/* =========================================
+   EMPTY FILTER
+   ========================================= */
+
+.clubs-empty {
+    max-width: 1500px;
+    margin: 30px auto 0;
+    padding: 60px;
+    display: none;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+
+.clubs-empty.show {
+    display: block;
+}
+
+
+.clubs-empty strong {
+    font-size: 13px;
+}
+
+
+.clubs-empty p {
+    margin-top: 10px;
+    color: #999;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   FUTURE STRUCTURE
+   ========================================= */
+
+.clubs-future {
+    padding: 120px 7%;
+    background: #0d0d0d;
+}
+
+
+.clubs-future-intro {
+    max-width: 950px;
+    margin-bottom: 65px;
+}
+
+
+.clubs-future-intro > span {
+    color: var(--lirfut);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.clubs-future-intro h2 {
+    margin: 17px 0 25px;
+    font-size: clamp(50px,7vw,95px);
+    line-height: 0.88;
+    letter-spacing: -6px;
+}
+
+
+.clubs-future-intro h2 strong {
+    display: block;
+    color: var(--lirfut);
+}
+
+
+.clubs-future-intro p {
+    max-width: 700px;
+    color: #888;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+.future-structure-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+
+.future-structure-grid > div {
+    min-height: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: #101010;
+}
+
+
+.future-structure-grid > div > span {
+    margin-bottom: auto;
+    color: var(--lirfut);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.future-structure-grid strong {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+
+.future-structure-grid p {
+    color: #777;
+    font-size: 11px;
+    line-height: 1.6;
 }
 
 
@@ -1462,7 +1870,7 @@ img {
 
 
 .footer-links a:hover {
-    color: var(--white);
+    color: #fff;
 }
 
 
@@ -1479,7 +1887,7 @@ img {
 
 
 /* =========================================
-   RESPONSIVO
+   RESPONSIVE
    ========================================= */
 
 @media (max-width: 1100px) {
@@ -1500,13 +1908,24 @@ img {
     }
 
 
-    .teams-grid {
+    .teams-grid,
+    .clubs-master-grid {
         grid-template-columns: repeat(2,1fr);
     }
 
 
     .media-section {
         grid-template-columns: 1fr;
+    }
+
+
+    .clubs-hero {
+        grid-template-columns: 1fr;
+    }
+
+
+    .future-structure-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 
 }
@@ -1537,11 +1956,6 @@ img {
     }
 
 
-    .selector-inner {
-        gap: 20px;
-    }
-
-
     .season-select {
         width: 240px;
     }
@@ -1568,6 +1982,12 @@ img {
         align-items: flex-start;
     }
 
+
+    .clubs-directory-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
 }
 
 
@@ -1578,14 +1998,8 @@ img {
     }
 
 
-    .qua4tro-bar-right a:first-child {
-        display: none;
-    }
-
-
     .lirfut-header {
         padding: 0 18px;
-        grid-template-columns: 1fr auto;
     }
 
 
@@ -1611,6 +2025,7 @@ img {
         padding: 12px 18px;
         flex-direction: column;
         align-items: stretch;
+        gap: 15px;
     }
 
 
@@ -1621,11 +2036,6 @@ img {
 
     .match-strip-grid {
         grid-template-columns: 1fr;
-    }
-
-
-    .mini-match {
-        min-height: 95px;
     }
 
 
@@ -1641,31 +2051,10 @@ img {
     }
 
 
-    .hero-logo-shell::before {
-        left: 50%;
-        width: 340px;
-        height: 340px;
-        transform: translate(-50%,-50%);
-    }
-
-
-    .hero-logo-shell::after {
-        left: 50%;
-        width: 200px;
-        height: 200px;
-        transform: translate(-50%,-50%);
-    }
-
-
     .hero-lirfut-logo {
         width: 90%;
         margin: 0 auto;
         object-position: center;
-    }
-
-
-    .lirfut-hero-content p {
-        font-size: 15px;
     }
 
 
@@ -1674,22 +2063,12 @@ img {
     }
 
 
-    .hero-status {
-        margin-top: 60px;
-        grid-template-columns: repeat(2,1fr);
-    }
-
-
-    .hero-status > div {
-        min-height: 90px;
-        padding: 18px;
-    }
-
-
     .content-section,
     .teams-section,
     .bracket-section,
-    .media-section {
+    .media-section,
+    .clubs-directory,
+    .clubs-future {
         padding: 85px 20px;
     }
 
@@ -1701,41 +2080,26 @@ img {
     }
 
 
-    .section-heading h2,
-    .media-main h2 {
-        letter-spacing: -3px;
-    }
-
-
     .game-card {
         padding: 25px 18px;
     }
 
 
-    .game-teams {
-        grid-template-columns: 1fr 35px 1fr;
-    }
-
-
-    .club-placeholder {
-        width: 55px;
-        height: 55px;
-    }
-
-
-    .teams-grid {
+    .teams-grid,
+    .clubs-master-grid {
         grid-template-columns: 1fr;
-    }
-
-
-    .team-card {
-        min-height: 310px;
     }
 
 
     .teams-explanation {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+
+    .all-clubs-button {
+        width: 100%;
+        justify-content: space-between;
     }
 
 
@@ -1744,23 +2108,14 @@ img {
     }
 
 
-    .media-card {
-        min-height: 220px;
-    }
-
-
     .lirfut-app {
         padding: 60px 20px;
     }
 
 
-    .join-section {
+    .join-section,
+    .clubs-join {
         padding: 100px 20px;
-    }
-
-
-    .join-section h2 {
-        letter-spacing: -4px;
     }
 
 
@@ -1782,6 +2137,60 @@ img {
 
     .footer-bottom {
         flex-direction: column;
+    }
+
+
+    /* CLUBES */
+
+    .clubs-hero {
+        min-height: 580px;
+        padding: 90px 20px 60px;
+    }
+
+
+    .clubs-hero-content h1 {
+        font-size: 68px;
+        letter-spacing: -5px;
+    }
+
+
+    .clubs-principle {
+        padding: 25px;
+    }
+
+
+    .clubs-directory-heading h2,
+    .clubs-future-intro h2 {
+        font-size: 52px;
+        letter-spacing: -4px;
+    }
+
+
+    .club-filters {
+        flex-direction: column;
+    }
+
+
+    .club-filter {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e2e2;
+        text-align: left;
+    }
+
+
+    .club-master-card {
+        min-height: 390px;
+    }
+
+
+    .future-structure-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .future-structure-grid > div {
+        min-height: 230px;
     }
 
 }
