@@ -17,6 +17,7 @@
 
     <title>Página não encontrada | Qua4tro Brasil</title>
 
+
     <script>
 
         (function () {
@@ -26,17 +27,21 @@
                     .replace(/\/+$/, '');
 
 
-            const clubeMatch =
+            /* =========================================
+               LIRFUT — PERFIL DINÂMICO
+               ========================================= */
+
+            const lirfutMatch =
                 caminho.match(
                     /^\/lirfut\/times\/([^/]+)$/
                 );
 
 
-            if (clubeMatch) {
+            if (lirfutMatch) {
 
                 const slug =
                     decodeURIComponent(
-                        clubeMatch[1]
+                        lirfutMatch[1]
                     );
 
 
@@ -54,6 +59,47 @@
 
                 window.location.replace(
                     '/lirfut/times/perfil/?slug=' +
+                    encodeURIComponent(slug)
+                );
+
+
+                return;
+
+            }
+
+
+            /* =========================================
+               SEPTA 7 — PERFIL DINÂMICO
+               ========================================= */
+
+            const septaMatch =
+                caminho.match(
+                    /^\/septa7\/times\/([^/]+)$/
+                );
+
+
+            if (septaMatch) {
+
+                const slug =
+                    decodeURIComponent(
+                        septaMatch[1]
+                    );
+
+
+                sessionStorage.setItem(
+                    'septa7_clube_slug',
+                    slug
+                );
+
+
+                sessionStorage.setItem(
+                    'septa7_clube_url',
+                    window.location.pathname
+                );
+
+
+                window.location.replace(
+                    '/septa7/times/perfil/?slug=' +
                     encodeURIComponent(slug)
                 );
 
