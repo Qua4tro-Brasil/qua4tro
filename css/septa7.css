@@ -1,5 +1,6 @@
 /* =========================================
-   SEPTA 7 — V1
+   SEPTA 7 — V2
+   HOME DINÂMICA
    JOGUE COM O CORAÇÃO
    ========================================= */
 
@@ -37,15 +38,48 @@ body {
 }
 
 
+[hidden] {
+    display: none !important;
+}
+
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
 
+button {
+    font-family: inherit;
+}
+
+
 img {
     display: block;
     max-width: 100%;
+}
+
+
+/* =========================================
+   LOADING
+   ========================================= */
+
+.loading-circle {
+    width: 42px;
+    height: 42px;
+    border: 3px solid #dedede;
+    border-top-color: var(--septa);
+    border-radius: 50%;
+    animation: septaLoading 0.85s linear infinite;
+}
+
+
+@keyframes septaLoading {
+
+    to {
+        transform: rotate(360deg);
+    }
+
 }
 
 
@@ -224,7 +258,7 @@ img {
 
 .competition-select {
     position: relative;
-    width: 340px;
+    width: 390px;
 }
 
 
@@ -248,6 +282,13 @@ img {
 }
 
 
+.competition-select summary > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
 .competition-menu {
     position: absolute;
     top: calc(100% + 7px);
@@ -259,26 +300,40 @@ img {
 
 
 .competition-menu > div {
-    min-height: 68px;
+    min-height: 72px;
     padding: 15px 18px;
     display: flex;
     align-items: center;
     gap: 15px;
     border-bottom: 1px solid #ddd;
-    color: #777;
-    font-size: 10px;
+}
+
+
+.competition-menu > div > span {
+    min-width: 55px;
+    color: var(--septa);
+    font-size: 9px;
     font-weight: 900;
 }
 
 
-.competition-menu span {
-    color: var(--septa);
+.competition-menu > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.competition-menu strong {
+    color: #555;
+    font-size: 9px;
 }
 
 
 .competition-menu small {
-    margin-left: auto;
+    color: #aaa;
     font-size: 6px;
+    font-weight: 900;
     letter-spacing: 1px;
 }
 
@@ -576,6 +631,26 @@ img {
 }
 
 
+.games-loading {
+    max-width: 1500px;
+    min-height: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+
+.games-loading strong {
+    margin-top: 18px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+
 .games-empty {
     max-width: 1500px;
     min-height: 390px;
@@ -629,6 +704,147 @@ img {
 }
 
 
+.games-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 20px;
+}
+
+
+.game-card {
+    min-height: 410px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+
+.game-card-finished {
+    border-top: 4px solid var(--septa);
+}
+
+
+.game-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #888;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.game-top span:first-child {
+    color: var(--septa);
+}
+
+
+.game-date {
+    margin-top: 35px;
+    text-align: center;
+    color: #888;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+
+.game-teams {
+    flex: 1;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 130px minmax(0,1fr);
+    align-items: center;
+    gap: 15px;
+}
+
+
+.game-team {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+
+.game-emblem {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #d6d6d6;
+    border-radius: 50%;
+    color: var(--septa);
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+.game-emblem img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+
+.game-team strong {
+    max-width: 220px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+.game-score {
+    width: 130px;
+    display: grid;
+    grid-template-columns: 40px 50px 40px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    color: var(--septa);
+}
+
+
+.game-score span {
+    font-size: 38px;
+    font-weight: 900;
+}
+
+
+.game-score b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    line-height: 1;
+}
+
+
+.game-score-only {
+    grid-column: 1 / -1;
+}
+
+
+.game-location {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #888;
+    text-align: center;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
 /* =========================================
    COMPETIÇÕES
    ========================================= */
@@ -654,6 +870,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
     background:
         radial-gradient(
             circle at 80% 20%,
@@ -661,6 +878,7 @@ img {
             transparent 30%
         ),
         #141414;
+
     border: 1px solid var(--border);
 }
 
@@ -774,6 +992,36 @@ img {
 }
 
 
+.clubs-loading,
+.clubs-error {
+    max-width: 1500px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #d4d4d4;
+}
+
+
+.clubs-loading strong,
+.clubs-error strong {
+    margin-top: 18px;
+    font-size: 10px;
+}
+
+
+.clubs-error p {
+    margin-top: 10px;
+    color: #999;
+    font-size: 9px;
+}
+
+
 .clubs-grid {
     max-width: 1500px;
     margin: 0 auto;
@@ -784,9 +1032,10 @@ img {
 }
 
 
-.club-placeholder-card {
+.club-placeholder-card,
+.club-dynamic-card {
     position: relative;
-    min-height: 360px;
+    min-height: 380px;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -798,7 +1047,23 @@ img {
 }
 
 
-.club-placeholder-card > span {
+.club-dynamic-card {
+    color: #050505;
+    transition: 0.3s ease;
+}
+
+
+.club-dynamic-card:hover {
+    z-index: 2;
+    transform: translateY(-7px);
+    background: #0c0c0c;
+    color: #fff;
+    box-shadow: 0 25px 55px rgba(0,0,0,0.16);
+}
+
+
+.club-placeholder-card > span,
+.club-card-number {
     position: absolute;
     top: 24px;
     left: 24px;
@@ -808,33 +1073,94 @@ img {
 }
 
 
-.club-symbol {
+.club-card-category {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: #aaa;
+    font-size: 6px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.club-symbol,
+.club-dynamic-emblem {
     width: 105px;
     height: 105px;
     margin-bottom: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     border-radius: 50%;
     border: 1px solid #ddd;
-    color: #ccc;
-    font-size: 35px;
+    color: var(--septa);
+    font-size: 24px;
     font-weight: 900;
 }
 
 
-.club-placeholder-card h3 {
+.club-dynamic-emblem {
+    border-color: rgba(255,165,31,0.42);
+    background: rgba(255,165,31,0.04);
+}
+
+
+.club-dynamic-emblem img {
+    width: 86%;
+    height: 86%;
+    object-fit: contain;
+}
+
+
+.club-placeholder-card h3,
+.club-dynamic-card h3 {
     text-align: center;
     font-size: 17px;
 }
 
 
-.club-placeholder-card p {
+.club-placeholder-card p,
+.club-dynamic-card > p {
     margin-top: 9px;
     color: #aaa;
+    text-align: center;
     font-size: 7px;
     font-weight: 900;
     letter-spacing: 1.4px;
+}
+
+
+.club-dynamic-footer {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 22px;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+}
+
+
+.club-dynamic-card:hover .club-dynamic-footer {
+    border-color: rgba(255,255,255,0.12);
+}
+
+
+.club-dynamic-footer span {
+    color: #999;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.club-dynamic-footer strong {
+    color: var(--septa);
+    font-size: 18px;
 }
 
 
@@ -1346,6 +1672,11 @@ img {
     }
 
 
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+
     .games-empty {
         grid-template-columns: 1fr;
     }
@@ -1475,6 +1806,45 @@ img {
     }
 
 
+    .game-card {
+        min-height: 390px;
+        padding: 25px 16px;
+    }
+
+
+    .game-teams {
+        grid-template-columns: minmax(0,1fr) 90px minmax(0,1fr);
+        gap: 5px;
+    }
+
+
+    .game-emblem {
+        width: 65px;
+        height: 65px;
+    }
+
+
+    .game-team strong {
+        font-size: 10px;
+    }
+
+
+    .game-score {
+        width: 90px;
+        grid-template-columns: 30px 30px 30px;
+    }
+
+
+    .game-score span {
+        font-size: 29px;
+    }
+
+
+    .game-score b {
+        font-size: 24px;
+    }
+
+
     .competition-main-card {
         min-height: 480px;
         padding: 30px 22px;
@@ -1503,8 +1873,9 @@ img {
     }
 
 
-    .club-placeholder-card {
-        min-height: 300px;
+    .club-placeholder-card,
+    .club-dynamic-card {
+        min-height: 330px;
     }
 
 
