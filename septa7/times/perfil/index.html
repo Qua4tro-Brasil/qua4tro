@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- =========================================
+         GOOGLE ANALYTICS
+         ========================================= -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9X7K9MSXQ"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-N9X7K9MSXQ');
+
+        function trackQua4tro(eventName, locationName) {
+            gtag('event', eventName, {
+                cta_location: locationName
+            });
+        }
+    </script>
+
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Clube | SEPTA 7</title>
+
+    <meta
+        name="theme-color"
+        content="#050505"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="/images/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/septa7-clubes.css?v=1"
+    >
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+
+
+<body class="profile-page">
+
+
+    <!-- =========================================
+         LOADING
+         ========================================= -->
+
+    <div
+        id="profileLoading"
+        class="profile-loading-screen"
+    >
+
+        <img
+            src="/images/Logo Septa7.svg"
+            alt="SEPTA 7"
+        >
+
+        <div class="loading-circle"></div>
+
+        <strong>
+            CARREGANDO CLUBE
+        </strong>
+
+    </div>
+
+
+    <!-- =========================================
+         ERRO
+         ========================================= -->
+
+    <div
+        id="profileError"
+        class="profile-error-screen"
+        hidden
+    >
+
+        <img
+            src="/images/Logo Septa7.svg"
+            alt="SEPTA 7"
+        >
+
+        <span>
+            SEPTA 7
+        </span>
+
+        <h1>
+            CLUBE NÃO
+            <strong>ENCONTRADO.</strong>
+        </h1>
+
+        <p id="profileErrorText">
+            Não encontramos este clube.
+        </p>
+
+        <a href="/septa7/times/">
+            VER TODOS OS CLUBES
+        </a>
+
+    </div>
+
+
+    <!-- =========================================
+         CONTEÚDO
+         ========================================= -->
+
+    <div
+        id="profileContent"
+        hidden
+    >
+
+
+        <!-- =====================================
+             HEADER
+             ===================================== -->
+
+        <header class="profile-header">
+
+            <a
+                href="/septa7/"
+                class="profile-brand"
+            >
+
+                <img
+                    src="/images/Logo Septa7.svg"
+                    alt="SEPTA 7"
+                >
+
+            </a>
+
+
+            <nav>
+
+                <a href="#visao-geral">
+                    VISÃO GERAL
+                </a>
+
+                <a href="#temporadas">
+                    TEMPORADAS
+                </a>
+
+                <a href="#jogos">
+                    JOGOS
+                </a>
+
+                <a href="#elenco">
+                    ELENCO
+                </a>
+
+                <a href="#numeros">
+                    NÚMEROS
+                </a>
+
+            </nav>
+
+
+            <a
+                href="/septa7/times/"
+                class="profile-all-clubs"
+            >
+                TODOS OS CLUBES
+            </a>
+
+        </header>
+
+
+        <!-- =====================================
+             HERO
+             ===================================== -->
+
+        <section
+            id="visao-geral"
+            class="profile-hero"
+        >
+
+            <div class="profile-seven">
+                7
+            </div>
+
+
+            <div class="profile-emblem-area">
+
+                <div
+                    id="profileEmblem"
+                    class="profile-emblem"
+                >
+                </div>
+
+            </div>
+
+
+            <div class="profile-identity">
+
+                <span id="profileCategory">
+                    SEPTA 7
+                </span>
+
+
+                <h1 id="profileName">
+                    —
+                </h1>
+
+
+                <p id="profileDescription">
+                    —
+                </p>
+
+
+                <div class="profile-location">
+
+                    <span id="profileCity">
+                        —
+                    </span>
+
+                    <span class="profile-dot">
+                        •
+                    </span>
+
+                    <span id="profileFounded">
+                        —
+                    </span>
+
+                </div>
+
+
+                <a
+                    id="profileInstagram"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    class="profile-instagram"
+                    hidden
+                >
+                    INSTAGRAM ↗
+                </a>
+
+            </div>
+
+
+            <div class="profile-status-panel">
+
+                <div>
+
+                    <span>
+                        STATUS
+                    </span>
+
+                    <strong id="profileStatus">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        FILIAÇÃO SEPTA 7
+                    </span>
+
+                    <strong id="profileAffiliation">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        COMPETIÇÃO ATUAL
+                    </span>
+
+                    <strong id="profileCompetition">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             NÚMEROS RÁPIDOS
+             ===================================== -->
+
+        <section class="profile-quick-stats">
+
+            <div>
+
+                <span>
+                    JOGOS
+                </span>
+
+                <strong id="quickGames">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    VITÓRIAS
+                </span>
+
+                <strong id="quickWins">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    GOLS MARCADOS
+                </span>
+
+                <strong id="quickGoals">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    TEMPORADAS
+                </span>
+
+                <strong id="quickSeasons">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PRÓXIMO JOGO + ÚLTIMOS RESULTADOS
+             ===================================== -->
+
+        <section
+            id="jogos"
+            class="profile-games-section"
+        >
+
+            <div class="next-game-card">
+
+                <div class="profile-card-heading">
+
+                    <div>
+
+                        <span>
+                            PRÓXIMO JOGO
+                        </span>
+
+                        <strong>
+                            SEPTA 7
+                        </strong>
+
+                    </div>
+
+                    <b id="nextGameCompetition">
+                        —
+                    </b>
+
+                </div>
+
+
+                <div
+                    id="nextGameBody"
+                    class="next-game-body"
+                >
+                </div>
+
+
+                <div class="next-game-footer">
+
+                    <span id="nextGameDate">
+                        SEM DATA
+                    </span>
+
+                    <span id="nextGameLocation">
+                        LOCAL A DEFINIR
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="results-card">
+
+                <div class="profile-card-heading">
+
+                    <div>
+
+                        <span>
+                            ÚLTIMOS RESULTADOS
+                        </span>
+
+                        <strong>
+                            HISTÓRICO SEPTA 7
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="resultsList"
+                    class="results-list"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             TEMPORADAS
+             ===================================== -->
+
+        <section
+            id="temporadas"
+            class="profile-section light-section"
+        >
+
+            <div class="profile-section-heading">
+
+                <span>
+                    01
+                </span>
+
+                <h2>
+                    TEMPORADAS
+                    <strong>SEPTA 7.</strong>
+                </h2>
+
+            </div>
+
+
+            <div
+                id="seasonsGrid"
+                class="seasons-grid"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             ELENCO
+             ===================================== -->
+
+        <section
+            id="elenco"
+            class="profile-section dark-section"
+        >
+
+            <div class="profile-section-heading">
+
+                <span>
+                    02
+                </span>
+
+                <h2>
+                    QUEM ENTRA
+                    <strong>EM QUADRA.</strong>
+                </h2>
+
+            </div>
+
+
+            <div
+                id="squadGrid"
+                class="squad-grid"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             NÚMEROS
+             ===================================== -->
+
+        <section
+            id="numeros"
+            class="profile-section numbers-section"
+        >
+
+            <div class="profile-section-heading">
+
+                <span>
+                    03
+                </span>
+
+                <h2>
+                    OS
+                    <strong>NÚMEROS.</strong>
+                </h2>
+
+            </div>
+
+
+            <div class="numbers-grid">
+
+                <div>
+                    <span>JOGOS</span>
+                    <strong id="statGames">0</strong>
+                </div>
+
+                <div>
+                    <span>VITÓRIAS</span>
+                    <strong id="statWins">0</strong>
+                </div>
+
+                <div>
+                    <span>EMPATES</span>
+                    <strong id="statDraws">0</strong>
+                </div>
+
+                <div>
+                    <span>DERROTAS</span>
+                    <strong id="statLosses">0</strong>
+                </div>
+
+                <div>
+                    <span>GOLS MARCADOS</span>
+                    <strong id="statGoalsFor">0</strong>
+                </div>
+
+                <div>
+                    <span>GOLS SOFRIDOS</span>
+                    <strong id="statGoalsAgainst">0</strong>
+                </div>
+
+                <div>
+                    <span>SALDO</span>
+                    <strong id="statGoalDifference">0</strong>
+                </div>
+
+                <div>
+                    <span>APROVEITAMENTO</span>
+                    <strong id="statPerformance">0%</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             APP
+             ===================================== -->
+
+        <section class="profile-app">
+
+            <div>
+
+                <span>
+                    APP QUA4TRO
+                </span>
+
+                <h2>
+                    SEPTA 7
+                    <strong>NA SUA MÃO.</strong>
+                </h2>
+
+            </div>
+
+
+            <a
+                href="https://qua4tro.expo.app/"
+                target="_blank"
+                rel="noopener"
+                onclick="trackQua4tro('acessar_app', 'perfil_clube_septa7')"
+            >
+                ACESSAR APP
+                <b>→</b>
+            </a>
+
+        </section>
+
+
+        <!-- =====================================
+             FOOTER
+             ===================================== -->
+
+        <footer class="septa-footer">
+
+            <div class="footer-main">
+
+                <img
+                    src="/images/Logo Septa7.svg"
+                    alt="SEPTA 7"
+                >
+
+
+                <div>
+
+                    <span>
+                        UMA DIVISÃO
+                    </span>
+
+                    <a href="/">
+                        QUA4TRO BRASIL
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-slogan">
+                JOGUE COM O CORAÇÃO.
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 SEPTA 7 / QUA4TRO BRASIL
+                </span>
+
+                <a href="#">
+                    VOLTAR AO TOPO ↑
+                </a>
+
+            </div>
+
+        </footer>
+
+
+    </div>
+
+
+    <!-- =========================================
+         SUPABASE
+         ========================================= -->
+
+    <script>
+
+        const SUPABASE_URL =
+            'https://ktqhtqsrawlwgirtuywi.supabase.co';
+
+
+        const SUPABASE_PUBLISHABLE_KEY =
+            'sb_publishable_6NJzlToCY2icHCM2VQGZJA_9Ci8MVCL';
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_PUBLISHABLE_KEY
+            );
+
+
+        const profileLoading =
+            document.getElementById(
+                'profileLoading'
+            );
+
+
+        const profileError =
+            document.getElementById(
+                'profileError'
+            );
+
+
+        const profileErrorText =
+            document.getElementById(
+                'profileErrorText'
+            );
+
+
+        const profileContent =
+            document.getElementById(
+                'profileContent'
+            );
+
+
+        let equipeAtual =
+            null;
+
+
+        let jogosEquipe =
+            [];
+
+
+        let campeonatosMap =
+            {};
+
+
+        function normalizar(valor) {
+
+            return String(valor || '')
+                .normalize('NFD')
+                .replace(
+                    /[\u0300-\u036f]/g,
+                    ''
+                )
+                .trim()
+                .toLowerCase();
+
+        }
+
+
+        function slugAtual() {
+
+            const params =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+
+            const querySlug =
+                params.get(
+                    'slug'
+                );
+
+
+            if (
+                querySlug
+            ) {
+                return querySlug;
+            }
+
+
+            const partes =
+                window.location.pathname
+                    .split('/')
+                    .filter(Boolean);
+
+
+            if (
+                partes[0] === 'septa7' &&
+                partes[1] === 'times' &&
+                partes[2] &&
+                partes[2] !== 'perfil'
+            ) {
+
+                return partes[2];
+
+            }
+
+
+            return null;
+
+        }
+
+
+        function iniciais(
+            clube
+        ) {
+
+            if (
+                clube.sigla &&
+                String(
+                    clube.sigla
+                ).trim()
+            ) {
+
+                return String(
+                    clube.sigla
+                )
+                    .trim()
+                    .substring(0, 3)
+                    .toUpperCase();
+
+            }
+
+
+            const partes =
+                String(
+                    clube.nome || 'CLUBE'
+                )
+                    .trim()
+                    .split(/\s+/)
+                    .filter(Boolean);
+
+
+            if (
+                partes.length === 1
+            ) {
+
+                return partes[0]
+                    .substring(0, 3)
+                    .toUpperCase();
+
+            }
+
+
+            return (
+                partes[0][0] +
+                partes[
+                    partes.length - 1
+                ][0]
+            ).toUpperCase();
+
+        }
+
+
+        function statusFinalizado(
+            jogo
+        ) {
+
+            return [
+                'finalizado',
+                'encerrado',
+                'concluido'
+            ].includes(
+                normalizar(
+                    jogo.status
+                )
+            );
+
+        }
+
+
+        function formatarData(
+            data
+        ) {
+
+            if (!data) {
+                return null;
+            }
+
+
+            return new Date(
+                `${data}T12:00:00`
+            ).toLocaleDateString(
+                'pt-BR'
+            );
+
+        }
+
+
+        function formatarHorario(
+            horario
+        ) {
+
+            if (!horario) {
+                return null;
+            }
+
+
+            return String(
+                horario
+            ).substring(
+                0,
+                5
+            );
+
+        }
+
+
+        function nomeCampeonato(
+            id
+        ) {
+
+            return campeonatosMap[id]?.nome ||
+                'SEPTA 7';
+
+        }
+
+
+        function criarEscudo(
+            clube,
+            classe
+        ) {
+
+            const container =
+                document.createElement(
+                    'div'
+                );
+
+
+            container.className =
+                classe;
+
+
+            if (
+                clube?.escudo &&
+                /^https?:\/\//i.test(
+                    clube.escudo
+                )
+            ) {
+
+                const img =
+                    document.createElement(
+                        'img'
+                    );
+
+
+                img.src =
+                    clube.escudo;
+
+
+                img.alt =
+                    clube.nome;
+
+
+                img.onerror =
+                    () => {
+
+                        img.remove();
+
+                        container.textContent =
+                            iniciais(
+                                clube
+                            );
+
+                    };
+
+
+                container.appendChild(
+                    img
+                );
+
+            } else {
+
+                container.textContent =
+                    clube
+                        ? iniciais(
+                            clube
+                        )
+                        : '—';
+
+            }
+
+
+            return container;
+
+        }
+
+
+        function montarHero(
+            clube,
+            filiacao,
+            campeonatoAtual
+        ) {
+
+            document.title =
+                `${clube.nome} | SEPTA 7`;
+
+
+            document.getElementById(
+                'profileName'
+            ).textContent =
+                clube.nome;
+
+
+            document.getElementById(
+                'profileDescription'
+            ).textContent =
+                clube.descricao ||
+                'Clube filiado à SEPTA 7.';
+
+
+            document.getElementById(
+                'profileCategory'
+            ).textContent =
+                String(
+                    filiacao?.categoria ||
+                    clube.sexo ||
+                    'SEPTA 7'
+                ).toUpperCase();
+
+
+            const cidade =
+                [
+                    clube.cidade,
+                    clube.estado
+                ]
+                .filter(Boolean)
+                .join(' / ');
+
+
+            document.getElementById(
+                'profileCity'
+            ).textContent =
+                cidade ||
+                'LOCAL NÃO INFORMADO';
+
+
+            document.getElementById(
+                'profileFounded'
+            ).textContent =
+                clube.ano_fundacao
+                    ? `DESDE ${clube.ano_fundacao}`
+                    : 'FUNDAÇÃO NÃO INFORMADA';
+
+
+            document.getElementById(
+                'profileStatus'
+            ).textContent =
+                clube.ativo
+                    ? 'ATIVO'
+                    : 'INATIVO';
+
+
+            document.getElementById(
+                'profileAffiliation'
+            ).textContent =
+                String(
+                    filiacao?.status ||
+                    '—'
+                ).toUpperCase();
+
+
+            document.getElementById(
+                'profileCompetition'
+            ).textContent =
+                campeonatoAtual?.nome ||
+                'SEM COMPETIÇÃO ATUAL';
+
+
+            const emblem =
+                document.getElementById(
+                    'profileEmblem'
+                );
+
+
+            emblem.innerHTML =
+                '';
+
+
+            const escudo =
+                criarEscudo(
+                    clube,
+                    'profile-emblem-inner'
+                );
+
+
+            while (
+                escudo.firstChild
+            ) {
+
+                emblem.appendChild(
+                    escudo.firstChild
+                );
+
+            }
+
+
+            if (
+                !emblem.children.length
+            ) {
+
+                emblem.textContent =
+                    escudo.textContent;
+
+            }
+
+
+            const instagram =
+                document.getElementById(
+                    'profileInstagram'
+                );
+
+
+            if (
+                clube.instagram
+            ) {
+
+                instagram.href =
+                    clube.instagram;
+
+
+                instagram.hidden =
+                    false;
+
+
+                instagram.addEventListener(
+                    'click',
+                    () => {
+
+                        trackQua4tro(
+                            'instagram_clube_septa7',
+                            clube.slug
+                        );
+
+                    }
+                );
+
+            }
+
+        }
+
+
+        function calcularEstatisticas() {
+
+            const finalizados =
+                jogosEquipe.filter(
+                    statusFinalizado
+                );
+
+
+            let vitorias =
+                0;
+
+
+            let empates =
+                0;
+
+
+            let derrotas =
+                0;
+
+
+            let golsPro =
+                0;
+
+
+            let golsContra =
+                0;
+
+
+            finalizados.forEach(
+                jogo => {
+
+                    const casa =
+                        jogo.equipe_casa_id ===
+                        equipeAtual.id;
+
+
+                    const pro =
+                        casa
+                            ? Number(
+                                jogo.gols_casa || 0
+                            )
+                            : Number(
+                                jogo.gols_fora || 0
+                            );
+
+
+                    const contra =
+                        casa
+                            ? Number(
+                                jogo.gols_fora || 0
+                            )
+                            : Number(
+                                jogo.gols_casa || 0
+                            );
+
+
+                    golsPro +=
+                        pro;
+
+
+                    golsContra +=
+                        contra;
+
+
+                    if (
+                        pro > contra
+                    ) {
+
+                        vitorias++;
+
+                    } else if (
+                        pro === contra
+                    ) {
+
+                        empates++;
+
+                    } else {
+
+                        derrotas++;
+
+                    }
+
+                }
+            );
+
+
+            const jogos =
+                finalizados.length;
+
+
+            const aproveitamento =
+                jogos > 0
+                    ? Math.round(
+                        (
+                            (
+                                vitorias * 3 +
+                                empates
+                            ) /
+                            (
+                                jogos * 3
+                            )
+                        ) * 100
+                    )
+                    : 0;
+
+
+            const saldo =
+                golsPro -
+                golsContra;
+
+
+            document.getElementById(
+                'quickGames'
+            ).textContent =
+                jogos;
+
+
+            document.getElementById(
+                'quickWins'
+            ).textContent =
+                vitorias;
+
+
+            document.getElementById(
+                'quickGoals'
+            ).textContent =
+                golsPro;
+
+
+            document.getElementById(
+                'statGames'
+            ).textContent =
+                jogos;
+
+
+            document.getElementById(
+                'statWins'
+            ).textContent =
+                vitorias;
+
+
+            document.getElementById(
+                'statDraws'
+            ).textContent =
+                empates;
+
+
+            document.getElementById(
+                'statLosses'
+            ).textContent =
+                derrotas;
+
+
+            document.getElementById(
+                'statGoalsFor'
+            ).textContent =
+                golsPro;
+
+
+            document.getElementById(
+                'statGoalsAgainst'
+            ).textContent =
+                golsContra;
+
+
+            document.getElementById(
+                'statGoalDifference'
+            ).textContent =
+                saldo > 0
+                    ? `+${saldo}`
+                    : saldo;
+
+
+            document.getElementById(
+                'statPerformance'
+            ).textContent =
+                `${aproveitamento}%`;
+
+        }
+
+
+        function renderizarProximoJogo(
+            equipesMap
+        ) {
+
+            const futuros =
+                jogosEquipe
+                    .filter(
+                        jogo =>
+                            !statusFinalizado(
+                                jogo
+                            ) &&
+                            ![
+                                'cancelado',
+                                'cancelada'
+                            ].includes(
+                                normalizar(
+                                    jogo.status
+                                )
+                            )
+                    )
+                    .sort(
+                        (a, b) => {
+
+                            if (
+                                !a.data &&
+                                !b.data
+                            ) {
+                                return 0;
+                            }
+
+
+                            if (!a.data) {
+                                return 1;
+                            }
+
+
+                            if (!b.data) {
+                                return -1;
+                            }
+
+
+                            return new Date(
+                                a.data
+                            ) - new Date(
+                                b.data
+                            );
+
+                        }
+                    );
+
+
+            const jogo =
+                futuros[0];
+
+
+            const body =
+                document.getElementById(
+                    'nextGameBody'
+                );
+
+
+            body.innerHTML =
+                '';
+
+
+            if (!jogo) {
+
+                body.innerHTML = `
+
+                    <div class="no-next-game">
+                        <span>—</span>
+
+                        <strong>
+                            NENHUM PRÓXIMO JOGO DEFINIDO
+                        </strong>
+                    </div>
+
+                `;
+
+
+                document.getElementById(
+                    'nextGameCompetition'
+                ).textContent =
+                    '—';
+
+
+                document.getElementById(
+                    'nextGameDate'
+                ).textContent =
+                    'SEM DATA';
+
+
+                document.getElementById(
+                    'nextGameLocation'
+                ).textContent =
+                    'LOCAL A DEFINIR';
+
+
+                return;
+
+            }
+
+
+            const casa =
+                equipesMap[
+                    jogo.equipe_casa_id
+                ];
+
+
+            const fora =
+                equipesMap[
+                    jogo.equipe_fora_id
+                ];
+
+
+            const blocoCasa =
+                document.createElement(
+                    'div'
+                );
+
+
+            blocoCasa.className =
+                'next-team';
+
+
+            blocoCasa.appendChild(
+                criarEscudo(
+                    casa,
+                    'next-team-emblem'
+                )
+            );
+
+
+            const nomeCasa =
+                document.createElement(
+                    'strong'
+                );
+
+
+            nomeCasa.textContent =
+                casa?.nome ||
+                'A DEFINIR';
+
+
+            blocoCasa.appendChild(
+                nomeCasa
+            );
+
+
+            const centro =
+                document.createElement(
+                    'div'
+                );
+
+
+            centro.className =
+                'next-versus';
+
+
+            centro.innerHTML = `
+
+                <span>
+                    PRÓXIMA PARTIDA
+                </span>
+
+                <strong>
+                    ×
+                </strong>
+
+            `;
+
+
+            const blocoFora =
+                document.createElement(
+                    'div'
+                );
+
+
+            blocoFora.className =
+                'next-team';
+
+
+            blocoFora.appendChild(
+                criarEscudo(
+                    fora,
+                    'next-team-emblem'
+                )
+            );
+
+
+            const nomeFora =
+                document.createElement(
+                    'strong'
+                );
+
+
+            nomeFora.textContent =
+                fora?.nome ||
+                'A DEFINIR';
+
+
+            blocoFora.appendChild(
+                nomeFora
+            );
+
+
+            body.append(
+                blocoCasa,
+                centro,
+                blocoFora
+            );
+
+
+            document.getElementById(
+                'nextGameCompetition'
+            ).textContent =
+                nomeCampeonato(
+                    jogo.campeonato_id
+                );
+
+
+            const detalhes =
+                [
+                    formatarData(
+                        jogo.data
+                    ),
+                    formatarHorario(
+                        jogo.horario
+                    )
+                ]
+                .filter(Boolean)
+                .join(' • ');
+
+
+            document.getElementById(
+                'nextGameDate'
+            ).textContent =
+                detalhes ||
+                'SEM DATA';
+
+
+            document.getElementById(
+                'nextGameLocation'
+            ).textContent =
+                jogo.local
+                    ? jogo.local.toUpperCase()
+                    : 'LOCAL A DEFINIR';
+
+        }
+
+
+        function renderizarResultados(
+            equipesMap
+        ) {
+
+            const container =
+                document.getElementById(
+                    'resultsList'
+                );
+
+
+            container.innerHTML =
+                '';
+
+
+            const resultados =
+                jogosEquipe
+                    .filter(
+                        statusFinalizado
+                    )
+                    .sort(
+                        (a, b) =>
+                            new Date(
+                                b.data || 0
+                            ) -
+                            new Date(
+                                a.data || 0
+                            )
+                    )
+                    .slice(
+                        0,
+                        5
+                    );
+
+
+            if (
+                resultados.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div class="empty-result">
+                        NENHUM RESULTADO REGISTRADO
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            resultados.forEach(
+                jogo => {
+
+                    const casa =
+                        equipesMap[
+                            jogo.equipe_casa_id
+                        ];
+
+
+                    const fora =
+                        equipesMap[
+                            jogo.equipe_fora_id
+                        ];
+
+
+                    const item =
+                        document.createElement(
+                            'div'
+                        );
+
+
+                    item.className =
+                        'result-item';
+
+
+                    item.innerHTML = `
+
+                        <span>
+                            ${
+                                formatarData(
+                                    jogo.data
+                                ) ||
+                                'SEM DATA'
+                            }
+                        </span>
+
+                        <strong>
+                            ${
+                                casa?.nome ||
+                                'A DEFINIR'
+                            }
+                            ${jogo.gols_casa ?? 0}
+                            ×
+                            ${jogo.gols_fora ?? 0}
+                            ${
+                                fora?.nome ||
+                                'A DEFINIR'
+                            }
+                        </strong>
+
+                        <small>
+                            ${
+                                nomeCampeonato(
+                                    jogo.campeonato_id
+                                )
+                            }
+                        </small>
+
+                    `;
+
+
+                    container.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+        }
+
+
+        function renderizarTemporadas(
+            participacoes,
+            campeonatos
+        ) {
+
+            const grid =
+                document.getElementById(
+                    'seasonsGrid'
+                );
+
+
+            grid.innerHTML =
+                '';
+
+
+            const temporadas =
+                campeonatos
+                    .filter(
+                        campeonato =>
+                            participacoes.some(
+                                participacao =>
+                                    participacao.campeonato_id ===
+                                    campeonato.id
+                            )
+                    )
+                    .sort(
+                        (a, b) =>
+                            String(
+                                b.temporada || ''
+                            ).localeCompare(
+                                String(
+                                    a.temporada || ''
+                                )
+                            )
+                    );
+
+
+            document.getElementById(
+                'quickSeasons'
+            ).textContent =
+                new Set(
+                    temporadas.map(
+                        item =>
+                            item.temporada
+                    )
+                ).size;
+
+
+            if (
+                temporadas.length === 0
+            ) {
+
+                grid.innerHTML = `
+
+                    <div class="empty-section-card">
+                        NENHUMA TEMPORADA REGISTRADA
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            temporadas.forEach(
+                campeonato => {
+
+                    const participacao =
+                        participacoes.find(
+                            item =>
+                                item.campeonato_id ===
+                                campeonato.id
+                        );
+
+
+                    const card =
+                        document.createElement(
+                            'article'
+                        );
+
+
+                    card.className =
+                        'season-card';
+
+
+                    card.innerHTML = `
+
+                        <span>
+                            ${campeonato.temporada || '—'}
+                        </span>
+
+                        <h3>
+                            ${campeonato.nome}
+                        </h3>
+
+                        <p>
+                            ${
+                                String(
+                                    participacao?.categoria ||
+                                    'SEPTA 7'
+                                ).toUpperCase()
+                            }
+                        </p>
+
+                        <div>
+                            ${
+                                String(
+                                    campeonato.status ||
+                                    '—'
+                                )
+                                    .replace(
+                                        /_/g,
+                                        ' '
+                                    )
+                                    .toUpperCase()
+                            }
+                        </div>
+
+                    `;
+
+
+                    grid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+        function renderizarElenco(
+            atletas
+        ) {
+
+            const grid =
+                document.getElementById(
+                    'squadGrid'
+                );
+
+
+            grid.innerHTML =
+                '';
+
+
+            if (
+                atletas.length === 0
+            ) {
+
+                grid.innerHTML = `
+
+                    <div class="empty-squad">
+                        <span>ELENCO</span>
+
+                        <strong>
+                            AINDA NÃO CADASTRADO
+                        </strong>
+
+                        <p>
+                            Os atletas SEPTA 7 deste clube
+                            aparecerão aqui.
+                        </p>
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            atletas.forEach(
+                atleta => {
+
+                    const card =
+                        document.createElement(
+                            'article'
+                        );
+
+
+                    card.className =
+                        'athlete-card';
+
+
+                    const foto =
+                        document.createElement(
+                            'div'
+                        );
+
+
+                    foto.className =
+                        'athlete-photo';
+
+
+                    if (
+                        atleta.foto &&
+                        /^https?:\/\//i.test(
+                            atleta.foto
+                        )
+                    ) {
+
+                        const img =
+                            document.createElement(
+                                'img'
+                            );
+
+
+                        img.src =
+                            atleta.foto;
+
+
+                        img.alt =
+                            atleta.nome;
+
+
+                        foto.appendChild(
+                            img
+                        );
+
+                    } else {
+
+                        foto.textContent =
+                            atleta.numero
+                                ? String(
+                                    atleta.numero
+                                )
+                                : '7';
+
+                    }
+
+
+                    const info =
+                        document.createElement(
+                            'div'
+                        );
+
+
+                    info.className =
+                        'athlete-info';
+
+
+                    info.innerHTML = `
+
+                        <span>
+                            ${
+                                atleta.posicao
+                                    ? atleta.posicao.toUpperCase()
+                                    : 'ATLETA'
+                            }
+                        </span>
+
+                        <h3>
+                            ${atleta.nome}
+                        </h3>
+
+                        <p>
+                            ${
+                                atleta.numero
+                                    ? `#${atleta.numero}`
+                                    : 'SEPTA 7'
+                            }
+                        </p>
+
+                    `;
+
+
+                    card.append(
+                        foto,
+                        info
+                    );
+
+
+                    grid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+        async function carregarPerfil() {
+
+            try {
+
+                const slug =
+                    slugAtual();
+
+
+                if (!slug) {
+
+                    throw new Error(
+                        'Clube não informado.'
+                    );
+
+                }
+
+
+                const {
+                    data: clube,
+                    error: clubeError
+                } =
+                    await supabaseClient
+                        .from(
+                            'equipes'
+                        )
+                        .select(`
+                            id,
+                            nome,
+                            nome_completo,
+                            slug,
+                            sigla,
+                            escudo,
+                            cidade,
+                            estado,
+                            sexo,
+                            ativo,
+                            instagram,
+                            ano_fundacao,
+                            descricao
+                        `)
+                        .eq(
+                            'slug',
+                            slug
+                        )
+                        .maybeSingle();
+
+
+                if (
+                    clubeError
+                ) {
+                    throw clubeError;
+                }
+
+
+                if (
+                    !clube
+                ) {
+
+                    throw new Error(
+                        'Clube não encontrado.'
+                    );
+
+                }
+
+
+                equipeAtual =
+                    clube;
+
+
+                const {
+                    data: filiacao,
+                    error: filiacaoError
+                } =
+                    await supabaseClient
+                        .from(
+                            'filiacoes_septa7'
+                        )
+                        .select(`
+                            equipe_id,
+                            status,
+                            categoria,
+                            data_filiacao
+                        `)
+                        .eq(
+                            'equipe_id',
+                            clube.id
+                        )
+                        .maybeSingle();
+
+
+                if (
+                    filiacaoError
+                ) {
+                    throw filiacaoError;
+                }
+
+
+                if (
+                    !filiacao
+                ) {
+
+                    throw new Error(
+                        'Este clube não está filiado à SEPTA 7.'
+                    );
+
+                }
+
+
+                const {
+                    data: participacoes,
+                    error: participacoesError
+                } =
+                    await supabaseClient
+                        .from(
+                            'participacoes_septa7'
+                        )
+                        .select(`
+                            equipe_id,
+                            campeonato_id,
+                            status,
+                            categoria
+                        `)
+                        .eq(
+                            'equipe_id',
+                            clube.id
+                        );
+
+
+                if (
+                    participacoesError
+                ) {
+                    throw participacoesError;
+                }
+
+
+                const campeonatoIds =
+                    [
+                        ...new Set(
+                            (
+                                participacoes || []
+                            )
+                                .map(
+                                    item =>
+                                        item.campeonato_id
+                                )
+                                .filter(Boolean)
+                        )
+                    ];
+
+
+                let campeonatos =
+                    [];
+
+
+                if (
+                    campeonatoIds.length > 0
+                ) {
+
+                    const {
+                        data,
+                        error
+                    } =
+                        await supabaseClient
+                            .from(
+                                'campeonatos'
+                            )
+                            .select(`
+                                id,
+                                nome,
+                                temporada,
+                                descricao,
+                                data_inicio,
+                                data_fim,
+                                status,
+                                formato,
+                                slug,
+                                modalidade
+                            `)
+                            .in(
+                                'id',
+                                campeonatoIds
+                            )
+                            .eq(
+                                'modalidade',
+                                'septa7'
+                            );
+
+
+                    if (
+                        error
+                    ) {
+                        throw error;
+                    }
+
+
+                    campeonatos =
+                        data || [];
+
+                }
+
+
+                campeonatosMap =
+                    {};
+
+
+                campeonatos.forEach(
+                    campeonato => {
+
+                        campeonatosMap[
+                            campeonato.id
+                        ] = campeonato;
+
+                    }
+                );
+
+
+                const campeonatoAtual =
+                    campeonatos
+                        .filter(
+                            item =>
+                                [
+                                    'planejado',
+                                    'em_andamento'
+                                ].includes(
+                                    normalizar(
+                                        item.status
+                                    )
+                                )
+                        )
+                        .sort(
+                            (a, b) => {
+
+                                if (
+                                    normalizar(
+                                        a.status
+                                    ) ===
+                                    'em_andamento'
+                                ) {
+                                    return -1;
+                                }
+
+
+                                if (
+                                    normalizar(
+                                        b.status
+                                    ) ===
+                                    'em_andamento'
+                                ) {
+                                    return 1;
+                                }
+
+
+                                return 0;
+
+                            }
+                        )[0] ||
+                        null;
+
+
+                const {
+                    data: jogos,
+                    error: jogosError
+                } =
+                    await supabaseClient
+                        .from(
+                            'jogos'
+                        )
+                        .select(`
+                            id,
+                            campeonato_id,
+                            equipe_casa_id,
+                            equipe_fora_id,
+                            data,
+                            horario,
+                            local,
+                            gols_casa,
+                            gols_fora,
+                            status,
+                            rodada,
+                            fase,
+                            grupo,
+                            ordem_chave,
+                            modalidade
+                        `)
+                        .eq(
+                            'modalidade',
+                            'septa7'
+                        )
+                        .or(
+                            `equipe_casa_id.eq.${clube.id},equipe_fora_id.eq.${clube.id}`
+                        );
+
+
+                if (
+                    jogosError
+                ) {
+                    throw jogosError;
+                }
+
+
+                jogosEquipe =
+                    jogos || [];
+
+
+                const outrosIds =
+                    [
+                        ...new Set(
+                            jogosEquipe
+                                .flatMap(
+                                    jogo => [
+                                        jogo.equipe_casa_id,
+                                        jogo.equipe_fora_id
+                                    ]
+                                )
+                                .filter(Boolean)
+                        )
+                    ];
+
+
+                let equipesJogos =
+                    [];
+
+
+                if (
+                    outrosIds.length > 0
+                ) {
+
+                    const {
+                        data,
+                        error
+                    } =
+                        await supabaseClient
+                            .from(
+                                'equipes'
+                            )
+                            .select(`
+                                id,
+                                nome,
+                                slug,
+                                sigla,
+                                escudo
+                            `)
+                            .in(
+                                'id',
+                                outrosIds
+                            );
+
+
+                    if (
+                        error
+                    ) {
+                        throw error;
+                    }
+
+
+                    equipesJogos =
+                        data || [];
+
+                }
+
+
+                const equipesMap =
+                    {};
+
+
+                equipesJogos.forEach(
+                    item => {
+
+                        equipesMap[
+                            item.id
+                        ] = item;
+
+                    }
+                );
+
+
+                const {
+                    data: atletas,
+                    error: atletasError
+                } =
+                    await supabaseClient
+                        .from(
+                            'atletas'
+                        )
+                        .select(`
+                            id,
+                            nome,
+                            foto,
+                            data_nascimento,
+                            posicao,
+                            numero,
+                            equipe_id,
+                            instagram,
+                            modalidade
+                        `)
+                        .eq(
+                            'equipe_id',
+                            clube.id
+                        )
+                        .eq(
+                            'modalidade',
+                            'septa7'
+                        )
+                        .order(
+                            'numero',
+                            {
+                                ascending: true
+                            }
+                        );
+
+
+                if (
+                    atletasError
+                ) {
+                    throw atletasError;
+                }
+
+
+                montarHero(
+                    clube,
+                    filiacao,
+                    campeonatoAtual
+                );
+
+
+                calcularEstatisticas();
+
+
+                renderizarProximoJogo(
+                    equipesMap
+                );
+
+
+                renderizarResultados(
+                    equipesMap
+                );
+
+
+                renderizarTemporadas(
+                    participacoes || [],
+                    campeonatos
+                );
+
+
+                renderizarElenco(
+                    atletas || []
+                );
+
+
+                profileLoading.hidden =
+                    true;
+
+
+                profileError.hidden =
+                    true;
+
+
+                profileContent.hidden =
+                    false;
+
+
+            } catch (error) {
+
+                console.error(
+                    'Erro perfil SEPTA 7:',
+                    error
+                );
+
+
+                profileLoading.hidden =
+                    true;
+
+
+                profileContent.hidden =
+                    true;
+
+
+                profileError.hidden =
+                    false;
+
+
+                profileErrorText.textContent =
+                    error?.message ||
+                    'Não foi possível carregar o clube.';
+
+            }
+
+        }
+
+
+        carregarPerfil();
+
+    </script>
+
+
+</body>
+
+</html>
