@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9X7K9MSXQ"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-N9X7K9MSXQ');
+
+        function trackQua4tro(eventName, locationName) {
+            gtag('event', eventName, {
+                cta_location: locationName
+            });
+        }
+    </script>
+
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Clubes | LIRFUT</title>
+
+    <meta
+        name="description"
+        content="Conheça os clubes da LIRFUT. Perfis, histórico, competições, atletas, jogos e estatísticas."
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <link
+        rel="canonical"
+        href="https://qua4tro.com.br/lirfut/times/"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../images/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/lirfut.css?v=4"
+    >
+
+</head>
+
+
+<body class="clubs-page">
+
+
+    <!-- =========================================
+         QUA4TRO
+         ========================================= -->
+
+    <div class="qua4tro-bar">
+
+        <a
+            href="../../"
+            class="qua4tro-back"
+        >
+            ← QUA4TRO BRASIL
+        </a>
+
+
+        <div class="qua4tro-bar-right">
+
+            <a href="../">
+                LIRFUT
+            </a>
+
+            <a
+                href="https://qua4tro.expo.app/"
+                target="_blank"
+                rel="noopener"
+                onclick="trackQua4tro('acessar_app', 'clubes_lirfut')"
+            >
+                APP QUA4TRO
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         HEADER
+         ========================================= -->
+
+    <header class="lirfut-header">
+
+        <a
+            href="../"
+            class="lirfut-brand"
+        >
+
+            <div class="lirfut-logo-shell">
+
+                <img
+                    src="../../images/Logo Lirfut.svg"
+                    alt="LIRFUT"
+                >
+
+            </div>
+
+        </a>
+
+
+        <nav class="lirfut-nav">
+
+            <a href="../#jogos">
+                JOGOS
+            </a>
+
+            <a href="../#chave">
+                CHAVE
+            </a>
+
+            <a
+                href="./"
+                class="nav-current"
+            >
+                CLUBES
+            </a>
+
+            <a href="../#midia">
+                MÍDIA
+            </a>
+
+        </nav>
+
+
+        <a
+            href="../#filiacao-lirfut"
+            class="header-affiliation"
+        >
+            FILIE-SE
+        </a>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO CLUBES
+             ========================================= -->
+
+        <section class="clubs-hero">
+
+            <div class="clubs-hero-number">
+                C
+            </div>
+
+
+            <div class="clubs-hero-content">
+
+                <span class="eyebrow">
+                    LIRFUT
+                </span>
+
+                <h1>
+                    CLUBES
+                    <strong>LIRFUT.</strong>
+                </h1>
+
+                <p>
+                    Todos os clubes que fazem parte da história
+                    da LIRFUT em um único lugar.
+                </p>
+
+            </div>
+
+
+            <div class="clubs-principle">
+
+                <span>
+                    UM CLUBE. UMA HISTÓRIA.
+                </span>
+
+                <p>
+                    O perfil do clube permanece na LIRFUT
+                    independentemente da competição,
+                    divisão ou temporada em que esteja.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FILTROS
+             ========================================= -->
+
+        <section class="clubs-directory">
+
+            <div class="clubs-directory-heading">
+
+                <div>
+
+                    <span>
+                        DIRETÓRIO
+                    </span>
+
+                    <h2>
+                        ENCONTRE
+                        <strong>SEU CLUBE.</strong>
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="../#filiacao-lirfut"
+                    class="directory-join"
+                >
+                    FILIE SUA EQUIPE
+                    <span>→</span>
+                </a>
+
+            </div>
+
+
+            <div class="club-filters">
+
+                <button
+                    type="button"
+                    class="club-filter active"
+                    data-filter="all"
+                >
+                    TODOS
+                </button>
+
+                <button
+                    type="button"
+                    class="club-filter"
+                    data-filter="copa"
+                >
+                    COPA LIRFUT 2026
+                </button>
+
+                <button
+                    type="button"
+                    class="club-filter"
+                    data-filter="filiado"
+                >
+                    FILIADOS
+                </button>
+
+                <button
+                    type="button"
+                    class="club-filter future-filter"
+                    disabled
+                >
+                    1ª DIVISÃO
+                    <small>EM BREVE</small>
+                </button>
+
+                <button
+                    type="button"
+                    class="club-filter future-filter"
+                    disabled
+                >
+                    2ª DIVISÃO
+                    <small>EM BREVE</small>
+                </button>
+
+            </div>
+
+
+            <!-- =====================================
+                 GRID DE CLUBES
+                 ===================================== -->
+
+            <div
+                class="clubs-master-grid"
+                id="clubsGrid"
+            >
+
+
+                <!-- PERFIL MODELO -->
+
+                <a
+                    href="time-01/"
+                    class="club-master-card"
+                    data-category="copa filiado"
+                >
+
+                    <span class="club-master-number">
+                        01
+                    </span>
+
+                    <span class="club-status active-status">
+                        PERFIL DISPONÍVEL
+                    </span>
+
+
+                    <div class="club-master-emblem active-master-emblem">
+                        01
+                    </div>
+
+
+                    <div class="club-master-content">
+
+                        <span>
+                            CLUBE LIRFUT
+                        </span>
+
+                        <h3>
+                            TIME 01
+                        </h3>
+
+                        <p>
+                            CIDADE / SP
+                        </p>
+
+                    </div>
+
+
+                    <div class="club-master-footer">
+
+                        <span>
+                            COPA LIRFUT 2026
+                        </span>
+
+                        <strong>
+                            VER PERFIL →
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <!-- CLUBE 02 -->
+
+                <div
+                    class="club-master-card club-master-placeholder"
+                    data-category="copa"
+                >
+
+                    <span class="club-master-number">
+                        02
+                    </span>
+
+                    <span class="club-status">
+                        AGUARDANDO
+                    </span>
+
+                    <div class="club-master-emblem">
+                        02
+                    </div>
+
+                    <div class="club-master-content">
+
+                        <span>
+                            CLUBE LIRFUT
+                        </span>
+
+                        <h3>
+                            EM DEFINIÇÃO
+                        </h3>
+
+                        <p>
+                            CIDADE / SP
+                        </p>
+
+                    </div>
+
+                    <div class="club-master-footer">
+
+                        <span>
+                            COPA LIRFUT 2026
+                        </span>
+
+                        <strong>
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLUBE 03 -->
+
+                <div
+                    class="club-master-card club-master-placeholder"
+                    data-category="copa"
+                >
+
+                    <span class="club-master-number">03</span>
+
+                    <span class="club-status">
+                        AGUARDANDO
+                    </span>
+
+                    <div class="club-master-emblem">
+                        03
+                    </div>
+
+                    <div class="club-master-content">
+
+                        <span>CLUBE LIRFUT</span>
+
+                        <h3>EM DEFINIÇÃO</h3>
+
+                        <p>CIDADE / SP</p>
+
+                    </div>
+
+                    <div class="club-master-footer">
+
+                        <span>
+                            COPA LIRFUT 2026
+                        </span>
+
+                        <strong>—</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLUBE 04 -->
+
+                <div
+                    class="club-master-card club-master-placeholder"
+                    data-category="copa"
+                >
+
+                    <span class="club-master-number">04</span>
+
+                    <span class="club-status">
+                        AGUARDANDO
+                    </span>
+
+                    <div class="club-master-emblem">
+                        04
+                    </div>
+
+                    <div class="club-master-content">
+
+                        <span>CLUBE LIRFUT</span>
+
+                        <h3>EM DEFINIÇÃO</h3>
+
+                        <p>CIDADE / SP</p>
+
+                    </div>
+
+                    <div class="club-master-footer">
+
+                        <span>
+                            COPA LIRFUT 2026
+                        </span>
+
+                        <strong>—</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLUBE 05 -->
+
+                <div
+                    class="club-master-card club-master-placeholder"
+                    data-category="copa"
+                >
+
+                    <span class="club-master-number">05</span>
+
+                    <span class="club-status">
+                        AGUARDANDO
+                    </span>
+
+                    <div class="club-master-emblem">
+                        05
+                    </div>
+
+                    <div class="club-master-content">
+
+                        <span>CLUBE LIRFUT</span>
+
+                        <h3>EM DEFINIÇÃO</h3>
+
+                        <p>CIDADE / SP</p>
+
+                    </div>
+
+                    <div class="club-master-footer">
+
+                        <span>
+                            COPA LIRFUT 2026
+                        </span>
+
+                        <strong>—</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLUBE 06 -->
+
+                <div
+                    class="club-master-card club-master-placeholder"
+                    data-category="copa"
+                >
+
+                    <span class="club-master-number">06</span>
+
+                    <span class="club-status">
+                        AGUARDANDO
+                    </span>
+
+                    <div class="club-master-emblem">
+                        06
+                    </div>
+
+                    <div class="club-master-content">
+
+                        <span>CLUBE LIRFUT</span>
+
+                        <h3>EM DEFINIÇÃO</h3>
+
+                        <p>CIDADE / SP</p>
+
+                    </div>
+
+                    <div class="club-master-footer">
+
+                        <span>
+                            COPA LIRFUT 2026
+                        </span>
+
+                        <strong>—</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLUBE 07 -->
+
+                <div
+                    class="club-master-card club-master-placeholder"
+                    data-category="copa"
+                >
+
+                    <span class="club-master-number">07</span>
+
+                    <span class="club-status">
+                        AGUARDANDO
+                    </span>
+
+                    <div class="club-master-emblem">
+                        07
+                    </div>
+
+                    <div class="club-master-content">
+
+                        <span>CLUBE LIRFUT</span>
+
+                        <h3>EM DEFINIÇÃO</h3>
+
+                        <p>CIDADE / SP</p>
+
+                    </div>
+
+                    <div class="club-master-footer">
+
+                        <span>
+                            COPA LIRFUT 2026
+                        </span>
+
+                        <strong>—</strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLUBE 08 -->
+
+                <div
+                    class="club-master-card club-master-placeholder"
+                    data-category="copa"
+                >
+
+                    <span class="club-master-number">08</span>
+
+                    <span class="club-status">
+                        AGUARDANDO
+                    </span>
+
+                    <div class="club-master-emblem">
+                        08
+                    </div>
+
+                    <div class="club-master-content">
+
+                        <span>CLUBE LIRFUT</span>
+
+                        <h3>EM DEFINIÇÃO</h3>
+
+                        <p>CIDADE / SP</p>
+
+                    </div>
+
+                    <div class="club-master-footer">
+
+                        <span>
+                            COPA LIRFUT 2026
+                        </span>
+
+                        <strong>—</strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =====================================
+                 NENHUM RESULTADO
+                 ===================================== -->
+
+            <div
+                class="clubs-empty"
+                id="clubsEmpty"
+            >
+
+                <strong>
+                    NENHUM CLUBE NESTA CATEGORIA.
+                </strong>
+
+                <p>
+                    Os clubes serão exibidos conforme
+                    a estrutura da LIRFUT for formada.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             ESTRUTURA FUTURA
+             ========================================= -->
+
+        <section class="clubs-future">
+
+            <div class="clubs-future-intro">
+
+                <span>
+                    ESTRUTURA LIRFUT
+                </span>
+
+                <h2>
+                    UM CLUBE.
+                    <strong>VÁRIAS TEMPORADAS.</strong>
+                </h2>
+
+                <p>
+                    Um clube poderá disputar diferentes competições
+                    e divisões ao longo dos anos sem perder seu
+                    perfil, seus números ou sua história.
+                </p>
+
+            </div>
+
+
+            <div class="future-structure-grid">
+
+                <div>
+
+                    <span>
+                        COPA
+                    </span>
+
+                    <strong>
+                        COPA LIRFUT
+                    </strong>
+
+                    <p>
+                        Competições eliminatórias
+                        dentro do calendário LIRFUT.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        LIGA
+                    </span>
+
+                    <strong>
+                        1ª DIVISÃO
+                    </strong>
+
+                    <p>
+                        Principal divisão da
+                        Liga LIRFUT.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        LIGA
+                    </span>
+
+                    <strong>
+                        2ª DIVISÃO
+                    </strong>
+
+                    <p>
+                        Acesso, disputa e desenvolvimento
+                        de novos clubes.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        HISTÓRIA
+                    </span>
+
+                    <strong>
+                        PERFIL PERMANENTE
+                    </strong>
+
+                    <p>
+                        Participações, temporadas,
+                        títulos e estatísticas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FILIAÇÃO
+             ========================================= -->
+
+        <section class="clubs-join">
+
+            <span>
+                FAÇA PARTE
+            </span>
+
+            <h2>
+                SEU CLUBE
+                <strong>AQUI.</strong>
+            </h2>
+
+            <p>
+                Filie sua equipe à LIRFUT e faça parte
+                do ecossistema esportivo Qua4tro.
+            </p>
+
+
+            <a
+                href="../#filiacao-lirfut"
+                class="join-button"
+            >
+                CONHECER A FILIAÇÃO
+                <span>→</span>
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="lirfut-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-logo-shell">
+
+                <img
+                    src="../../images/Logo Lirfut.svg"
+                    alt="LIRFUT"
+                >
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    UMA DIVISÃO
+                </span>
+
+                <a href="../../">
+                    QUA4TRO BRASIL
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="../">
+                LIRFUT
+            </a>
+
+            <a href="../#jogos">
+                Jogos
+            </a>
+
+            <a href="../#chave">
+                Chave
+            </a>
+
+            <a href="./">
+                Clubes
+            </a>
+
+            <a
+                href="https://www.instagram.com/lirfut.br/"
+                target="_blank"
+                rel="noopener"
+            >
+                Instagram
+            </a>
+
+            <a
+                href="https://www.youtube.com/@Qua4troTV"
+                target="_blank"
+                rel="noopener"
+            >
+                Qua4tro TV
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 LIRFUT / QUA4TRO BRASIL
+            </span>
+
+            <a href="#">
+                VOLTAR AO TOPO ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         FILTRO DOS CLUBES
+         ========================================= -->
+
+    <script>
+
+        const filters = document.querySelectorAll('.club-filter[data-filter]');
+        const clubs = document.querySelectorAll('.club-master-card');
+        const empty = document.getElementById('clubsEmpty');
+
+        filters.forEach(filter => {
+
+            filter.addEventListener('click', () => {
+
+                filters.forEach(button => {
+                    button.classList.remove('active');
+                });
+
+                filter.classList.add('active');
+
+                const selected = filter.dataset.filter;
+
+                let visibleClubs = 0;
+
+                clubs.forEach(club => {
+
+                    const categories =
+                        club.dataset.category
+                            ? club.dataset.category.split(' ')
+                            : [];
+
+                    const shouldShow =
+                        selected === 'all' ||
+                        categories.includes(selected);
+
+                    if (shouldShow) {
+
+                        club.style.display = 'flex';
+
+                        visibleClubs++;
+
+                    } else {
+
+                        club.style.display = 'none';
+
+                    }
+
+                });
+
+
+                if (visibleClubs === 0) {
+
+                    empty.classList.add('show');
+
+                } else {
+
+                    empty.classList.remove('show');
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
