@@ -47,10 +47,19 @@
         href="/images/favicon.png"
     >
 
+
+    <link
+        id="profileCanonical"
+        rel="canonical"
+        href="https://qua4tro.com.br/septa7/times/"
+    >
+
+
     <link
         rel="stylesheet"
         href="/css/septa7-clubes.css?v=1"
     >
+
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -361,7 +370,7 @@
 
 
         <!-- =====================================
-             PRÓXIMO JOGO + ÚLTIMOS RESULTADOS
+             PRÓXIMO JOGO + RESULTADOS
              ===================================== -->
 
         <section
@@ -720,6 +729,10 @@
             {};
 
 
+        /* =========================================
+           HELPERS
+           ========================================= */
+
         function normalizar(valor) {
 
             return String(valor || '')
@@ -751,7 +764,9 @@
             if (
                 querySlug
             ) {
+
                 return querySlug;
+
             }
 
 
@@ -768,12 +783,99 @@
                 partes[2] !== 'perfil'
             ) {
 
-                return partes[2];
+                return decodeURIComponent(
+                    partes[2]
+                );
 
             }
 
 
             return null;
+
+        }
+
+
+        /* =========================================
+           URL LIMPA
+           ========================================= */
+
+        function aplicarUrlLimpa(
+            slug
+        ) {
+
+            const urlLimpa =
+                `/septa7/times/${encodeURIComponent(
+                    slug
+                )}/`;
+
+
+            const slugArmazenado =
+                sessionStorage.getItem(
+                    'septa7_clube_slug'
+                );
+
+
+            const urlArmazenada =
+                sessionStorage.getItem(
+                    'septa7_clube_url'
+                );
+
+
+            let destino =
+                urlLimpa;
+
+
+            if (
+                slugArmazenado === slug &&
+                urlArmazenada
+            ) {
+
+                destino =
+                    urlArmazenada;
+
+            }
+
+
+            if (
+                !destino.endsWith('/')
+            ) {
+
+                destino += '/';
+
+            }
+
+
+            window.history.replaceState(
+                {},
+                '',
+                destino
+            );
+
+
+            const canonical =
+                document.getElementById(
+                    'profileCanonical'
+                );
+
+
+            if (
+                canonical
+            ) {
+
+                canonical.href =
+                    `https://qua4tro.com.br${urlLimpa}`;
+
+            }
+
+
+            sessionStorage.removeItem(
+                'septa7_clube_slug'
+            );
+
+
+            sessionStorage.removeItem(
+                'septa7_clube_url'
+            );
 
         }
 
@@ -963,6 +1065,10 @@
         }
 
 
+        /* =========================================
+           HERO
+           ========================================= */
+
         function montarHero(
             clube,
             filiacao,
@@ -1116,6 +1222,10 @@
 
         }
 
+
+        /* =========================================
+           ESTATÍSTICAS
+           ========================================= */
 
         function calcularEstatisticas() {
 
@@ -1298,6 +1408,10 @@
         }
 
 
+        /* =========================================
+           PRÓXIMO JOGO
+           ========================================= */
+
         function renderizarProximoJogo(
             equipesMap
         ) {
@@ -1368,11 +1482,15 @@
                 body.innerHTML = `
 
                     <div class="no-next-game">
-                        <span>—</span>
+
+                        <span>
+                            —
+                        </span>
 
                         <strong>
                             NENHUM PRÓXIMO JOGO DEFINIDO
                         </strong>
+
                     </div>
 
                 `;
@@ -1549,6 +1667,10 @@
         }
 
 
+        /* =========================================
+           RESULTADOS
+           ========================================= */
+
         function renderizarResultados(
             equipesMap
         ) {
@@ -1671,6 +1793,10 @@
 
         }
 
+
+        /* =========================================
+           TEMPORADAS
+           ========================================= */
 
         function renderizarTemporadas(
             participacoes,
@@ -1805,6 +1931,10 @@
         }
 
 
+        /* =========================================
+           ELENCO
+           ========================================= */
+
         function renderizarElenco(
             atletas
         ) {
@@ -1826,7 +1956,10 @@
                 grid.innerHTML = `
 
                     <div class="empty-squad">
-                        <span>ELENCO</span>
+
+                        <span>
+                            ELENCO
+                        </span>
 
                         <strong>
                             AINDA NÃO CADASTRADO
@@ -1836,6 +1969,7 @@
                             Os atletas SEPTA 7 deste clube
                             aparecerão aqui.
                         </p>
+
                     </div>
 
                 `;
@@ -1957,6 +2091,10 @@
         }
 
 
+        /* =========================================
+           CARREGAR PERFIL
+           ========================================= */
+
         async function carregarPerfil() {
 
             try {
@@ -2007,7 +2145,9 @@
                 if (
                     clubeError
                 ) {
+
                     throw clubeError;
+
                 }
 
 
@@ -2024,6 +2164,16 @@
 
                 equipeAtual =
                     clube;
+
+
+                /*
+                 * RESTAURA / CRIA A URL LIMPA
+                 * SEM RECARREGAR A PÁGINA
+                 */
+
+                aplicarUrlLimpa(
+                    clube.slug
+                );
 
 
                 const {
@@ -2050,7 +2200,9 @@
                 if (
                     filiacaoError
                 ) {
+
                     throw filiacaoError;
+
                 }
 
 
@@ -2088,7 +2240,9 @@
                 if (
                     participacoesError
                 ) {
+
                     throw participacoesError;
+
                 }
 
 
@@ -2148,7 +2302,9 @@
                     if (
                         error
                     ) {
+
                         throw error;
+
                     }
 
 
@@ -2195,7 +2351,9 @@
                                     ) ===
                                     'em_andamento'
                                 ) {
+
                                     return -1;
+
                                 }
 
 
@@ -2205,7 +2363,9 @@
                                     ) ===
                                     'em_andamento'
                                 ) {
+
                                     return 1;
+
                                 }
 
 
@@ -2253,7 +2413,9 @@
                 if (
                     jogosError
                 ) {
+
                     throw jogosError;
+
                 }
 
 
@@ -2308,7 +2470,9 @@
                     if (
                         error
                     ) {
+
                         throw error;
+
                     }
 
 
@@ -2371,7 +2535,9 @@
                 if (
                     atletasError
                 ) {
+
                     throw atletasError;
+
                 }
 
 
