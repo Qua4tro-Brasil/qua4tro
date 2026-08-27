@@ -3,7 +3,10 @@
 
 <head>
 
-    <!-- GOOGLE ANALYTICS -->
+    <!-- =========================================
+         GOOGLE ANALYTICS
+         ========================================= -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9X7K9MSXQ"></script>
 
     <script>
@@ -23,6 +26,10 @@
         }
     </script>
 
+
+    <!-- =========================================
+         CONFIGURAÇÕES
+         ========================================= -->
 
     <meta charset="UTF-8">
 
@@ -56,8 +63,15 @@
 
     <link
         rel="stylesheet"
-        href="../../css/lirfut.css?v=4"
+        href="../../css/lirfut.css?v=5"
     >
+
+
+    <!-- =========================================
+         SUPABASE
+         ========================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 </head>
 
@@ -160,7 +174,7 @@
 
 
         <!-- =========================================
-             HERO CLUBES
+             HERO
              ========================================= -->
 
         <section class="clubs-hero">
@@ -207,7 +221,7 @@
 
 
         <!-- =========================================
-             FILTROS
+             DIRETÓRIO
              ========================================= -->
 
         <section class="clubs-directory">
@@ -239,6 +253,10 @@
             </div>
 
 
+            <!-- =========================================
+                 FILTROS
+                 ========================================= -->
+
             <div class="club-filters">
 
                 <button
@@ -249,6 +267,7 @@
                     TODOS
                 </button>
 
+
                 <button
                     type="button"
                     class="club-filter"
@@ -256,6 +275,7 @@
                 >
                     COPA LIRFUT 2026
                 </button>
+
 
                 <button
                     type="button"
@@ -265,400 +285,109 @@
                     FILIADOS
                 </button>
 
-                <button
-                    type="button"
-                    class="club-filter future-filter"
-                    disabled
-                >
-                    1ª DIVISÃO
-                    <small>EM BREVE</small>
-                </button>
 
                 <button
                     type="button"
-                    class="club-filter future-filter"
-                    disabled
+                    class="club-filter"
+                    data-filter="primeira-divisao"
+                >
+                    1ª DIVISÃO
+                </button>
+
+
+                <button
+                    type="button"
+                    class="club-filter"
+                    data-filter="segunda-divisao"
                 >
                     2ª DIVISÃO
-                    <small>EM BREVE</small>
                 </button>
 
             </div>
 
 
-            <!-- =====================================
-                 GRID DE CLUBES
-                 ===================================== -->
+            <!-- =========================================
+                 CARREGANDO
+                 ========================================= -->
+
+            <div
+                id="clubsLoading"
+                class="clubs-loading"
+            >
+
+                <div class="loading-circle"></div>
+
+                <strong>
+                    CARREGANDO CLUBES LIRFUT
+                </strong>
+
+                <span>
+                    Consultando banco de dados Qua4tro.
+                </span>
+
+            </div>
+
+
+            <!-- =========================================
+                 ERRO
+                 ========================================= -->
+
+            <div
+                id="clubsError"
+                class="clubs-error"
+                hidden
+            >
+
+                <strong>
+                    NÃO FOI POSSÍVEL CARREGAR OS CLUBES.
+                </strong>
+
+                <p id="clubsErrorMessage">
+                    Tente novamente em instantes.
+                </p>
+
+                <button
+                    type="button"
+                    id="retryClubs"
+                >
+                    TENTAR NOVAMENTE
+                </button>
+
+            </div>
+
+
+            <!-- =========================================
+                 GRID DINÂMICO
+                 ========================================= -->
 
             <div
                 class="clubs-master-grid"
                 id="clubsGrid"
+                hidden
             >
-
-
-                <!-- PERFIL MODELO -->
-
-                <a
-                    href="time-01/"
-                    class="club-master-card"
-                    data-category="copa filiado"
-                >
-
-                    <span class="club-master-number">
-                        01
-                    </span>
-
-                    <span class="club-status active-status">
-                        PERFIL DISPONÍVEL
-                    </span>
-
-
-                    <div class="club-master-emblem active-master-emblem">
-                        01
-                    </div>
-
-
-                    <div class="club-master-content">
-
-                        <span>
-                            CLUBE LIRFUT
-                        </span>
-
-                        <h3>
-                            TIME 01
-                        </h3>
-
-                        <p>
-                            CIDADE / SP
-                        </p>
-
-                    </div>
-
-
-                    <div class="club-master-footer">
-
-                        <span>
-                            COPA LIRFUT 2026
-                        </span>
-
-                        <strong>
-                            VER PERFIL →
-                        </strong>
-
-                    </div>
-
-                </a>
-
-
-                <!-- CLUBE 02 -->
-
-                <div
-                    class="club-master-card club-master-placeholder"
-                    data-category="copa"
-                >
-
-                    <span class="club-master-number">
-                        02
-                    </span>
-
-                    <span class="club-status">
-                        AGUARDANDO
-                    </span>
-
-                    <div class="club-master-emblem">
-                        02
-                    </div>
-
-                    <div class="club-master-content">
-
-                        <span>
-                            CLUBE LIRFUT
-                        </span>
-
-                        <h3>
-                            EM DEFINIÇÃO
-                        </h3>
-
-                        <p>
-                            CIDADE / SP
-                        </p>
-
-                    </div>
-
-                    <div class="club-master-footer">
-
-                        <span>
-                            COPA LIRFUT 2026
-                        </span>
-
-                        <strong>
-                            —
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CLUBE 03 -->
-
-                <div
-                    class="club-master-card club-master-placeholder"
-                    data-category="copa"
-                >
-
-                    <span class="club-master-number">03</span>
-
-                    <span class="club-status">
-                        AGUARDANDO
-                    </span>
-
-                    <div class="club-master-emblem">
-                        03
-                    </div>
-
-                    <div class="club-master-content">
-
-                        <span>CLUBE LIRFUT</span>
-
-                        <h3>EM DEFINIÇÃO</h3>
-
-                        <p>CIDADE / SP</p>
-
-                    </div>
-
-                    <div class="club-master-footer">
-
-                        <span>
-                            COPA LIRFUT 2026
-                        </span>
-
-                        <strong>—</strong>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CLUBE 04 -->
-
-                <div
-                    class="club-master-card club-master-placeholder"
-                    data-category="copa"
-                >
-
-                    <span class="club-master-number">04</span>
-
-                    <span class="club-status">
-                        AGUARDANDO
-                    </span>
-
-                    <div class="club-master-emblem">
-                        04
-                    </div>
-
-                    <div class="club-master-content">
-
-                        <span>CLUBE LIRFUT</span>
-
-                        <h3>EM DEFINIÇÃO</h3>
-
-                        <p>CIDADE / SP</p>
-
-                    </div>
-
-                    <div class="club-master-footer">
-
-                        <span>
-                            COPA LIRFUT 2026
-                        </span>
-
-                        <strong>—</strong>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CLUBE 05 -->
-
-                <div
-                    class="club-master-card club-master-placeholder"
-                    data-category="copa"
-                >
-
-                    <span class="club-master-number">05</span>
-
-                    <span class="club-status">
-                        AGUARDANDO
-                    </span>
-
-                    <div class="club-master-emblem">
-                        05
-                    </div>
-
-                    <div class="club-master-content">
-
-                        <span>CLUBE LIRFUT</span>
-
-                        <h3>EM DEFINIÇÃO</h3>
-
-                        <p>CIDADE / SP</p>
-
-                    </div>
-
-                    <div class="club-master-footer">
-
-                        <span>
-                            COPA LIRFUT 2026
-                        </span>
-
-                        <strong>—</strong>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CLUBE 06 -->
-
-                <div
-                    class="club-master-card club-master-placeholder"
-                    data-category="copa"
-                >
-
-                    <span class="club-master-number">06</span>
-
-                    <span class="club-status">
-                        AGUARDANDO
-                    </span>
-
-                    <div class="club-master-emblem">
-                        06
-                    </div>
-
-                    <div class="club-master-content">
-
-                        <span>CLUBE LIRFUT</span>
-
-                        <h3>EM DEFINIÇÃO</h3>
-
-                        <p>CIDADE / SP</p>
-
-                    </div>
-
-                    <div class="club-master-footer">
-
-                        <span>
-                            COPA LIRFUT 2026
-                        </span>
-
-                        <strong>—</strong>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CLUBE 07 -->
-
-                <div
-                    class="club-master-card club-master-placeholder"
-                    data-category="copa"
-                >
-
-                    <span class="club-master-number">07</span>
-
-                    <span class="club-status">
-                        AGUARDANDO
-                    </span>
-
-                    <div class="club-master-emblem">
-                        07
-                    </div>
-
-                    <div class="club-master-content">
-
-                        <span>CLUBE LIRFUT</span>
-
-                        <h3>EM DEFINIÇÃO</h3>
-
-                        <p>CIDADE / SP</p>
-
-                    </div>
-
-                    <div class="club-master-footer">
-
-                        <span>
-                            COPA LIRFUT 2026
-                        </span>
-
-                        <strong>—</strong>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CLUBE 08 -->
-
-                <div
-                    class="club-master-card club-master-placeholder"
-                    data-category="copa"
-                >
-
-                    <span class="club-master-number">08</span>
-
-                    <span class="club-status">
-                        AGUARDANDO
-                    </span>
-
-                    <div class="club-master-emblem">
-                        08
-                    </div>
-
-                    <div class="club-master-content">
-
-                        <span>CLUBE LIRFUT</span>
-
-                        <h3>EM DEFINIÇÃO</h3>
-
-                        <p>CIDADE / SP</p>
-
-                    </div>
-
-                    <div class="club-master-footer">
-
-                        <span>
-                            COPA LIRFUT 2026
-                        </span>
-
-                        <strong>—</strong>
-
-                    </div>
-
-                </div>
-
-
             </div>
 
 
-            <!-- =====================================
-                 NENHUM RESULTADO
-                 ===================================== -->
+            <!-- =========================================
+                 NENHUM CLUBE
+                 ========================================= -->
 
             <div
                 class="clubs-empty"
                 id="clubsEmpty"
             >
 
+                <span>
+                    CLUBES LIRFUT
+                </span>
+
                 <strong>
                     NENHUM CLUBE NESTA CATEGORIA.
                 </strong>
 
                 <p>
-                    Os clubes serão exibidos conforme
-                    a estrutura da LIRFUT for formada.
+                    Os clubes aparecerão aqui automaticamente
+                    conforme forem cadastrados no ecossistema LIRFUT.
                 </p>
 
             </div>
@@ -667,7 +396,7 @@
 
 
         <!-- =========================================
-             ESTRUTURA FUTURA
+             ESTRUTURA
              ========================================= -->
 
         <section class="clubs-future">
@@ -693,6 +422,7 @@
 
 
             <div class="future-structure-grid">
+
 
                 <div>
 
@@ -764,6 +494,7 @@
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -891,68 +622,1006 @@
 
 
     <!-- =========================================
-         FILTRO DOS CLUBES
+         SUPABASE / CLUBES
          ========================================= -->
 
     <script>
 
-        const filters = document.querySelectorAll('.club-filter[data-filter]');
-        const clubs = document.querySelectorAll('.club-master-card');
-        const empty = document.getElementById('clubsEmpty');
+        const SUPABASE_URL =
+            'https://ktqhtqsrawlwgirtuywi.supabase.co';
 
-        filters.forEach(filter => {
-
-            filter.addEventListener('click', () => {
-
-                filters.forEach(button => {
-                    button.classList.remove('active');
-                });
-
-                filter.classList.add('active');
-
-                const selected = filter.dataset.filter;
-
-                let visibleClubs = 0;
-
-                clubs.forEach(club => {
-
-                    const categories =
-                        club.dataset.category
-                            ? club.dataset.category.split(' ')
-                            : [];
-
-                    const shouldShow =
-                        selected === 'all' ||
-                        categories.includes(selected);
-
-                    if (shouldShow) {
-
-                        club.style.display = 'flex';
-
-                        visibleClubs++;
-
-                    } else {
-
-                        club.style.display = 'none';
-
-                    }
-
-                });
+        const SUPABASE_PUBLISHABLE_KEY =
+            'sb_publishable_6NJzlToCY2icHCM2VQGZJA_9Ci8MVCL';
 
 
-                if (visibleClubs === 0) {
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_PUBLISHABLE_KEY
+            );
 
-                    empty.classList.add('show');
 
-                } else {
+        const clubsGrid =
+            document.getElementById('clubsGrid');
 
-                    empty.classList.remove('show');
+        const clubsLoading =
+            document.getElementById('clubsLoading');
 
+        const clubsError =
+            document.getElementById('clubsError');
+
+        const clubsErrorMessage =
+            document.getElementById('clubsErrorMessage');
+
+        const clubsEmpty =
+            document.getElementById('clubsEmpty');
+
+        const retryClubs =
+            document.getElementById('retryClubs');
+
+        const filters =
+            document.querySelectorAll(
+                '.club-filter[data-filter]'
+            );
+
+
+        let clubes = [];
+
+        let participacoes = [];
+
+        let campeonatos = [];
+
+        let historicos = [];
+
+        let divisoes = [];
+
+        let filtroAtual = 'all';
+
+
+        /* =========================================
+           NORMALIZA TEXTO
+           ========================================= */
+
+        function normalizar(texto) {
+
+            return String(texto || '')
+                .normalize('NFD')
+                .replace(
+                    /[\u0300-\u036f]/g,
+                    ''
+                )
+                .trim()
+                .toLowerCase();
+
+        }
+
+
+        /* =========================================
+           CARREGA BANCO
+           ========================================= */
+
+        async function carregarClubes() {
+
+            clubsLoading.hidden = false;
+
+            clubsError.hidden = true;
+
+            clubsGrid.hidden = true;
+
+            clubsEmpty.classList.remove('show');
+
+
+            try {
+
+                const [
+                    equipesResult,
+                    participacoesResult,
+                    campeonatosResult,
+                    historicosResult,
+                    divisoesResult
+                ] = await Promise.all([
+
+
+                    supabaseClient
+                        .from('equipes')
+                        .select(`
+                            id,
+                            nome,
+                            escudo,
+                            cidade,
+                            estado,
+                            ativo,
+                            instagram,
+                            sexo,
+                            slug,
+                            sigla,
+                            nome_completo,
+                            ano_fundacao,
+                            site,
+                            data_filiacao,
+                            status_lirfut,
+                            descricao
+                        `)
+                        .eq('ativo', true)
+                        .order(
+                            'nome',
+                            { ascending: true }
+                        ),
+
+
+                    supabaseClient
+                        .from('participacoes_lirfut')
+                        .select(`
+                            id,
+                            equipe_id,
+                            campeonato_id,
+                            status
+                        `),
+
+
+                    supabaseClient
+                        .from('campeonatos')
+                        .select(`
+                            id,
+                            nome,
+                            temporada,
+                            formato,
+                            divisao_id
+                        `),
+
+
+                    supabaseClient
+                        .from('historico_divisoes_lirfut')
+                        .select(`
+                            id,
+                            equipe_id,
+                            temporada,
+                            divisao_id,
+                            campeonato_id,
+                            posicao_final,
+                            movimento
+                        `),
+
+
+                    supabaseClient
+                        .from('divisoes_lirfut')
+                        .select(`
+                            id,
+                            nome,
+                            slug,
+                            nivel,
+                            ativa
+                        `)
+                        .order(
+                            'nivel',
+                            { ascending: true }
+                        )
+
+                ]);
+
+
+                const resultados = [
+                    equipesResult,
+                    participacoesResult,
+                    campeonatosResult,
+                    historicosResult,
+                    divisoesResult
+                ];
+
+
+                const erro =
+                    resultados.find(
+                        resultado =>
+                            resultado.error
+                    );
+
+
+                if (erro) {
+                    throw erro.error;
                 }
 
-            });
 
-        });
+                clubes =
+                    equipesResult.data || [];
+
+                participacoes =
+                    participacoesResult.data || [];
+
+                campeonatos =
+                    campeonatosResult.data || [];
+
+                historicos =
+                    historicosResult.data || [];
+
+                divisoes =
+                    divisoesResult.data || [];
+
+
+                clubsLoading.hidden = true;
+
+                clubsGrid.hidden = false;
+
+
+                renderizarClubes();
+
+            } catch (error) {
+
+                console.error(
+                    'Erro ao carregar clubes:',
+                    error
+                );
+
+
+                clubsLoading.hidden = true;
+
+                clubsGrid.hidden = true;
+
+                clubsError.hidden = false;
+
+
+                clubsErrorMessage.textContent =
+                    error?.message ||
+                    'Erro inesperado ao consultar o banco de dados.';
+
+            }
+
+        }
+
+
+        /* =========================================
+           COPA LIRFUT 2026
+           ========================================= */
+
+        function campeonatosCopa2026() {
+
+            return campeonatos
+                .filter(campeonato => {
+
+                    const temporada =
+                        String(
+                            campeonato.temporada || ''
+                        );
+
+                    const formato =
+                        normalizar(
+                            campeonato.formato
+                        );
+
+
+                    return (
+                        temporada === '2026' &&
+                        formato === 'copa'
+                    );
+
+                })
+                .map(
+                    campeonato =>
+                        campeonato.id
+                );
+
+        }
+
+
+        function participaCopa2026(equipeId) {
+
+            const idsCopa =
+                campeonatosCopa2026();
+
+
+            return participacoes.some(
+                participacao =>
+
+                    participacao.equipe_id ===
+                        equipeId &&
+
+                    idsCopa.includes(
+                        participacao.campeonato_id
+                    )
+
+            );
+
+        }
+
+
+        /* =========================================
+           DIVISÃO ATUAL
+           ========================================= */
+
+        function divisaoAtual(equipeId) {
+
+            const participacoesEquipe =
+                participacoes
+                    .filter(
+                        item =>
+                            item.equipe_id === equipeId
+                    )
+                    .map(item => {
+
+                        const campeonato =
+                            campeonatos.find(
+                                camp =>
+                                    camp.id ===
+                                    item.campeonato_id
+                            );
+
+
+                        return {
+                            participacao: item,
+                            campeonato
+                        };
+
+                    })
+                    .filter(
+                        item =>
+                            item.campeonato &&
+                            item.campeonato.divisao_id
+                    )
+                    .sort((a, b) => {
+
+                        return String(
+                            b.campeonato.temporada || ''
+                        ).localeCompare(
+                            String(
+                                a.campeonato.temporada || ''
+                            )
+                        );
+
+                    });
+
+
+            if (
+                participacoesEquipe.length > 0
+            ) {
+
+                const divisaoId =
+                    participacoesEquipe[0]
+                        .campeonato
+                        .divisao_id;
+
+
+                return divisoes.find(
+                    divisao =>
+                        divisao.id === divisaoId
+                ) || null;
+
+            }
+
+
+            const historicoEquipe =
+                historicos
+                    .filter(
+                        item =>
+                            item.equipe_id === equipeId
+                    )
+                    .sort((a, b) =>
+
+                        String(
+                            b.temporada || ''
+                        ).localeCompare(
+                            String(
+                                a.temporada || ''
+                            )
+                        )
+
+                    );
+
+
+            if (
+                historicoEquipe.length === 0
+            ) {
+                return null;
+            }
+
+
+            return divisoes.find(
+                divisao =>
+                    divisao.id ===
+                    historicoEquipe[0].divisao_id
+            ) || null;
+
+        }
+
+
+        /* =========================================
+           CATEGORIAS DE UM CLUBE
+           ========================================= */
+
+        function categoriasClube(clube) {
+
+            const categorias = [];
+
+
+            if (
+                normalizar(
+                    clube.status_lirfut
+                ) === 'filiado'
+            ) {
+                categorias.push('filiado');
+            }
+
+
+            if (
+                participaCopa2026(
+                    clube.id
+                )
+            ) {
+                categorias.push('copa');
+            }
+
+
+            const divisao =
+                divisaoAtual(
+                    clube.id
+                );
+
+
+            if (divisao?.slug) {
+
+                categorias.push(
+                    divisao.slug
+                );
+
+            }
+
+
+            return categorias;
+
+        }
+
+
+        /* =========================================
+           FILTRA CLUBES
+           ========================================= */
+
+        function clubesFiltrados() {
+
+            if (
+                filtroAtual === 'all'
+            ) {
+                return clubes;
+            }
+
+
+            return clubes.filter(
+                clube =>
+                    categoriasClube(
+                        clube
+                    ).includes(
+                        filtroAtual
+                    )
+            );
+
+        }
+
+
+        /* =========================================
+           INICIAIS
+           ========================================= */
+
+        function iniciais(nome) {
+
+            const palavras =
+                String(nome || 'CLUBE')
+                    .trim()
+                    .split(/\s+/)
+                    .filter(Boolean);
+
+
+            if (
+                palavras.length === 1
+            ) {
+
+                return palavras[0]
+                    .substring(0, 3)
+                    .toUpperCase();
+
+            }
+
+
+            return (
+                palavras[0][0] +
+                palavras[
+                    palavras.length - 1
+                ][0]
+            ).toUpperCase();
+
+        }
+
+
+        /* =========================================
+           TEXTO DO STATUS
+           ========================================= */
+
+        function statusClube(clube) {
+
+            const status =
+                normalizar(
+                    clube.status_lirfut
+                );
+
+
+            if (
+                status === 'filiado'
+            ) {
+                return 'FILIADO';
+            }
+
+
+            if (
+                status === 'inativo'
+            ) {
+                return 'INATIVO';
+            }
+
+
+            return 'CLUBE LIRFUT';
+
+        }
+
+
+        /* =========================================
+           DESCRIÇÃO DO CARD
+           ========================================= */
+
+        function contextoClube(clube) {
+
+            if (
+                participaCopa2026(
+                    clube.id
+                )
+            ) {
+
+                return 'COPA LIRFUT 2026';
+
+            }
+
+
+            const divisao =
+                divisaoAtual(
+                    clube.id
+                );
+
+
+            if (divisao) {
+
+                return divisao.nome
+                    .toUpperCase();
+
+            }
+
+
+            if (
+                normalizar(
+                    clube.status_lirfut
+                ) === 'filiado'
+            ) {
+
+                return 'FILIADO À LIRFUT';
+
+            }
+
+
+            return 'CLUBE LIRFUT';
+
+        }
+
+
+        /* =========================================
+           CRIA ESCUDO
+           ========================================= */
+
+        function criarEscudo(clube) {
+
+            const container =
+                document.createElement(
+                    'div'
+                );
+
+
+            container.className =
+                'club-master-emblem';
+
+
+            if (
+                clube.escudo &&
+                /^https?:\/\//i.test(
+                    clube.escudo
+                )
+            ) {
+
+                const img =
+                    document.createElement(
+                        'img'
+                    );
+
+
+                img.src =
+                    clube.escudo;
+
+                img.alt =
+                    `Escudo ${clube.nome}`;
+
+                img.loading =
+                    'lazy';
+
+                img.className =
+                    'club-logo-image';
+
+
+                img.onerror = () => {
+
+                    img.remove();
+
+                    container.textContent =
+                        iniciais(
+                            clube.nome
+                        );
+
+                };
+
+
+                container.appendChild(
+                    img
+                );
+
+            } else {
+
+                container.textContent =
+                    iniciais(
+                        clube.nome
+                    );
+
+            }
+
+
+            return container;
+
+        }
+
+
+        /* =========================================
+           CRIA CARD
+           ========================================= */
+
+        function criarCard(
+            clube,
+            indice
+        ) {
+
+            const possuiSlug =
+                Boolean(
+                    clube.slug &&
+                    String(
+                        clube.slug
+                    ).trim()
+                );
+
+
+            const card =
+                document.createElement(
+                    possuiSlug
+                        ? 'a'
+                        : 'div'
+                );
+
+
+            card.className =
+                'club-master-card';
+
+
+            if (possuiSlug) {
+
+                card.href =
+                    `${encodeURIComponent(
+                        clube.slug
+                    )}/`;
+
+
+                card.addEventListener(
+                    'click',
+                    () => {
+
+                        trackQua4tro(
+                            'perfil_clube',
+                            clube.slug
+                        );
+
+                    }
+                );
+
+            } else {
+
+                card.classList.add(
+                    'club-card-no-link'
+                );
+
+            }
+
+
+            card.dataset.category =
+                categoriasClube(
+                    clube
+                ).join(' ');
+
+
+            /* NÚMERO */
+
+            const numero =
+                document.createElement(
+                    'span'
+                );
+
+            numero.className =
+                'club-master-number';
+
+            numero.textContent =
+                String(
+                    indice + 1
+                ).padStart(
+                    2,
+                    '0'
+                );
+
+
+            /* STATUS */
+
+            const status =
+                document.createElement(
+                    'span'
+                );
+
+            status.className =
+                'club-status';
+
+            status.textContent =
+                statusClube(
+                    clube
+                );
+
+
+            if (
+                normalizar(
+                    clube.status_lirfut
+                ) === 'filiado'
+            ) {
+
+                status.classList.add(
+                    'active-status'
+                );
+
+            }
+
+
+            /* ESCUDO */
+
+            const escudo =
+                criarEscudo(
+                    clube
+                );
+
+
+            /* CONTEÚDO */
+
+            const content =
+                document.createElement(
+                    'div'
+                );
+
+            content.className =
+                'club-master-content';
+
+
+            const categoria =
+                document.createElement(
+                    'span'
+                );
+
+            categoria.textContent =
+                'CLUBE LIRFUT';
+
+
+            const nome =
+                document.createElement(
+                    'h3'
+                );
+
+            nome.textContent =
+                clube.nome ||
+                'CLUBE';
+
+
+            const cidade =
+                document.createElement(
+                    'p'
+                );
+
+
+            const local =
+                [
+                    clube.cidade,
+                    clube.estado
+                ]
+                .filter(Boolean)
+                .join(' / ');
+
+
+            cidade.textContent =
+                local ||
+                'LOCAL NÃO INFORMADO';
+
+
+            content.append(
+                categoria,
+                nome,
+                cidade
+            );
+
+
+            /* FOOTER */
+
+            const footer =
+                document.createElement(
+                    'div'
+                );
+
+            footer.className =
+                'club-master-footer';
+
+
+            const contexto =
+                document.createElement(
+                    'span'
+                );
+
+            contexto.textContent =
+                contextoClube(
+                    clube
+                );
+
+
+            const perfil =
+                document.createElement(
+                    'strong'
+                );
+
+            perfil.textContent =
+                possuiSlug
+                    ? 'VER PERFIL →'
+                    : 'PERFIL EM PREPARAÇÃO';
+
+
+            footer.append(
+                contexto,
+                perfil
+            );
+
+
+            card.append(
+                numero,
+                status,
+                escudo,
+                content,
+                footer
+            );
+
+
+            return card;
+
+        }
+
+
+        /* =========================================
+           RENDERIZA
+           ========================================= */
+
+        function renderizarClubes() {
+
+            clubsGrid.innerHTML = '';
+
+
+            const lista =
+                clubesFiltrados();
+
+
+            if (
+                lista.length === 0
+            ) {
+
+                clubsGrid.hidden =
+                    true;
+
+                clubsEmpty.classList.add(
+                    'show'
+                );
+
+                return;
+
+            }
+
+
+            clubsEmpty.classList.remove(
+                'show'
+            );
+
+            clubsGrid.hidden =
+                false;
+
+
+            lista.forEach(
+                (clube, indice) => {
+
+                    const card =
+                        criarCard(
+                            clube,
+                            indice
+                        );
+
+
+                    clubsGrid.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =========================================
+           FILTROS
+           ========================================= */
+
+        filters.forEach(
+            filter => {
+
+                filter.addEventListener(
+                    'click',
+                    () => {
+
+                        filters.forEach(
+                            button => {
+
+                                button.classList.remove(
+                                    'active'
+                                );
+
+                            }
+                        );
+
+
+                        filter.classList.add(
+                            'active'
+                        );
+
+
+                        filtroAtual =
+                            filter.dataset.filter;
+
+
+                        renderizarClubes();
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           RETRY
+           ========================================= */
+
+        retryClubs.addEventListener(
+            'click',
+            carregarClubes
+        );
+
+
+        /* =========================================
+           INICIALIZA
+           ========================================= */
+
+        carregarClubes();
 
     </script>
 
