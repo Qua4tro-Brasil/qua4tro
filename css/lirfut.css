@@ -1,6 +1,6 @@
 /* =========================================
-   LIRFUT — V8
-   HOME + CLUBES + JOGOS + SUPABASE
+   LIRFUT — V9
+   HOME + CLUBES + JOGOS + CHAVE DINÂMICA
    ========================================= */
 
 :root {
@@ -386,17 +386,19 @@ img {
 
 .mini-match {
     min-height: 125px;
-    padding: 16px 20px;
+    padding: 16px 18px;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(0,1fr) 80px minmax(0,1fr);
     align-items: center;
-    gap: 10px;
+    column-gap: 10px;
     border-right: 1px solid var(--line);
 }
 
 
 .match-date {
     grid-column: 1 / -1;
+    align-self: end;
+    padding-bottom: 8px;
     color: #666;
     font-size: 7px;
     font-weight: 900;
@@ -418,10 +420,11 @@ img {
 .mini-team > span:last-child {
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
-.mini-team:last-child {
+.mini-team-away {
     justify-content: flex-end;
     text-align: right;
 }
@@ -442,11 +445,39 @@ img {
 }
 
 
-.mini-versus {
+.mini-score {
+    width: 80px;
+    min-width: 80px;
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    align-items: center;
+    justify-items: center;
+    white-space: nowrap;
     color: var(--lirfut);
+}
+
+
+.mini-score .score-number {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+.mini-score .score-x,
+.mini-score .score-x-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
     text-align: center;
     font-size: 15px;
+    line-height: 1;
     font-weight: 900;
+}
+
+
+.mini-score .score-x-only {
+    grid-column: 1 / -1;
 }
 
 
@@ -748,7 +779,7 @@ img {
     max-width: 1500px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,minmax(0,1fr));
     gap: 18px;
 }
 
@@ -756,6 +787,8 @@ img {
 .game-card {
     min-height: 410px;
     padding: 35px;
+    display: flex;
+    flex-direction: column;
     background: #fff;
     border: 1px solid #ddd;
     transition: 0.3s ease;
@@ -765,6 +798,11 @@ img {
 .game-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+
+.game-card-finished {
+    border-top: 3px solid var(--lirfut);
 }
 
 
@@ -793,10 +831,13 @@ img {
 
 
 .game-teams {
-    margin: 35px 0;
+    flex: 1;
+    width: 100%;
+    margin: 35px auto;
     display: grid;
-    grid-template-columns: 1fr 70px 1fr;
+    grid-template-columns: minmax(0,1fr) 150px minmax(0,1fr);
     align-items: center;
+    gap: 20px;
 }
 
 
@@ -805,6 +846,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 15px;
     text-align: center;
 }
@@ -827,21 +869,66 @@ img {
 
 
 .game-team strong {
-    max-width: 220px;
+    max-width: 240px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 13px;
     line-height: 1.4;
 }
 
 
-.game-x {
-    text-align: center;
+.game-score {
+    width: 150px;
+    min-width: 150px;
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    white-space: nowrap;
     color: var(--lirfut);
-    font-size: 30px;
+}
+
+
+.game-score .score-number {
+    width: 50px;
+    text-align: center;
+    font-size: 43px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+
+.game-score .score-x {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+
+.game-score .score-x-only {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 34px;
+    line-height: 1;
     font-weight: 900;
 }
 
 
 .game-location {
+    margin-top: auto;
     padding-top: 20px;
     text-align: center;
     border-top: 1px solid #eee;
@@ -871,7 +958,7 @@ img {
     max-width: 1500px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,minmax(0,1fr));
     gap: 40px;
     align-items: center;
 }
@@ -903,6 +990,35 @@ img {
 
 .bracket-match strong {
     color: var(--lirfut);
+}
+
+
+.bracket-qualified {
+    position: relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,165,31,0.08),
+            transparent 60%
+        ),
+        #171717;
+}
+
+
+.bracket-qualified::after {
+    content: "CLASSIFICADO";
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    color: var(--lirfut);
+    font-size: 6px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+
+.bracket-team-winner {
+    color: #fff;
 }
 
 
@@ -972,7 +1088,7 @@ img {
 
 
 /* =========================================
-   TIMES / PARTICIPANTES
+   TIMES
    ========================================= */
 
 .teams-grid {
@@ -2102,7 +2218,7 @@ a.club-master-card:hover {
 
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVO
    ========================================= */
 
 @media (max-width: 1100px) {
@@ -2256,6 +2372,19 @@ a.club-master-card:hover {
 
     .mini-match {
         min-height: 115px;
+        grid-template-columns: minmax(0,1fr) 65px minmax(0,1fr);
+    }
+
+
+    .mini-score {
+        width: 65px;
+        min-width: 65px;
+        grid-template-columns: 22px 21px 22px;
+    }
+
+
+    .mini-score .score-number {
+        font-size: 12px;
     }
 
 
@@ -2307,13 +2436,39 @@ a.club-master-card:hover {
 
 
     .game-teams {
-        grid-template-columns: 1fr 45px 1fr;
+        grid-template-columns: minmax(0,1fr) 105px minmax(0,1fr);
+        gap: 8px;
+    }
+
+
+    .game-score {
+        width: 105px;
+        min-width: 105px;
+        grid-template-columns: 35px 35px 35px;
+    }
+
+
+    .game-score .score-number {
+        width: 35px;
+        font-size: 32px;
+    }
+
+
+    .game-score .score-x {
+        width: 35px;
+        height: 40px;
+        font-size: 26px;
     }
 
 
     .club-placeholder {
-        width: 65px;
-        height: 65px;
+        width: 62px;
+        height: 62px;
+    }
+
+
+    .game-team strong {
+        font-size: 10px;
     }
 
 
