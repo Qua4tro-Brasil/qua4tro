@@ -1,0 +1,1966 @@
+/* =========================================
+   SEPTA 7 — CLUBES V1
+   DIRETÓRIO + PERFIL
+   ========================================= */
+
+:root {
+    --bg: #050505;
+    --surface: #101010;
+    --surface-2: #171717;
+    --white: #ffffff;
+    --light: #f3f3f3;
+    --muted: #818181;
+    --septa: #ffa51f;
+    --border: rgba(255,255,255,0.10);
+    --light-border: #d7d7d7;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+[hidden] {
+    display: none !important;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================
+   QUA4TRO BAR
+   ========================================= */
+
+.qua4tro-bar {
+    min-height: 38px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    border-bottom: 1px solid var(--border);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.qua4tro-back {
+    color: #666;
+}
+
+
+.qua4tro-bar-right {
+    display: flex;
+    gap: 25px;
+}
+
+
+.qua4tro-bar-right a {
+    color: #666;
+    transition: 0.25s ease;
+}
+
+
+.qua4tro-bar a:hover {
+    color: var(--septa);
+}
+
+
+/* =========================================
+   DIRECTORY HEADER
+   ========================================= */
+
+.septa-header {
+    min-height: 105px;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 210px 1fr 150px;
+    align-items: center;
+    gap: 30px;
+    background: #080808;
+    border-bottom: 1px solid var(--border);
+}
+
+
+.septa-brand {
+    width: 110px;
+    height: 80px;
+}
+
+
+.septa-brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.septa-nav {
+    display: flex;
+    justify-content: center;
+    gap: 38px;
+}
+
+
+.septa-nav a {
+    position: relative;
+    padding: 42px 0;
+    color: #8d8d8d;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.septa-nav a.active,
+.septa-nav a:hover {
+    color: #fff;
+}
+
+
+.septa-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 31px;
+    height: 3px;
+    background: var(--septa);
+}
+
+
+.header-join {
+    justify-self: end;
+    padding: 15px 22px;
+    background: var(--septa);
+    color: #050505;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   DIRECTORY HERO
+   ========================================= */
+
+.clubs-hero {
+    position: relative;
+    min-height: 620px;
+    padding: 105px 7% 70px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: end;
+    gap: 80px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 72% 43%,
+            rgba(255,165,31,0.14),
+            transparent 29%
+        ),
+        #070707;
+}
+
+
+.hero-seven {
+    position: absolute;
+    right: -30px;
+    top: -230px;
+    color: transparent;
+    -webkit-text-stroke: 3px rgba(255,165,31,0.10);
+    font-size: 800px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+
+.clubs-hero-content,
+.clubs-hero-message {
+    position: relative;
+    z-index: 2;
+}
+
+
+.clubs-hero-content > span {
+    color: var(--septa);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+
+.clubs-hero-content h1 {
+    margin-top: 20px;
+    font-size: clamp(90px,13vw,180px);
+    line-height: 0.76;
+    letter-spacing: -10px;
+}
+
+
+.clubs-hero-content h1 strong {
+    display: block;
+    color: var(--septa);
+}
+
+
+.clubs-hero-content p {
+    max-width: 610px;
+    margin-top: 35px;
+    color: #888;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+.clubs-hero-message {
+    max-width: 400px;
+    padding: 35px;
+    border-left: 4px solid var(--septa);
+    background: rgba(255,255,255,0.025);
+}
+
+
+.clubs-hero-message > span {
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.clubs-hero-message strong {
+    display: block;
+    margin-top: 15px;
+    font-size: 24px;
+    line-height: 1.1;
+}
+
+
+.clubs-hero-message p {
+    margin-top: 15px;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   DIRECTORY
+   ========================================= */
+
+.clubs-directory {
+    padding: 120px 7%;
+    background: var(--light);
+    color: #050505;
+}
+
+
+.directory-heading {
+    max-width: 1500px;
+    margin: 0 auto 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+
+.directory-heading > div:first-child > span {
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.directory-heading h2 {
+    margin-top: 15px;
+    font-size: clamp(50px,7vw,95px);
+    line-height: 0.87;
+    letter-spacing: -6px;
+}
+
+
+.directory-heading h2 strong {
+    display: block;
+    color: var(--septa);
+}
+
+
+.directory-counter {
+    min-width: 180px;
+    padding-left: 25px;
+    border-left: 3px solid var(--septa);
+}
+
+
+.directory-counter span {
+    display: block;
+    color: #888;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.directory-counter strong {
+    display: block;
+    margin-top: 7px;
+    color: var(--septa);
+    font-size: 45px;
+}
+
+
+/* =========================================
+   FILTERS
+   ========================================= */
+
+.club-filters {
+    max-width: 1500px;
+    margin: 0 auto 30px;
+    display: flex;
+    background: #fff;
+    border: 1px solid var(--light-border);
+}
+
+
+.club-filter {
+    min-height: 56px;
+    padding: 0 25px;
+    border: none;
+    border-right: 1px solid #ddd;
+    background: transparent;
+    color: #888;
+    cursor: pointer;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+
+.club-filter.active {
+    background: #050505;
+    color: #fff;
+}
+
+
+.club-filter.active::before {
+    content: "●";
+    margin-right: 9px;
+    color: var(--septa);
+}
+
+
+/* =========================================
+   LOADING / ERROR
+   ========================================= */
+
+.clubs-loading,
+.clubs-error,
+.clubs-empty {
+    max-width: 1500px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--light-border);
+}
+
+
+.loading-circle {
+    width: 42px;
+    height: 42px;
+    border: 3px solid #e6e6e6;
+    border-top-color: var(--septa);
+    border-radius: 50%;
+    animation: loading 0.8s linear infinite;
+}
+
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.clubs-loading strong,
+.clubs-error strong,
+.clubs-empty strong {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+
+.clubs-loading span,
+.clubs-error > span,
+.clubs-empty > span {
+    margin-top: 10px;
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.clubs-error p,
+.clubs-empty p {
+    margin-top: 10px;
+    color: #999;
+    font-size: 10px;
+}
+
+
+.clubs-error button {
+    margin-top: 25px;
+    padding: 14px 20px;
+    border: none;
+    background: #050505;
+    color: #fff;
+    cursor: pointer;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+/* =========================================
+   CLUB GRID
+   ========================================= */
+
+.clubs-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-top: 1px solid var(--light-border);
+    border-left: 1px solid var(--light-border);
+}
+
+
+.club-card {
+    position: relative;
+    min-height: 440px;
+    padding: 35px 30px 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    color: #050505;
+    border-right: 1px solid var(--light-border);
+    border-bottom: 1px solid var(--light-border);
+    transition: 0.3s ease;
+}
+
+
+.club-card:hover {
+    z-index: 2;
+    transform: translateY(-8px);
+    background: #0c0c0c;
+    color: #fff;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.16);
+}
+
+
+.club-number {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+.club-category {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #aaa;
+    font-size: 6px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.club-emblem {
+    width: 125px;
+    height: 125px;
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,165,31,0.38);
+    border-radius: 50%;
+    background: rgba(255,165,31,0.05);
+    color: var(--septa);
+    font-size: 22px;
+    font-weight: 900;
+}
+
+
+.club-emblem img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+}
+
+
+.club-content {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.club-content > span {
+    color: var(--septa);
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.club-content h3 {
+    margin: 9px 0;
+    font-size: 20px;
+}
+
+
+.club-content p {
+    color: #aaa;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.club-footer {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+}
+
+
+.club-card:hover .club-footer {
+    border-color: rgba(255,255,255,0.12);
+}
+
+
+.club-footer span {
+    color: #999;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+}
+
+
+.club-footer strong {
+    color: var(--septa);
+    font-size: 19px;
+}
+
+
+/* =========================================
+   DIRECTORY JOIN
+   ========================================= */
+
+.directory-join {
+    position: relative;
+    min-height: 620px;
+    padding: 110px 7%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #070707;
+}
+
+
+.join-seven {
+    position: absolute;
+    right: -20px;
+    bottom: -200px;
+    color: transparent;
+    -webkit-text-stroke: 3px rgba(255,165,31,0.10);
+    font-size: 750px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+
+.directory-join > div:last-child {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+
+.directory-join > div > span {
+    color: var(--septa);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+
+.directory-join h2 {
+    margin: 20px 0 25px;
+    font-size: clamp(60px,8vw,115px);
+    line-height: 0.83;
+    letter-spacing: -7px;
+}
+
+
+.directory-join h2 strong {
+    display: block;
+    color: var(--septa);
+}
+
+
+.directory-join p {
+    max-width: 600px;
+    color: #888;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+.directory-join a {
+    margin-top: 35px;
+    min-height: 56px;
+    padding: 0 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    background: var(--septa);
+    color: #050505;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+
+.directory-join a b {
+    font-size: 20px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.septa-footer {
+    padding: 65px 7% 30px;
+    background: #030303;
+    border-top: 1px solid var(--border);
+}
+
+
+.footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.footer-main > img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}
+
+
+.footer-main > div {
+    text-align: right;
+}
+
+
+.footer-main span {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.footer-main a {
+    color: var(--septa);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+.footer-slogan {
+    margin-top: 55px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,165,31,0.32);
+    font-size: clamp(40px,7vw,100px);
+    font-weight: 900;
+    letter-spacing: -5px;
+}
+
+
+.footer-bottom {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    color: #444;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+/* =====================================================
+   PERFIL
+   ===================================================== */
+
+
+/* =========================================
+   LOADING / ERROR PERFIL
+   ========================================= */
+
+.profile-loading-screen,
+.profile-error-screen {
+    min-height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #050505;
+}
+
+
+.profile-loading-screen img,
+.profile-error-screen img {
+    width: 180px;
+    max-height: 120px;
+    object-fit: contain;
+    margin-bottom: 35px;
+}
+
+
+.profile-loading-screen strong {
+    margin-top: 20px;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+.profile-error-screen > span {
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.profile-error-screen h1 {
+    margin-top: 20px;
+    font-size: clamp(50px,8vw,100px);
+    line-height: 0.85;
+    letter-spacing: -6px;
+}
+
+
+.profile-error-screen h1 strong {
+    display: block;
+    color: var(--septa);
+}
+
+
+.profile-error-screen p {
+    margin-top: 25px;
+    color: #888;
+}
+
+
+.profile-error-screen a {
+    margin-top: 30px;
+    padding: 16px 22px;
+    border: 1px solid var(--septa);
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+/* =========================================
+   PROFILE HEADER
+   ========================================= */
+
+.profile-header {
+    min-height: 105px;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 190px 1fr 170px;
+    align-items: center;
+    gap: 30px;
+    background: #090909;
+    border-bottom: 1px solid var(--border);
+}
+
+
+.profile-brand {
+    width: 100px;
+    height: 78px;
+}
+
+
+.profile-brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.profile-header nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+
+.profile-header nav a {
+    color: #8b8b8b;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.profile-header nav a:hover {
+    color: var(--septa);
+}
+
+
+.profile-all-clubs {
+    justify-self: end;
+    padding: 14px 18px;
+    border: 1px solid rgba(255,165,31,0.45);
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   PROFILE HERO
+   ========================================= */
+
+.profile-hero {
+    position: relative;
+    min-height: 640px;
+    padding: 95px 7% 60px;
+    display: grid;
+    grid-template-columns: 320px 1fr 310px;
+    align-items: center;
+    gap: 60px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 48%,
+            rgba(255,165,31,0.14),
+            transparent 25%
+        ),
+        #080808;
+}
+
+
+.profile-seven {
+    position: absolute;
+    right: -50px;
+    top: -220px;
+    color: transparent;
+    -webkit-text-stroke: 3px rgba(255,165,31,0.08);
+    font-size: 760px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+
+.profile-emblem-area,
+.profile-identity,
+.profile-status-panel {
+    position: relative;
+    z-index: 2;
+}
+
+
+.profile-emblem {
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,165,31,0.4);
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,165,31,0.12),
+            transparent 65%
+        );
+    color: var(--septa);
+    font-size: 50px;
+    font-weight: 900;
+}
+
+
+.profile-emblem img {
+    width: 82%;
+    height: 82%;
+    object-fit: contain;
+}
+
+
+.profile-identity > span {
+    color: var(--septa);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+
+.profile-identity h1 {
+    max-width: 760px;
+    margin-top: 15px;
+    font-size: clamp(55px,7vw,105px);
+    line-height: 0.85;
+    letter-spacing: -7px;
+}
+
+
+.profile-identity > p {
+    max-width: 620px;
+    margin-top: 25px;
+    color: #858585;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+.profile-location {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+    color: #666;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+
+.profile-dot {
+    color: var(--septa);
+}
+
+
+.profile-instagram {
+    margin-top: 28px;
+    display: inline-flex;
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.profile-status-panel {
+    border-top: 1px solid var(--border);
+}
+
+
+.profile-status-panel > div {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+
+.profile-status-panel span {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.profile-status-panel strong {
+    display: block;
+    color: #ddd;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   QUICK STATS
+   ========================================= */
+
+.profile-quick-stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background: var(--septa);
+    color: #050505;
+}
+
+
+.profile-quick-stats > div {
+    min-height: 120px;
+    padding: 25px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(0,0,0,0.13);
+}
+
+
+.profile-quick-stats span {
+    margin-bottom: 8px;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+}
+
+
+.profile-quick-stats strong {
+    font-size: 32px;
+}
+
+
+/* =========================================
+   PROFILE GAMES
+   ========================================= */
+
+.profile-games-section {
+    padding: 100px 7%;
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 20px;
+    background: var(--light);
+    color: #050505;
+}
+
+
+.next-game-card,
+.results-card {
+    background: #fff;
+    border: 1px solid var(--light-border);
+}
+
+
+.profile-card-heading {
+    min-height: 90px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+
+.profile-card-heading span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--septa);
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.profile-card-heading strong {
+    font-size: 14px;
+}
+
+
+.profile-card-heading > b {
+    max-width: 230px;
+    color: #999;
+    text-align: right;
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+
+.next-game-body {
+    min-height: 310px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.next-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+
+.next-team-emblem {
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: var(--septa);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+.next-team-emblem img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+
+.next-team > strong {
+    max-width: 220px;
+    font-size: 15px;
+}
+
+
+.next-versus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.next-versus span {
+    color: #aaa;
+    text-align: center;
+    font-size: 6px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+
+.next-versus strong {
+    margin-top: 10px;
+    color: var(--septa);
+    font-size: 42px;
+    line-height: 1;
+}
+
+
+.no-next-game {
+    grid-column: 1 / -1;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    text-align: center;
+}
+
+
+.no-next-game span {
+    color: var(--septa);
+    font-size: 50px;
+}
+
+
+.no-next-game strong {
+    margin-top: 15px;
+    font-size: 11px;
+}
+
+
+.next-game-footer {
+    min-height: 65px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-top: 1px solid #e4e4e4;
+    color: #888;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+}
+
+
+.results-list {
+    min-height: 375px;
+}
+
+
+.result-item {
+    padding: 22px 30px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+.result-item > span {
+    display: block;
+    margin-bottom: 9px;
+    color: #999;
+    font-size: 7px;
+    font-weight: 900;
+}
+
+
+.result-item strong {
+    display: block;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+.result-item small {
+    display: block;
+    margin-top: 8px;
+    color: var(--septa);
+    font-size: 6px;
+    font-weight: 900;
+}
+
+
+.empty-result {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+/* =========================================
+   PROFILE SECTIONS
+   ========================================= */
+
+.profile-section {
+    padding: 110px 7%;
+}
+
+
+.light-section {
+    background: #f3f3f3;
+    color: #050505;
+}
+
+
+.dark-section {
+    background: #090909;
+}
+
+
+.profile-section-heading {
+    max-width: 1500px;
+    margin: 0 auto 55px;
+}
+
+
+.profile-section-heading > span {
+    display: block;
+    margin-bottom: 13px;
+    color: var(--septa);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.profile-section-heading h2 {
+    font-size: clamp(48px,7vw,90px);
+    line-height: 0.88;
+    letter-spacing: -6px;
+}
+
+
+.profile-section-heading h2 strong {
+    display: block;
+    color: var(--septa);
+}
+
+
+/* =========================================
+   TEMPORADAS
+   ========================================= */
+
+.seasons-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border-top: 1px solid var(--light-border);
+    border-left: 1px solid var(--light-border);
+}
+
+
+.season-card {
+    min-height: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-right: 1px solid var(--light-border);
+    border-bottom: 1px solid var(--light-border);
+}
+
+
+.season-card > span {
+    color: var(--septa);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+.season-card h3 {
+    margin-top: auto;
+    font-size: 24px;
+    line-height: 1.1;
+}
+
+
+.season-card p {
+    margin-top: 10px;
+    color: #999;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.season-card > div {
+    margin-top: 22px;
+    padding-top: 17px;
+    border-top: 1px solid #eee;
+    color: #888;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.empty-section-card {
+    grid-column: 1 / -1;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #aaa;
+    border-right: 1px solid var(--light-border);
+    border-bottom: 1px solid var(--light-border);
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+/* =========================================
+   ELENCO
+   ========================================= */
+
+.squad-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+
+.athlete-card {
+    min-height: 380px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: #101010;
+}
+
+
+.athlete-photo {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,165,31,0.13),
+            transparent 65%
+        ),
+        #161616;
+    color: var(--septa);
+    font-size: 70px;
+    font-weight: 900;
+}
+
+
+.athlete-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.athlete-info {
+    margin-top: 22px;
+}
+
+
+.athlete-info span {
+    color: var(--septa);
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.athlete-info h3 {
+    margin-top: 7px;
+    font-size: 19px;
+}
+
+
+.athlete-info p {
+    margin-top: 8px;
+    color: #777;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+
+.empty-squad {
+    grid-column: 1 / -1;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: #101010;
+}
+
+
+.empty-squad span {
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.empty-squad strong {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+
+.empty-squad p {
+    margin-top: 10px;
+    color: #777;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   NUMBERS
+   ========================================= */
+
+.numbers-section {
+    background: var(--septa);
+    color: #050505;
+}
+
+
+.numbers-section .profile-section-heading > span,
+.numbers-section .profile-section-heading h2 strong {
+    color: #050505;
+}
+
+
+.numbers-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-top: 1px solid rgba(0,0,0,0.15);
+    border-left: 1px solid rgba(0,0,0,0.15);
+}
+
+
+.numbers-grid > div {
+    min-height: 180px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+
+.numbers-grid span {
+    margin-bottom: 12px;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+}
+
+
+.numbers-grid strong {
+    font-size: 45px;
+}
+
+
+/* =========================================
+   APP
+   ========================================= */
+
+.profile-app {
+    padding: 75px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: #080808;
+}
+
+
+.profile-app > div > span {
+    color: var(--septa);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.profile-app h2 {
+    margin-top: 10px;
+    font-size: clamp(40px,5vw,70px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+}
+
+
+.profile-app h2 strong {
+    display: block;
+    color: var(--septa);
+}
+
+
+.profile-app a {
+    min-height: 55px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: var(--septa);
+    color: #050505;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.profile-app a b {
+    font-size: 20px;
+}
+
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+@media (max-width: 1150px) {
+
+    .clubs-grid,
+    .squad-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+
+    .profile-hero {
+        grid-template-columns: 240px 1fr;
+    }
+
+
+    .profile-status-panel {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+
+    .profile-status-panel > div {
+        padding-right: 25px;
+    }
+
+
+    .profile-games-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .septa-header,
+    .profile-header {
+        grid-template-columns: 1fr auto;
+        min-height: 90px;
+    }
+
+
+    .septa-nav,
+    .profile-header nav {
+        display: none;
+    }
+
+
+    .clubs-hero {
+        grid-template-columns: 1fr;
+    }
+
+
+    .clubs-hero-message {
+        max-width: 100%;
+    }
+
+
+    .profile-hero {
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-emblem {
+        width: 210px;
+        height: 210px;
+    }
+
+
+    .profile-status-panel {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-quick-stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+
+    .seasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .numbers-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .qua4tro-bar {
+        padding: 0 18px;
+    }
+
+
+    .septa-header,
+    .profile-header {
+        padding: 0 18px;
+    }
+
+
+    .septa-brand,
+    .profile-brand {
+        width: 85px;
+        height: 65px;
+    }
+
+
+    .header-join,
+    .profile-all-clubs {
+        padding: 11px 13px;
+        font-size: 7px;
+    }
+
+
+    .clubs-hero {
+        min-height: 580px;
+        padding: 80px 20px 55px;
+        gap: 45px;
+    }
+
+
+    .clubs-hero-content h1 {
+        font-size: 82px;
+        letter-spacing: -7px;
+    }
+
+
+    .clubs-directory {
+        padding: 85px 20px;
+    }
+
+
+    .directory-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .directory-heading h2 {
+        font-size: 52px;
+        letter-spacing: -4px;
+    }
+
+
+    .club-filters {
+        flex-direction: column;
+    }
+
+
+    .club-filter {
+        width: 100%;
+        text-align: left;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    .clubs-grid,
+    .squad-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .club-card {
+        min-height: 400px;
+    }
+
+
+    .directory-join {
+        min-height: 580px;
+        padding: 85px 20px;
+    }
+
+
+    .directory-join h2 {
+        font-size: 58px;
+        letter-spacing: -5px;
+    }
+
+
+    .directory-join a {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    .septa-footer {
+        padding: 55px 20px 25px;
+    }
+
+
+    .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+
+    .footer-main > div {
+        text-align: left;
+    }
+
+
+    .footer-slogan {
+        font-size: 43px;
+        letter-spacing: -3px;
+    }
+
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+
+    .profile-hero {
+        min-height: auto;
+        padding: 75px 20px 60px;
+        gap: 35px;
+    }
+
+
+    .profile-emblem {
+        width: 170px;
+        height: 170px;
+    }
+
+
+    .profile-identity h1 {
+        font-size: 55px;
+        letter-spacing: -5px;
+    }
+
+
+    .profile-quick-stats > div {
+        min-height: 100px;
+        padding: 20px;
+    }
+
+
+    .profile-games-section {
+        padding: 70px 20px;
+    }
+
+
+    .next-game-body {
+        min-height: 390px;
+        padding: 30px 15px;
+        grid-template-columns: 1fr 65px 1fr;
+        gap: 5px;
+    }
+
+
+    .next-team-emblem {
+        width: 70px;
+        height: 70px;
+    }
+
+
+    .next-team > strong {
+        font-size: 10px;
+    }
+
+
+    .next-versus strong {
+        font-size: 30px;
+    }
+
+
+    .next-game-footer {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 7px;
+    }
+
+
+    .profile-section {
+        padding: 80px 20px;
+    }
+
+
+    .profile-section-heading h2 {
+        font-size: 52px;
+        letter-spacing: -4px;
+    }
+
+
+    .numbers-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .numbers-grid > div {
+        min-height: 145px;
+        padding: 20px;
+    }
+
+
+    .numbers-grid strong {
+        font-size: 35px;
+    }
+
+
+    .profile-app {
+        padding: 60px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .profile-app a {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+}
