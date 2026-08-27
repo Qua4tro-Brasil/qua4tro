@@ -1,6 +1,6 @@
 /* =========================================
    LIRFUT
-   PERFIL PERMANENTE DE CLUBE — V3
+   PERFIL PERMANENTE DE CLUBE — V4
    ========================================= */
 
 :root {
@@ -499,7 +499,9 @@ img {
 }
 
 
-/* INSTAGRAM */
+/* =========================================
+   INSTAGRAM
+   ========================================= */
 
 .team-instagram-link {
     position: relative;
@@ -840,8 +842,13 @@ img {
 }
 
 
-.season-data .season-live {
-    color: var(--lirfut);
+.season-status-planned {
+    color: var(--lirfut) !important;
+}
+
+
+.season-status-live {
+    color: #fff !important;
 }
 
 
