@@ -597,9 +597,7 @@
         }
 
 
-        function criarEscudo(
-            clube
-        ) {
+        function criarEscudo(clube) {
 
             const escudo =
                 document.createElement(
@@ -683,10 +681,14 @@
                 'club-card';
 
 
+            /*
+             * URL LIMPA
+             */
+
             card.href =
-                `/septa7/times/perfil/?slug=${encodeURIComponent(
+                `/septa7/times/${encodeURIComponent(
                     clube.slug
-                )}`;
+                )}/`;
 
 
             card.addEventListener(
@@ -1033,10 +1035,13 @@
 
                                 return {
                                     ...equipe,
+
                                     categoria:
                                         filiacao.categoria,
+
                                     status_septa7:
                                         filiacao.status,
+
                                     data_filiacao_septa7:
                                         filiacao.data_filiacao
                                 };
