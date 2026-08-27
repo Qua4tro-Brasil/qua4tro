@@ -81,7 +81,7 @@
 
     <link
         rel="stylesheet"
-        href="../css/lirfut.css?v=8"
+        href="../css/lirfut.css?v=9"
     >
 
 
@@ -373,7 +373,7 @@
 
 
         <!-- =========================================
-             PRÓXIMOS JOGOS
+             PRÓXIMOS JOGOS / JOGOS DA FASE
              ========================================= -->
 
         <section class="content-section">
@@ -387,8 +387,8 @@
                     </span>
 
                     <h2>
-                        PRÓXIMOS
-                        <strong>JOGOS</strong>
+                        JOGOS DA
+                        <strong>FASE</strong>
                     </h2>
 
                 </div>
@@ -445,8 +445,6 @@
             <div class="bracket">
 
 
-                <!-- QUARTAS -->
-
                 <div class="bracket-column">
 
                     <h3>
@@ -459,8 +457,6 @@
                 </div>
 
 
-                <!-- SEMIFINAL -->
-
                 <div class="bracket-column bracket-middle">
 
                     <h3>
@@ -472,8 +468,6 @@
 
                 </div>
 
-
-                <!-- FINAL -->
 
                 <div class="bracket-column bracket-final">
 
@@ -493,7 +487,7 @@
 
 
         <!-- =========================================
-             TIMES DA COMPETIÇÃO
+             TIMES
              ========================================= -->
 
         <section
@@ -653,7 +647,6 @@
 
             <div class="media-grid">
 
-
                 <div class="media-card">
 
                     <span>
@@ -706,7 +699,6 @@
                     </p>
 
                 </div>
-
 
             </div>
 
@@ -1018,39 +1010,6 @@
 
 
             return '';
-        }
-
-
-        function faseRotulo(valor) {
-
-            const tipo =
-                tipoFase(valor);
-
-
-            if (
-                tipo === 'quartas'
-            ) {
-                return 'QUARTAS DE FINAL';
-            }
-
-
-            if (
-                tipo === 'semifinal'
-            ) {
-                return 'SEMIFINAL';
-            }
-
-
-            if (
-                tipo === 'final'
-            ) {
-                return 'FINAL';
-            }
-
-
-            return valor
-                ? String(valor).toUpperCase()
-                : 'FASE A DEFINIR';
 
         }
 
@@ -1137,14 +1096,6 @@
         }
 
 
-        function nomeEquipe(id) {
-
-            return mapaEquipes[id]?.nome ||
-                'A DEFINIR';
-
-        }
-
-
         function equipe(id) {
 
             return mapaEquipes[id] ||
@@ -1155,24 +1106,115 @@
 
         function statusFinalizado(jogo) {
 
-            return normalizar(
-                jogo?.status
-            ) === 'finalizado';
+            const status =
+                normalizar(
+                    jogo?.status
+                );
+
+
+            return [
+                'finalizado',
+                'encerrado',
+                'concluido'
+            ].includes(
+                status
+            );
 
         }
 
 
-        function placarJogo(jogo) {
+        function vencedorJogo(jogo) {
 
             if (
                 !jogo ||
                 !statusFinalizado(jogo)
             ) {
-                return '×';
+
+                return null;
+
             }
 
 
-            return `${jogo.gols_casa ?? 0} × ${jogo.gols_fora ?? 0}`;
+            const casa =
+                equipe(
+                    jogo.equipe_casa_id
+                );
+
+
+            const fora =
+                equipe(
+                    jogo.equipe_fora_id
+                );
+
+
+            if (
+                !casa ||
+                !fora
+            ) {
+
+                return null;
+
+            }
+
+
+            const golsCasa =
+                Number(
+                    jogo.gols_casa ??
+                    0
+                );
+
+
+            const golsFora =
+                Number(
+                    jogo.gols_fora ??
+                    0
+                );
+
+
+            if (
+                golsCasa >
+                golsFora
+            ) {
+
+                return casa;
+
+            }
+
+
+            if (
+                golsFora >
+                golsCasa
+            ) {
+
+                return fora;
+
+            }
+
+
+            return null;
+
+        }
+
+
+        function localizarJogo(
+            fase,
+            ordem
+        ) {
+
+            return jogosCampeonato
+                .find(
+                    jogo =>
+
+                        tipoFase(
+                            jogo.fase
+                        ) === fase &&
+
+                        Number(
+                            jogo.ordem_chave
+                        ) === ordem
+
+                ) ||
+                null;
 
         }
 
@@ -1205,25 +1247,123 @@
         }
 
 
-        function localizarJogo(
-            fase,
-            ordem
+        /* =========================================
+           PLACAR
+           ========================================= */
+
+        function criarPlacar(
+            jogo,
+            classe
         ) {
 
-            return jogosCampeonato
-                .find(
-                    jogo =>
+            const placar =
+                document.createElement(
+                    'div'
+                );
 
-                        tipoFase(
-                            jogo.fase
-                        ) === fase &&
 
-                        Number(
-                            jogo.ordem_chave
-                        ) === ordem
+            placar.className =
+                classe;
 
-                ) ||
-                null;
+
+            if (
+                !jogo ||
+                !statusFinalizado(jogo)
+            ) {
+
+                const x =
+                    document.createElement(
+                        'span'
+                    );
+
+
+                x.className =
+                    'score-x-only';
+
+
+                x.textContent =
+                    '×';
+
+
+                placar.appendChild(
+                    x
+                );
+
+
+                return placar;
+
+            }
+
+
+            const casa =
+                document.createElement(
+                    'span'
+                );
+
+
+            casa.className =
+                'score-number';
+
+
+            casa.textContent =
+                jogo.gols_casa ??
+                0;
+
+
+            const x =
+                document.createElement(
+                    'span'
+                );
+
+
+            x.className =
+                'score-x';
+
+
+            x.textContent =
+                '×';
+
+
+            const fora =
+                document.createElement(
+                    'span'
+                );
+
+
+            fora.className =
+                'score-number';
+
+
+            fora.textContent =
+                jogo.gols_fora ??
+                0;
+
+
+            placar.append(
+                casa,
+                x,
+                fora
+            );
+
+
+            return placar;
+
+        }
+
+
+        function placarTexto(jogo) {
+
+            if (
+                !jogo ||
+                !statusFinalizado(jogo)
+            ) {
+
+                return '—';
+
+            }
+
+
+            return `${jogo.gols_casa ?? 0} × ${jogo.gols_fora ?? 0}`;
 
         }
 
@@ -1706,19 +1846,10 @@
                 );
 
 
-                const versus =
-                    document.createElement(
-                        'div'
-                    );
-
-
-                versus.className =
-                    'mini-versus';
-
-
-                versus.textContent =
-                    placarJogo(
-                        jogo
+                const placar =
+                    criarPlacar(
+                        jogo,
+                        'mini-score'
                     );
 
 
@@ -1729,7 +1860,7 @@
 
 
                 timeFora.className =
-                    'mini-team';
+                    'mini-team mini-team-away';
 
 
                 const nomeFora =
@@ -1753,15 +1884,15 @@
 
 
                 timeFora.append(
-                    escudoFora,
-                    nomeFora
+                    nomeFora,
+                    escudoFora
                 );
 
 
                 card.append(
                     data,
                     timeCasa,
-                    versus,
+                    placar,
                     timeFora
                 );
 
@@ -1777,7 +1908,7 @@
 
 
         /* =========================================
-           PRÓXIMOS JOGOS
+           CARDS DE JOGOS
            ========================================= */
 
         function renderGames() {
@@ -1823,6 +1954,18 @@
 
                 card.className =
                     'game-card';
+
+
+                if (
+                    jogo &&
+                    statusFinalizado(jogo)
+                ) {
+
+                    card.classList.add(
+                        'game-card-finished'
+                    );
+
+                }
 
 
                 const top =
@@ -1915,19 +2058,10 @@
                 );
 
 
-                const versus =
-                    document.createElement(
-                        'div'
-                    );
-
-
-                versus.className =
-                    'game-x';
-
-
-                versus.textContent =
-                    placarJogo(
-                        jogo
+                const placar =
+                    criarPlacar(
+                        jogo,
+                        'game-score'
                     );
 
 
@@ -1969,7 +2103,7 @@
 
                 teams.append(
                     equipeCasa,
-                    versus,
+                    placar,
                     equipeFora
                 );
 
@@ -2012,9 +2146,10 @@
            ========================================= */
 
         function criarBracketMatch(
-            jogo,
-            fallbackCasa,
-            fallbackFora
+            equipeCasa,
+            equipeFora,
+            placar,
+            opcoes = {}
         ) {
 
             const card =
@@ -2027,26 +2162,78 @@
                 'bracket-match';
 
 
+            if (
+                opcoes.classificado
+            ) {
+
+                card.classList.add(
+                    'bracket-qualified'
+                );
+
+            }
+
+
+            const nomeCasa =
+                equipeCasa?.nome
+                    ? equipeCasa.nome.toUpperCase()
+                    : opcoes.fallbackCasa ||
+                      'A DEFINIR';
+
+
+            const nomeFora =
+                equipeFora?.nome
+                    ? equipeFora.nome.toUpperCase()
+                    : opcoes.fallbackFora ||
+                      'A DEFINIR';
+
+
+            card.innerHTML = `
+
+                <span class="${
+                    opcoes.destaqueCasa
+                        ? 'bracket-team-winner'
+                        : ''
+                }">
+                    ${nomeCasa}
+                </span>
+
+                <strong>
+                    ${placar || '—'}
+                </strong>
+
+                <span class="${
+                    opcoes.destaqueFora
+                        ? 'bracket-team-winner'
+                        : ''
+                }">
+                    ${nomeFora}
+                </span>
+
+            `;
+
+
+            return card;
+
+        }
+
+
+        function criarBracketDoJogo(
+            jogo,
+            fallbackCasa,
+            fallbackFora
+        ) {
+
             if (!jogo) {
 
-                card.innerHTML = `
-
-                    <span>
-                        ${fallbackCasa}
-                    </span>
-
-                    <strong>
-                        —
-                    </strong>
-
-                    <span>
-                        ${fallbackFora}
-                    </span>
-
-                `;
-
-
-                return card;
+                return criarBracketMatch(
+                    null,
+                    null,
+                    '—',
+                    {
+                        fallbackCasa,
+                        fallbackFora
+                    }
+                );
 
             }
 
@@ -2063,36 +2250,191 @@
                 );
 
 
-            const casaTexto =
-                casa
-                    ? casa.nome.toUpperCase()
-                    : fallbackCasa;
+            const vencedor =
+                vencedorJogo(
+                    jogo
+                );
 
 
-            const foraTexto =
-                fora
-                    ? fora.nome.toUpperCase()
-                    : fallbackFora;
+            return criarBracketMatch(
+                casa,
+                fora,
+                placarTexto(
+                    jogo
+                ),
+                {
+                    fallbackCasa,
+                    fallbackFora,
+
+                    destaqueCasa:
+                        vencedor?.id ===
+                        casa?.id,
+
+                    destaqueFora:
+                        vencedor?.id ===
+                        fora?.id
+                }
+            );
+
+        }
 
 
-            card.innerHTML = `
+        function renderSemifinalDerivada(
+            ordemSemi,
+            ordemQuartasA,
+            ordemQuartasB
+        ) {
 
-                <span>
-                    ${casaTexto}
-                </span>
-
-                <strong>
-                    ${placarJogo(jogo)}
-                </strong>
-
-                <span>
-                    ${foraTexto}
-                </span>
-
-            `;
+            const semifinalReal =
+                localizarJogo(
+                    'semifinal',
+                    ordemSemi
+                );
 
 
-            return card;
+            /*
+               Se uma semifinal real já estiver
+               cadastrada no banco, ela sempre tem
+               prioridade.
+            */
+
+            if (semifinalReal) {
+
+                return criarBracketDoJogo(
+                    semifinalReal,
+                    'A DEFINIR',
+                    'A DEFINIR'
+                );
+
+            }
+
+
+            const quartasA =
+                localizarJogo(
+                    'quartas',
+                    ordemQuartasA
+                );
+
+
+            const quartasB =
+                localizarJogo(
+                    'quartas',
+                    ordemQuartasB
+                );
+
+
+            const vencedorA =
+                vencedorJogo(
+                    quartasA
+                );
+
+
+            const vencedorB =
+                vencedorJogo(
+                    quartasB
+                );
+
+
+            /*
+               OS DOIS VENCEDORES JÁ DEFINIDOS
+            */
+
+            if (
+                vencedorA &&
+                vencedorB
+            ) {
+
+                return criarBracketMatch(
+                    vencedorA,
+                    vencedorB,
+                    '×',
+                    {
+                        classificado: true
+                    }
+                );
+
+            }
+
+
+            /*
+               SÓ O PRIMEIRO LADO JÁ TEM VENCEDOR
+
+               É exatamente o cenário atual:
+               Clube Teste venceu J1 e J2
+               ainda não existe.
+
+               Portanto o clube já aparece
+               na semifinal e aguarda adversário.
+            */
+
+            if (
+                vencedorA &&
+                !vencedorB
+            ) {
+
+                return criarBracketMatch(
+                    vencedorA,
+                    null,
+                    '—',
+                    {
+                        fallbackFora:
+                            `AGUARDA VENCEDOR J${ordemQuartasB}`,
+
+                        classificado:
+                            true,
+
+                        destaqueCasa:
+                            true
+                    }
+                );
+
+            }
+
+
+            /*
+               SÓ O SEGUNDO LADO JÁ TEM VENCEDOR
+            */
+
+            if (
+                !vencedorA &&
+                vencedorB
+            ) {
+
+                return criarBracketMatch(
+                    null,
+                    vencedorB,
+                    '—',
+                    {
+                        fallbackCasa:
+                            `AGUARDA VENCEDOR J${ordemQuartasA}`,
+
+                        classificado:
+                            true,
+
+                        destaqueFora:
+                            true
+                    }
+                );
+
+            }
+
+
+            /*
+               NENHUM VENCEDOR DEFINIDO
+            */
+
+            return criarBracketMatch(
+                null,
+                null,
+                '—',
+                {
+                    fallbackCasa:
+                        `VENCEDOR J${ordemQuartasA}`,
+
+                    fallbackFora:
+                        `VENCEDOR J${ordemQuartasB}`
+                }
+            );
 
         }
 
@@ -2111,7 +2453,9 @@
                 '';
 
 
-            /* QUARTAS */
+            /* =====================================
+               QUARTAS
+               ===================================== */
 
             for (
                 let ordem = 1;
@@ -2121,7 +2465,7 @@
 
                 quarterFinals
                     .appendChild(
-                        criarBracketMatch(
+                        criarBracketDoJogo(
                             localizarJogo(
                                 'quartas',
                                 ordem
@@ -2134,35 +2478,33 @@
             }
 
 
-            /* SEMIFINAIS */
+            /* =====================================
+               SEMIFINAIS AUTOMÁTICAS
+               ===================================== */
 
             semiFinals
                 .appendChild(
-                    criarBracketMatch(
-                        localizarJogo(
-                            'semifinal',
-                            1
-                        ),
-                        'VENCEDOR J1',
-                        'VENCEDOR J2'
+                    renderSemifinalDerivada(
+                        1,
+                        1,
+                        2
                     )
                 );
 
 
             semiFinals
                 .appendChild(
-                    criarBracketMatch(
-                        localizarJogo(
-                            'semifinal',
-                            2
-                        ),
-                        'VENCEDOR J3',
-                        'VENCEDOR J4'
+                    renderSemifinalDerivada(
+                        2,
+                        3,
+                        4
                     )
                 );
 
 
-            /* FINAL */
+            /* =====================================
+               FINAL
+               ===================================== */
 
             const final =
                 localizarJogo(
@@ -2186,8 +2528,8 @@
                         </strong>
 
                         <p>
-                            O primeiro campeão da
-                            Copa LIRFUT será decidido aqui.
+                            Os classificados das semifinais
+                            disputarão o título da Copa LIRFUT.
                         </p>
 
                     </div>
@@ -2230,7 +2572,7 @@
                         </b>
 
                         <strong>
-                            ${placarJogo(final)}
+                            ${placarTexto(final)}
                         </strong>
 
                         <b>
@@ -2255,7 +2597,7 @@
 
 
         /* =========================================
-           CARREGAMENTO COMPLETO
+           CARREGAMENTO
            ========================================= */
 
         async function carregarCopaLirfut() {
@@ -2411,7 +2753,7 @@
 
 
                 /* =====================================
-                   IDs DE EQUIPES
+                   IDS DAS EQUIPES
                    ===================================== */
 
                 const equipeIds =
@@ -2499,7 +2841,7 @@
 
 
                 /* =====================================
-                   CLUBES PARTICIPANTES
+                   PARTICIPANTES
                    ===================================== */
 
                 const clubesParticipantes =
@@ -2523,7 +2865,7 @@
 
 
                 /* =====================================
-                   JOGOS
+                   JOGOS + CHAVE
                    ===================================== */
 
                 renderMatchStrip();
@@ -2557,11 +2899,6 @@
                     error?.message ||
                     'Erro inesperado ao consultar a Copa LIRFUT.';
 
-
-                /*
-                   Mesmo se houver erro no banco,
-                   mantemos as áreas esportivas visíveis.
-                */
 
                 renderMatchStrip();
 
