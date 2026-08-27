@@ -1,6 +1,6 @@
 /* =========================================
-   LIRFUT — V4
-   HOME + DIRETÓRIO DE CLUBES
+   LIRFUT — V5
+   HOME + CLUBES + SUPABASE
    ========================================= */
 
 :root {
@@ -869,6 +869,7 @@ img {
 
 .final-box {
     padding: 45px;
+
     background:
         radial-gradient(
             circle at center,
@@ -876,6 +877,7 @@ img {
             transparent 60%
         ),
         #171717;
+
     border: 1px solid rgba(255,165,31,0.30);
     text-align: center;
 }
@@ -1439,7 +1441,7 @@ img {
 
 
 /* =========================================
-   CLUB FILTERS
+   FILTERS
    ========================================= */
 
 .club-filters {
@@ -1485,17 +1487,96 @@ img {
 }
 
 
-.future-filter {
-    cursor: default;
-    color: #bbb;
+/* =========================================
+   LOADING
+   ========================================= */
+
+.clubs-loading {
+    max-width: 1500px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
 }
 
 
-.future-filter small {
+.loading-circle {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 25px;
+    border: 3px solid #eee;
+    border-top-color: var(--lirfut);
+    border-radius: 50%;
+    animation: lirfutLoading 0.9s linear infinite;
+}
+
+
+@keyframes lirfutLoading {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.clubs-loading strong {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+.clubs-loading span {
+    margin-top: 9px;
+    color: #aaa;
+    font-size: 9px;
+}
+
+
+/* =========================================
+   ERROR
+   ========================================= */
+
+.clubs-error {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 65px 30px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+
+.clubs-error strong {
     display: block;
-    margin-top: 3px;
-    color: var(--lirfut);
-    font-size: 5px;
+    font-size: 13px;
+}
+
+
+.clubs-error p {
+    max-width: 650px;
+    margin: 12px auto 0;
+    color: #999;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+
+.clubs-error button {
+    margin-top: 25px;
+    padding: 14px 20px;
+    border: none;
+    background: #080808;
+    color: #fff;
+    cursor: pointer;
+    font-size: 8px;
+    font-weight: 900;
     letter-spacing: 1px;
 }
 
@@ -1538,6 +1619,11 @@ a.club-master-card:hover {
 }
 
 
+.club-card-no-link {
+    cursor: default;
+}
+
+
 .club-master-number {
     position: absolute;
     top: 25px;
@@ -1571,18 +1657,20 @@ a.club-master-card:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ddd;
+    overflow: hidden;
+    border: 1px solid rgba(255,165,31,0.35);
     border-radius: 50%;
-    color: #aaa;
+    background: rgba(255,165,31,0.04);
+    color: var(--lirfut);
     font-size: 18px;
     font-weight: 900;
 }
 
 
-.active-master-emblem {
-    border-color: rgba(255,165,31,0.50);
-    background: rgba(255,165,31,0.06);
-    color: var(--lirfut);
+.club-logo-image {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
 }
 
 
@@ -1647,20 +1735,19 @@ a.club-master-card:hover .club-master-footer {
 }
 
 
-.club-master-placeholder {
-    color: #999;
-}
-
-
 /* =========================================
-   EMPTY FILTER
+   EMPTY
    ========================================= */
 
 .clubs-empty {
     max-width: 1500px;
-    margin: 30px auto 0;
+    min-height: 300px;
+    margin: 0 auto;
     padding: 60px;
     display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
     border: 1px solid #ddd;
     background: #fff;
@@ -1668,7 +1755,16 @@ a.club-master-card:hover .club-master-footer {
 
 
 .clubs-empty.show {
-    display: block;
+    display: flex;
+}
+
+
+.clubs-empty > span {
+    margin-bottom: 15px;
+    color: var(--lirfut);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 
@@ -1678,9 +1774,11 @@ a.club-master-card:hover .club-master-footer {
 
 
 .clubs-empty p {
+    max-width: 500px;
     margin-top: 10px;
     color: #999;
     font-size: 11px;
+    line-height: 1.6;
 }
 
 
@@ -2140,8 +2238,6 @@ a.club-master-card:hover .club-master-footer {
     }
 
 
-    /* CLUBES */
-
     .clubs-hero {
         min-height: 580px;
         padding: 90px 20px 60px;
@@ -2181,6 +2277,14 @@ a.club-master-card:hover .club-master-footer {
 
     .club-master-card {
         min-height: 390px;
+    }
+
+
+    .clubs-loading,
+    .clubs-empty,
+    .clubs-error {
+        min-height: 250px;
+        padding: 40px 20px;
     }
 
 
