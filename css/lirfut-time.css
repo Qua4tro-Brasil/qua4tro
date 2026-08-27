@@ -1,0 +1,1619 @@
+/* =========================================
+   LIRFUT — PÁGINA DE TIME V1
+   ========================================= */
+
+:root {
+    --bg: #080808;
+    --surface: #101010;
+    --surface-2: #171717;
+
+    --white: #ffffff;
+    --light: #f4f4f4;
+
+    --muted: #858585;
+
+    --lirfut: #ffa51f;
+
+    --line: rgba(255,255,255,0.10);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--bg);
+
+    color: var(--white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   QUA4TRO BAR
+   ========================================= */
+
+.qua4tro-bar {
+    min-height: 38px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #000;
+
+    border-bottom: 1px solid var(--line);
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+
+.qua4tro-back,
+.qua4tro-bar-right a {
+    color: #777;
+
+    transition: 0.3s ease;
+}
+
+
+.qua4tro-back:hover,
+.qua4tro-bar-right a:hover {
+    color: var(--lirfut);
+}
+
+
+.qua4tro-bar-right {
+    display: flex;
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.team-header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    min-height: 105px;
+
+    padding: 0 5%;
+
+    display: grid;
+
+    grid-template-columns:
+        170px
+        1fr
+        180px;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background:
+        rgba(8,8,8,0.96);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.lirfut-logo-shell {
+    position: relative;
+
+    width: 82px;
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,165,31,0.20),
+            rgba(255,165,31,0.07) 45%,
+            transparent 75%
+        );
+}
+
+
+.lirfut-logo-shell::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+
+.lirfut-logo-shell img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 65px;
+    height: 65px;
+
+    object-fit: contain;
+}
+
+
+.team-nav {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 36px;
+}
+
+
+.team-nav a {
+    position: relative;
+
+    padding: 43px 0;
+
+    color: #999;
+
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+
+.team-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 100%;
+    bottom: 31px;
+
+    height: 2px;
+
+    background: var(--lirfut);
+
+    transition: 0.3s ease;
+}
+
+
+.team-nav a:hover {
+    color: #fff;
+}
+
+
+.team-nav a:hover::after {
+    right: 0;
+}
+
+
+.back-teams {
+    justify-self: end;
+
+    padding: 14px 18px;
+
+    border:
+        1px solid rgba(255,165,31,0.45);
+
+    color: var(--lirfut);
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+
+.back-teams:hover {
+    background: var(--lirfut);
+
+    color: #080808;
+}
+
+
+/* =========================================
+   COMPETIÇÃO
+   ========================================= */
+
+.competition-bar {
+    min-height: 60px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: #fff;
+
+    color: #080808;
+}
+
+
+.competition-bar span {
+    color: #888;
+
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.competition-bar strong {
+    padding-left: 25px;
+
+    border-left:
+        3px solid var(--lirfut);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.team-hero {
+    position: relative;
+
+    min-height: 650px;
+
+    padding: 100px 7% 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 25% 45%,
+            rgba(255,165,31,0.16),
+            transparent 25%
+        ),
+        linear-gradient(
+            125deg,
+            #080808,
+            #111 55%,
+            #080808
+        );
+}
+
+
+.hero-number {
+    position: absolute;
+
+    right: -20px;
+    top: -140px;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        2px rgba(255,255,255,0.035);
+
+    font-size: 650px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+.hero-team {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        270px
+        1fr;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+.team-emblem-large {
+    width: 260px;
+    height: 260px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,165,31,0.22),
+            rgba(255,165,31,0.06) 50%,
+            transparent 72%
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 0 80px rgba(255,165,31,0.08);
+
+    color: var(--lirfut);
+
+    font-size: 60px;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+}
+
+
+.team-category {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--lirfut);
+
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+
+.team-main-info h1 {
+    font-size:
+        clamp(70px,10vw,145px);
+
+    line-height: 0.85;
+
+    letter-spacing: -8px;
+}
+
+
+.team-city {
+    margin-top: 25px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.team-meta {
+    margin-top: 45px;
+
+    display: flex;
+
+    gap: 50px;
+
+    flex-wrap: wrap;
+}
+
+
+.team-meta div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.team-meta span {
+    color: #555;
+
+    font-size: 7px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.team-meta strong {
+    color: #ddd;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   HERO STATS
+   ========================================= */
+
+.hero-stats {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top:
+        1px solid var(--line);
+
+    border-left:
+        1px solid var(--line);
+}
+
+
+.hero-stats > div {
+    min-height: 115px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.hero-stats span {
+    margin-bottom: 8px;
+
+    color: #666;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.hero-stats strong {
+    color: var(--lirfut);
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   HEADINGS
+   ========================================= */
+
+.section-heading {
+    margin-bottom: 60px;
+}
+
+
+.section-heading > span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--lirfut);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+    font-size:
+        clamp(50px,7vw,95px);
+
+    line-height: 0.88;
+
+    letter-spacing: -6px;
+}
+
+
+.section-heading h2 strong {
+    display: block;
+
+    color: var(--lirfut);
+}
+
+
+/* =========================================
+   PRÓXIMO JOGO
+   ========================================= */
+
+.next-match-section {
+    padding: 120px 7%;
+
+    background: #f4f4f4;
+
+    color: #080808;
+}
+
+
+.next-match-card {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.4fr
+        100px;
+
+    align-items: center;
+
+    background: #fff;
+
+    border:
+        1px solid #ddd;
+}
+
+
+.next-match-info {
+    padding: 45px;
+
+    border-right:
+        1px solid #eee;
+}
+
+
+.next-match-info span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--lirfut);
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.next-match-info strong {
+    display: block;
+
+    font-size: 24px;
+}
+
+
+.next-match-info p {
+    margin-top: 18px;
+
+    color: #888;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+.next-match-teams {
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 60px 1fr;
+
+    align-items: center;
+}
+
+
+.match-team {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.match-emblem {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid #ddd;
+
+    color: #aaa;
+
+    font-weight: 900;
+}
+
+
+.match-emblem.active {
+    border-color:
+        rgba(255,165,31,0.45);
+
+    background:
+        rgba(255,165,31,0.08);
+
+    color: var(--lirfut);
+}
+
+
+.versus {
+    text-align: center;
+
+    color: var(--lirfut);
+
+    font-size: 32px;
+
+    font-weight: 900;
+}
+
+
+.match-status {
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-left:
+        1px solid #eee;
+
+    color: #999;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   RESULTADOS
+   ========================================= */
+
+.results-heading {
+    margin-top: 65px;
+
+    padding-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid #ddd;
+}
+
+
+.results-heading span {
+    color: var(--lirfut);
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.results-heading h3 {
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+.results-list {
+    margin-top: 20px;
+}
+
+
+.empty-result {
+    min-height: 110px;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #fff;
+
+    border:
+        1px solid #ddd;
+
+    color: #888;
+}
+
+
+.empty-result span {
+    color: var(--lirfut);
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   ELENCO
+   ========================================= */
+
+.squad-section {
+    padding: 120px 7%;
+
+    background: #0d0d0d;
+}
+
+
+.position-group {
+    margin-top: 70px;
+}
+
+
+.position-title {
+    margin-bottom: 20px;
+
+    padding-bottom: 15px;
+
+    border-bottom:
+        1px solid var(--line);
+
+    color: var(--lirfut);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.players-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top:
+        1px solid var(--line);
+
+    border-left:
+        1px solid var(--line);
+}
+
+
+.player-card {
+    position: relative;
+
+    min-height: 350px;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    background:
+        linear-gradient(
+            180deg,
+            #171717,
+            #101010
+        );
+
+    transition: 0.35s ease;
+}
+
+
+.player-card:hover {
+    transform: translateY(-5px);
+
+    background:
+        linear-gradient(
+            180deg,
+            #1d1d1d,
+            #101010
+        );
+}
+
+
+.player-number {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    z-index: 2;
+
+    color: var(--lirfut);
+
+    font-size: 12px;
+
+    font-weight: 900;
+}
+
+
+.player-photo {
+    min-height: 250px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,165,31,0.12),
+            transparent 55%
+        );
+}
+
+
+.player-photo span {
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(255,255,255,0.10);
+
+    font-size: 130px;
+
+    font-weight: 900;
+}
+
+
+.player-info {
+    padding: 25px;
+}
+
+
+.player-info span {
+    color: var(--lirfut);
+
+    font-size: 7px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.player-info h3 {
+    margin-top: 8px;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   ESTATÍSTICAS
+   ========================================= */
+
+.stats-section {
+    padding: 120px 7%;
+
+    background: #f4f4f4;
+
+    color: #080808;
+}
+
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border-top:
+        1px solid #d6d6d6;
+
+    border-left:
+        1px solid #d6d6d6;
+}
+
+
+.stat-card {
+    min-height: 230px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-right:
+        1px solid #d6d6d6;
+
+    border-bottom:
+        1px solid #d6d6d6;
+
+    background: #fff;
+}
+
+
+.stat-card > span {
+    color: var(--lirfut);
+
+    font-size: 8px;
+
+    font-weight: 900;
+}
+
+
+.stat-card strong {
+    font-size: 70px;
+
+    letter-spacing: -4px;
+}
+
+
+.stat-card p {
+    color: #888;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.featured-stat {
+    background: #101010;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   DESTAQUES
+   ========================================= */
+
+.highlights-section {
+    padding: 120px 7%;
+
+    background: #080808;
+}
+
+
+.highlights-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border-top:
+        1px solid var(--line);
+
+    border-left:
+        1px solid var(--line);
+}
+
+
+.highlight-card {
+    min-height: 270px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    background: #101010;
+}
+
+
+.highlight-card > span {
+    margin-bottom: auto;
+
+    color: var(--lirfut);
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.highlight-card strong {
+    margin-bottom: 12px;
+
+    font-size: 40px;
+}
+
+
+.highlight-card p {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   APP
+   ========================================= */
+
+.team-app {
+    padding: 75px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: var(--lirfut);
+
+    color: #080808;
+}
+
+
+.team-app > div > span {
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.team-app h2 {
+    margin: 10px 0 15px;
+
+    font-size:
+        clamp(40px,5vw,70px);
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+}
+
+
+.team-app h2 strong {
+    display: block;
+}
+
+
+.team-app p {
+    max-width: 650px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.app-button {
+    flex-shrink: 0;
+
+    min-height: 54px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: #080808;
+
+    color: #fff;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+
+.app-button:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.team-footer {
+    padding: 70px 7% 30px;
+
+    background: #050505;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+.footer-main {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+.footer-team {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.footer-team-emblem {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,165,31,0.30);
+
+    background:
+        rgba(255,165,31,0.05);
+
+    color: var(--lirfut);
+
+    font-weight: 900;
+}
+
+
+.footer-team span,
+.footer-lirfut span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+
+.footer-team strong {
+    font-size: 18px;
+}
+
+
+.footer-lirfut {
+    text-align: right;
+}
+
+
+.footer-lirfut a {
+    color: var(--lirfut);
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+
+.footer-links {
+    margin-top: 55px;
+
+    padding: 28px 0;
+
+    display: flex;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.footer-links a {
+    color: #777;
+
+    font-size: 10px;
+
+    transition: 0.3s ease;
+}
+
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+
+.footer-bottom {
+    padding-top: 28px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    color: #444;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    .players-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .next-match-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .next-match-info {
+        border-right: none;
+
+        border-bottom:
+            1px solid #eee;
+    }
+
+
+    .match-status {
+        min-height: 50px;
+
+        border-left: none;
+
+        border-top:
+            1px solid #eee;
+
+        writing-mode: initial;
+
+        transform: none;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .team-header {
+        min-height: 90px;
+
+        grid-template-columns:
+            1fr auto;
+    }
+
+
+    .team-nav {
+        display: none;
+    }
+
+
+    .hero-team {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .team-emblem-large {
+        width: 190px;
+        height: 190px;
+
+        font-size: 45px;
+    }
+
+
+    .hero-stats {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .team-app {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .qua4tro-bar {
+        padding: 0 18px;
+    }
+
+
+    .qua4tro-bar-right a:last-child {
+        display: none;
+    }
+
+
+    .team-header {
+        padding: 0 18px;
+    }
+
+
+    .lirfut-logo-shell {
+        width: 64px;
+        height: 64px;
+    }
+
+
+    .lirfut-logo-shell img {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .back-teams {
+        padding: 10px 12px;
+
+        font-size: 7px;
+    }
+
+
+    .competition-bar {
+        padding: 18px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .competition-bar strong {
+        padding-left: 0;
+
+        border-left: none;
+    }
+
+
+    .team-hero {
+        padding: 75px 20px 35px;
+    }
+
+
+    .team-main-info h1 {
+        font-size: 65px;
+
+        letter-spacing: -5px;
+    }
+
+
+    .team-meta {
+        gap: 25px;
+    }
+
+
+    .hero-stats > div {
+        min-height: 90px;
+
+        padding: 18px;
+    }
+
+
+    .next-match-section,
+    .squad-section,
+    .stats-section,
+    .highlights-section {
+        padding: 85px 20px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 50px;
+
+        letter-spacing: -4px;
+    }
+
+
+    .next-match-teams {
+        padding: 25px 10px;
+
+        grid-template-columns:
+            1fr 35px 1fr;
+    }
+
+
+    .match-emblem {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .player-card {
+        min-height: 300px;
+    }
+
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stat-card {
+        min-height: 190px;
+    }
+
+
+    .team-app {
+        padding: 60px 20px;
+    }
+
+
+    .app-button {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+
+    .team-footer {
+        padding: 55px 20px 25px;
+    }
+
+
+    .footer-main {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .footer-lirfut {
+        text-align: left;
+    }
+
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+}
