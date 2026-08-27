@@ -1,6 +1,6 @@
 /* =========================================
-   LIRFUT — V7
-   HOME + CLUBES + SUPABASE
+   LIRFUT — V8
+   HOME + CLUBES + JOGOS + SUPABASE
    ========================================= */
 
 :root {
@@ -215,14 +215,12 @@ img {
 }
 
 
-.lirfut-nav a:hover,
-.lirfut-nav .nav-current {
+.lirfut-nav a:hover {
     color: var(--white);
 }
 
 
-.lirfut-nav a:hover::after,
-.lirfut-nav .nav-current::after {
+.lirfut-nav a:hover::after {
     right: 0;
 }
 
@@ -387,12 +385,12 @@ img {
 
 
 .mini-match {
-    min-height: 115px;
+    min-height: 125px;
     padding: 16px 20px;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     border-right: 1px solid var(--line);
 }
 
@@ -407,33 +405,70 @@ img {
 
 
 .mini-team {
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 8px;
     color: #ccc;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 900;
+}
+
+
+.mini-team > span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
 .mini-team:last-child {
     justify-content: flex-end;
+    text-align: right;
 }
 
 
 .team-placeholder {
-    width: 21px;
-    height: 21px;
-    display: block;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     border: 1px solid #444;
     border-radius: 50%;
+    color: var(--lirfut);
+    font-size: 6px;
 }
 
 
 .mini-versus {
     color: var(--lirfut);
-    font-size: 16px;
+    text-align: center;
+    font-size: 15px;
     font-weight: 900;
+}
+
+
+/* =========================================
+   DYNAMIC LOGOS
+   ========================================= */
+
+.dynamic-team-logo {
+    width: 82%;
+    height: 82%;
+    object-fit: contain;
+}
+
+
+.dynamic-mini-emblem .dynamic-team-logo {
+    width: 80%;
+    height: 80%;
+}
+
+
+.dynamic-game-emblem {
+    overflow: hidden;
 }
 
 
@@ -719,6 +754,7 @@ img {
 
 
 .game-card {
+    min-height: 410px;
     padding: 35px;
     background: #fff;
     border: 1px solid #ddd;
@@ -759,16 +795,18 @@ img {
 .game-teams {
     margin: 35px 0;
     display: grid;
-    grid-template-columns: 1fr 50px 1fr;
+    grid-template-columns: 1fr 70px 1fr;
     align-items: center;
 }
 
 
 .game-team {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
+    text-align: center;
 }
 
 
@@ -779,6 +817,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     border: 1px solid #ccc;
     border-radius: 50%;
     color: #aaa;
@@ -788,7 +827,9 @@ img {
 
 
 .game-team strong {
+    max-width: 220px;
     font-size: 13px;
+    line-height: 1.4;
 }
 
 
@@ -896,7 +937,7 @@ img {
 }
 
 
-.final-box strong {
+.final-box > strong {
     display: block;
     margin: 25px 0;
     color: var(--lirfut);
@@ -908,6 +949,25 @@ img {
     color: #777;
     font-size: 13px;
     line-height: 1.6;
+}
+
+
+.final-teams {
+    margin: 35px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+.final-teams b {
+    font-size: 16px;
+}
+
+
+.final-teams strong {
+    color: var(--lirfut);
+    font-size: 38px;
 }
 
 
@@ -997,13 +1057,6 @@ img {
 
 .competition-team-emblem {
     overflow: hidden;
-}
-
-
-.competition-team-logo {
-    width: 82%;
-    height: 82%;
-    object-fit: contain;
 }
 
 
@@ -1799,11 +1852,6 @@ a.club-master-card:hover {
 }
 
 
-a.club-master-card:hover .club-master-footer {
-    border-color: rgba(255,255,255,0.10);
-}
-
-
 /* =========================================
    EMPTY
    ========================================= */
@@ -2206,6 +2254,11 @@ a.club-master-card:hover .club-master-footer {
     }
 
 
+    .mini-match {
+        min-height: 115px;
+    }
+
+
     .lirfut-hero {
         min-height: 700px;
         padding: 80px 20px 35px;
@@ -2248,7 +2301,19 @@ a.club-master-card:hover .club-master-footer {
 
 
     .game-card {
+        min-height: 380px;
         padding: 25px 18px;
+    }
+
+
+    .game-teams {
+        grid-template-columns: 1fr 45px 1fr;
+    }
+
+
+    .club-placeholder {
+        width: 65px;
+        height: 65px;
     }
 
 
@@ -2320,24 +2385,6 @@ a.club-master-card:hover .club-master-footer {
     }
 
 
-    .clubs-hero-content h1 {
-        font-size: 68px;
-        letter-spacing: -5px;
-    }
-
-
-    .clubs-principle {
-        padding: 25px;
-    }
-
-
-    .clubs-directory-heading h2,
-    .clubs-future-intro h2 {
-        font-size: 52px;
-        letter-spacing: -4px;
-    }
-
-
     .club-filters {
         flex-direction: column;
     }
@@ -2351,11 +2398,6 @@ a.club-master-card:hover .club-master-footer {
     }
 
 
-    .club-master-card {
-        min-height: 390px;
-    }
-
-
     .clubs-loading,
     .clubs-empty,
     .clubs-error {
@@ -2366,11 +2408,6 @@ a.club-master-card:hover .club-master-footer {
 
     .future-structure-grid {
         grid-template-columns: 1fr;
-    }
-
-
-    .future-structure-grid > div {
-        min-height: 230px;
     }
 
 }
